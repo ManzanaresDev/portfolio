@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a1628;
+  --navy-mid: #0d2147;
+  --blue-deep: #1a3a6e;
+  --blue-mid: #2563c4;
+  --blue-light: #4a9eff;
+  --sky: #7ec8f7;
+  --white: #f0f6ff;
+  --accent: #5ddfff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 30%, var(--blue-deep) 60%, var(--blue-mid) 85%, var(--blue-light) 100%);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.display-font {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Carousel */
+.carousel-track {
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Glassmorphism card */
+.glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.glass-form {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Input styles */
+.field {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  color: var(--white);
+  transition: all 0.3s ease;
+  outline: none;
+  width: 100%;
+  padding: 14px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+}
+
+.field::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.field:focus {
+  border-color: var(--accent);
+  background: rgba(93,223,255,0.07);
+  box-shadow: 0 0 0 3px rgba(93,223,255,0.1);
+}
+
+/* Button */
+.btn-send {
+  background: linear-gradient(135deg, var(--blue-mid), var(--accent));
+  border: none;
+  border-radius: 10px;
+  color: var(--navy);
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-send::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background 0.3s;
+}
+
+.btn-send:hover::after {
+  background: rgba(255,255,255,0.12);
+}
+
+.btn-send:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(93,223,255,0.35);
+}
+
+/* Dot indicators */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.dot.active {
+  background: var(--accent);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Tag pill */
+.tag {
+  background: rgba(93,223,255,0.12);
+  border: 1px solid rgba(93,223,255,0.25);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* Fade in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.fade-up-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-up-2 { animation-delay: 0.25s; opacity: 0; }
+.fade-up-3 { animation-delay: 0.4s; opacity: 0; }
+.fade-up-4 { animation-delay: 0.55s; opacity: 0; }
+
+/* Scrollbar hidden for carousel */
+.no-scroll::-webkit-scrollbar { display: none; }
+
+/* Vertical line decorator */
+.v-line {
+  width: 2px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
