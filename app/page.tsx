@@ -226,6 +226,24 @@ export default function Portfolio() {
                 >
                   Parlez-moi de votre projet.
                 </p>
+
+                {/* BADGE SÉCURITÉ */}
+                <div
+                  style={{
+                    marginTop: 12,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "6px 10px",
+                    borderRadius: 999,
+                    fontSize: "0.75rem",
+                    color: "#5ddfff",
+                    background: "rgba(93,223,255,0.08)",
+                    border: "1px solid rgba(93,223,255,0.25)",
+                  }}
+                >
+                  🔒 Formulaire protégé (validation + anti-injection)
+                </div>
               </div>
               <ContactForm />
             </div>
