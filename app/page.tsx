@@ -28,18 +28,20 @@ export default function Portfolio() {
             "linear-gradient(135deg, #0a1628 0%, #0d2147 30%, #1a3a6e 60%, #2563c4 85%, #4a9eff 100%)",
         }}
       >
-        <Image
-          src="/cabeza-marcos.png"
-          alt="background"
-          fill
-          priority
-          style={{
-            objectFit: "contain",
-            objectPosition: "-230px 190px",
-            mixBlendMode: "luminosity",
-            opacity: 0.55,
-          }}
-        />
+        {!isMobile && (
+          <Image
+            src="/cabeza-marcos.png"
+            alt="background"
+            fill
+            priority
+            style={{
+              objectFit: "contain",
+              objectPosition: "-230px 190px",
+              mixBlendMode: "luminosity",
+              opacity: 0.55,
+            }}
+          />
+        )}
 
         <div
           style={{
