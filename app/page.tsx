@@ -35,7 +35,7 @@ export default function Portfolio() {
           priority
           style={{
             objectFit: "contain",
-            objectPosition: "left bottom",
+            objectPosition: "-230px 190px",
             mixBlendMode: "luminosity",
             opacity: 0.55,
           }}
@@ -63,10 +63,19 @@ export default function Portfolio() {
         }}
       >
         <Image
-          src="/coderCatLogo.png"
-          alt="logo"
-          width={isMobile ? 52 : 72} // 👈 plus grand
-          height={isMobile ? 52 : 72}
+          src="/cabeza-marcos.png"
+          alt="background"
+          fill
+          priority
+          style={{
+            objectFit: "contain",
+            objectPosition: isMobile ? "left bottom" : "left bottom",
+
+            transform: isMobile ? "none" : "translateX(-38%)",
+
+            mixBlendMode: "luminosity",
+            opacity: 0.55,
+          }}
         />
       </div>
 
@@ -89,6 +98,7 @@ export default function Portfolio() {
             gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
             gap: isMobile ? 40 : 100,
             alignItems: "center",
+            transform: isMobile ? "none" : "translateX(120px)",
           }}
         >
           {/* LEFT TEXT */}
@@ -100,14 +110,25 @@ export default function Portfolio() {
               alignItems: isMobile ? "center" : "flex-start",
             }}
           >
+            <Image
+              src="/coderCatLogo.png"
+              alt="CoderCat Logo"
+              width={isMobile ? 80 : 140}
+              height={isMobile ? 80 : 140}
+              style={{
+                marginBottom: 20,
+                alignSelf: isMobile ? "center" : "flex-start",
+              }}
+            />
             {/* TITRE PLUS GRAND */}
             <span
               style={{
                 color: "#5ddfff",
-                fontSize: isMobile ? "1.2rem" : "1.6rem",
+                fontSize: "clamp(1.2rem, 4vw, 2.1rem)",
                 fontWeight: 700,
                 letterSpacing: "0.05em",
                 marginBottom: 14,
+                whiteSpace: "nowrap",
               }}
             >
               Développement web & sécurité
@@ -116,14 +137,15 @@ export default function Portfolio() {
             {/* TEXTE PLUS PETIT */}
             <p
               style={{
-                fontSize: isMobile ? "0.9rem" : "1.05rem",
-                lineHeight: 1.6,
+                fontSize: "clamp(0.95rem, 1.2vw, 1.3rem)",
+                lineHeight: 1.7,
                 color: "rgba(240,246,255,0.65)",
                 maxWidth: 520,
               }}
             >
-              “ Je propose aux petites structures des sites web modernes
-              intégrant dès le départ les bonnes pratiques de sécurité ”
+              « Je conçois pour les petites structures des sites web rapides,
+              sécurisés et faciles à prendre en main, afin que vous soyez
+              autonomes dès le premier jour. »
             </p>
           </div>
 
