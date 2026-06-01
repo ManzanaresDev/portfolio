@@ -23,13 +23,7 @@ export default function ContactForm() {
     try {
       setServerError("");
 
-      const formData = new FormData();
-
-      formData.append("name", data.name);
-      formData.append("email", data.email);
-      formData.append("message", data.message);
-
-      await sendEmail(formData);
+      await sendEmail(data);
 
       setSuccess(true);
       reset();
@@ -88,6 +82,23 @@ export default function ContactForm() {
         {errors.message && <p style={errorStyle}>{errors.message.message}</p>}
       </div>
 
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          opacity: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          {...register("website")}
+        />
+      </div>
+
       <button
         type="submit"
         disabled={isSubmitting}
@@ -126,13 +137,14 @@ export default function ContactForm() {
 
 const inputStyle = {
   width: "100%",
-  padding: "14px 16px",
-  borderRadius: 14,
+  padding: "8px 10px",
+  fontSize: "0.85rem",
+  borderRadius: "10px",
+  lineHeight: 1.2,
   border: "1px solid rgba(255,255,255,0.08)",
   background: "rgba(255,255,255,0.05)",
   color: "white",
   outline: "none",
-  fontSize: "0.95rem",
 };
 
 const errorStyle = {
@@ -145,14 +157,16 @@ const buttonStyle = {
   marginTop: 10,
   height: 54,
   border: "none",
-  borderRadius: 14,
   cursor: "pointer",
   background: "linear-gradient(135deg, #2563c4 0%, #5ddfff 100%)",
   color: "white",
-  fontSize: "0.95rem",
-  fontWeight: 700,
+  fontWeight: 600,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  padding: "10px 12px",
+  fontSize: "0.85rem",
+  borderRadius: "10px",
+  alignSelf: "flex-end",
   width: "100%",
 };

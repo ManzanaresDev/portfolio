@@ -2,23 +2,30 @@
 "use server";
 
 import nodemailer from "nodemailer";
+import { headers } from "next/headers";
 import { contactSchema } from "@/lib/contactSchema";
+import { rateLimit } from "@/lib/rateLimit";
 
-export async function sendEmail(formData: FormData) {
-  const rawData = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message"),
-  };
-
+export async function sendEmail(data: unknown) {
   // validation côté serveur!
-  const result = contactSchema.safeParse(rawData);
+  const result = contactSchema.safeParse(data);
 
   if (!result.success) {
     throw new Error("Données invalides");
   }
 
-  const { name, email, message } = result.data;
+  const { name, email, message, website } = result.data;
+
+  // Honeypot validation!
+  if (website?.trim()) {
+    return;
+  }
+
+  //   Rate limit validation!
+  const ip = (await headers()).get("x-forwarded-for") ?? "unknown";
+  if (!rateLimit(ip, 3000)) {
+    return;
+  }
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
