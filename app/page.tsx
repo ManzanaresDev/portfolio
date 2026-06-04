@@ -58,7 +58,7 @@ export default function Portfolio() {
       <div
         style={{
           position: "fixed",
-          top: isMobile ? 22 : 40, // 👈 plus bas
+          top: isMobile ? 22 : 40,
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 20,
@@ -72,9 +72,7 @@ export default function Portfolio() {
           style={{
             objectFit: "contain",
             objectPosition: isMobile ? "left bottom" : "left bottom",
-
             transform: isMobile ? "none" : "translateX(-38%)",
-
             mixBlendMode: "luminosity",
             opacity: 0.55,
           }}
@@ -87,9 +85,10 @@ export default function Portfolio() {
           zIndex: 10,
           minHeight: "100vh",
           display: "flex",
-          alignItems: "center",
+          alignItems: isMobile ? "flex-start" : "center",
           justifyContent: "center",
-          padding: isMobile ? "80px 16px 20px" : "20px",
+          padding: isMobile ? "30px 16px 40px" : "20px",
+          overflowY: isMobile ? "auto" : "visible",
         }}
       >
         <div
@@ -98,7 +97,7 @@ export default function Portfolio() {
             maxWidth: "1200px",
             display: "grid",
             gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-            gap: isMobile ? 40 : 100,
+            gap: isMobile ? 32 : 100,
             alignItems: "center",
             transform: isMobile ? "none" : "translateX(120px)",
           }}
@@ -118,29 +117,28 @@ export default function Portfolio() {
               width={isMobile ? 80 : 140}
               height={isMobile ? 80 : 140}
               style={{
-                marginBottom: 20,
+                marginBottom: 10,
                 alignSelf: isMobile ? "center" : "flex-start",
               }}
             />
-            {/* TITRE PLUS GRAND */}
+
             <span
               style={{
                 color: "#5ddfff",
                 fontSize: "clamp(1.2rem, 4vw, 2.1rem)",
                 fontWeight: 700,
                 letterSpacing: "0.05em",
-                marginBottom: 14,
+                marginBottom: 8,
                 whiteSpace: "nowrap",
               }}
             >
               Développement web & sécurité
             </span>
 
-            {/* TEXTE PLUS PETIT */}
             <p
               style={{
                 fontSize: "clamp(0.95rem, 1.2vw, 1.3rem)",
-                lineHeight: 1.7,
+                lineHeight: 1.5,
                 color: "rgba(240,246,255,0.65)",
                 maxWidth: 520,
               }}
@@ -163,51 +161,52 @@ export default function Portfolio() {
               style={{
                 width: "100%",
                 maxWidth: 460,
-                maxHeight: isMobile ? "78vh" : "auto",
-                overflowY: "auto",
-
                 borderRadius: 20,
                 padding: isMobile ? "16px 14px" : "22px 26px",
-
                 backdropFilter: "blur(16px)",
                 background: "rgba(255,255,255,0.06)",
                 border: "1px solid rgba(255,255,255,0.08)",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
-
                 display: "flex",
                 flexDirection: "column",
                 gap: 10,
               }}
             >
-              {/* HEADER ULTRA SIMPLE */}
-              <h2
+              {/* HEADER - Contact + badge sur la même ligne */}
+              <div
                 style={{
-                  fontSize: isMobile ? "1.1rem" : "1.3rem",
-                  fontWeight: 600,
-                  color: "white",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
                   marginBottom: 6,
                 }}
               >
-                Contact
-              </h2>
+                <h2
+                  style={{
+                    fontSize: isMobile ? "1.1rem" : "1.3rem",
+                    fontWeight: 600,
+                    color: "white",
+                    margin: 0,
+                  }}
+                >
+                  Contact
+                </h2>
 
-              {/* BADGE */}
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 6,
-                  padding: "4px 8px",
-                  borderRadius: 999,
-                  fontSize: "0.7rem",
-                  color: "#5ddfff",
-                  background: "rgba(93,223,255,0.08)",
-                  border: "1px solid rgba(93,223,255,0.25)",
-                  width: "fit-content",
-                  marginBottom: 10,
-                }}
-              >
-                🔒 Formulaire sécurisé
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    padding: "4px 8px",
+                    borderRadius: 999,
+                    fontSize: "0.7rem",
+                    color: "#5ddfff",
+                    background: "rgba(93,223,255,0.08)",
+                    border: "1px solid rgba(93,223,255,0.25)",
+                  }}
+                >
+                  🔒 Formulaire sécurisé
+                </div>
               </div>
 
               {/* FORM */}
