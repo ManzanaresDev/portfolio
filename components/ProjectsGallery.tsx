@@ -32,21 +32,6 @@ const PROJECTS = [
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Vercel"],
     link: "https://zohre-masajes.vercel.app/",
   },
-  {
-    title: "App de chat temps réel",
-    desc: "Messagerie instantanée multi-salons avec authentification JWT et notifications push.",
-    tags: [
-      "React",
-      "Node.js",
-      "Express",
-      "Socket.IO",
-      "MongoDB",
-      "Mongoose",
-      "JWT",
-    ],
-    link: "https://...",
-  },
-  // ... ajoute tes vrais projets ici
 ];
 
 export default function ProjectsGallery() {
@@ -74,7 +59,7 @@ export default function ProjectsGallery() {
         zIndex: 10,
         padding: "60px 16px",
         maxWidth: 900,
-        background: "transparent", // ✅ Fix 1 : plus de fond sombre
+        background: "transparent",
         margin: "0 auto",
       }}
     >
