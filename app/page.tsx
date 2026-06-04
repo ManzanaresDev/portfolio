@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import ProjectsGallery from "@/components/ProjectsGallery";
 
 export default function Portfolio() {
   const [isMobile, setIsMobile] = useState(false);
@@ -53,7 +54,6 @@ export default function Portfolio() {
           }}
         />
       </div>
-
       {/* TOP LOGO CENTRÉ */}
       <div
         style={{
@@ -78,7 +78,6 @@ export default function Portfolio() {
           }}
         />
       </div>
-
       <main
         style={{
           position: "relative",
@@ -215,6 +214,17 @@ export default function Portfolio() {
           </div>
         </div>
       </main>
+      {/* GALERIE PROJETS */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          background: "#0a1628",
+          width: "100%",
+        }}
+      >
+        <ProjectsGallery />
+      </div>
     </>
   );
 }
