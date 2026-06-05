@@ -219,7 +219,7 @@ export default function Portfolio() {
         style={{
           position: "relative",
           zIndex: 10,
-          background: "#0a1628",
+          background: "transparent",
           width: "100%",
         }}
       >
