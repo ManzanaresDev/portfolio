@@ -44,7 +44,7 @@ const PROJECTS = [
       "TailwindCSS",
     ],
     link: "https://zohre-masajes.vercel.app/",
-    github: "https://github.com/ManzanaresDev/zohre-masajes", 
+    github: "https://github.com/ManzanaresDev/zohre-masajes",
   },
   {
     title: "Old Books (en espagnol)",
@@ -59,7 +59,7 @@ const PROJECTS = [
       "Cloudinary",
       "Stripe",
     ],
-    link: "old-books-six.vercel.app",
+    link: "https://old-books-six.vercel.app/",
     github:
       "https://github.com/ManzanaresDev/all/tree/main/projets/11-old-books",
   },
@@ -74,15 +74,15 @@ const PROJECTS = [
       "Vercel",
       "TailwindCSS",
     ],
-    link: "bbdd-eta.vercel.app",
+    link: "https://bbdd-eta.vercel.app/dashboard",
     github: "https://github.com/ManzanaresDev/bbdd",
   },
   {
     title: "KinéApp",
     desc: "Application web destiné à la gestion et planification de séances individuelles de rééducation adaptées, à réaliser en autonomie par le patient (type, durée, répétitions, etc.)",
     tags: ["Next.js", "TypeScript", "Prisma", "Vercel", "TailwindCSS"],
-    link: "kine-app-lac.vercel.app",
-    github: "https://github.com/ManzanaresDev/kine-app", 
+    link: "https://kine-app-lac.vercel.app/exercises",
+    github: "https://github.com/ManzanaresDev/kine-app",
   },
 ];
 
