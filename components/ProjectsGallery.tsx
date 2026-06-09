@@ -84,6 +84,13 @@ const PROJECTS = [
     link: "https://kine-app-lac.vercel.app/exercises",
     github: "https://github.com/ManzanaresDev/kine-app",
   },
+  {
+    title: "Plateforme programmation",
+    desc: "Mrojet est une plateforme d’apprentissage et de pratique de la programmation en Python, conçue pour rendre l’exécution de code et la progression des utilisateurs simples et interactives.",
+    tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS"],
+    link: "https://kine-app-lac.vercel.app/exercises",
+    github: "https://github.com/ManzanaresDev/plateforme-programmation",
+  },
 ];
 
 // Icône GitHub SVG inline
