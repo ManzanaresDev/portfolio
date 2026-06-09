@@ -88,7 +88,7 @@ const PROJECTS = [
     title: "Plateforme programmation",
     desc: "Plateforme d'apprentissage et de pratique de la programmation en Python, conçue pour rendre l'exécution de code et la progression des utilisateurs simples et interactives.",
     tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS"],
-    link: "https://plateforme-programmation-log8.vercel.app",
+    link: "https://plateforme-programmation.vercel.app",
     github: "https://github.com/ManzanaresDev/plateforme-programmation",
   },
 ];
