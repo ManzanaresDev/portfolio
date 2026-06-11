@@ -39,7 +39,7 @@ const auditItems = [
   "Analyse des en-têtes de sécurité",
   "Rapport clair, sans jargon technique",
   "Actions prioritaires classées par risque",
-  "Tarif : 150 – 500 € · Durée : 1 à 2 jours",
+  "Durée : 1 à 2 jours",
 ];
 
 const rgpdCols = [
