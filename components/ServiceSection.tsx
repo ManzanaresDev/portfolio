@@ -9,24 +9,20 @@ const services = [
     num: "01",
     title: "Création de sites",
     price: "800 – 2 500 € / site",
-    description:
-      "Vitrine & portfolio — présenter votre activité et valoriser votre savoir-faire.",
-    description2:
-      "Portail client, prise de rendez-vous, formulaire métier, interface de gestion interne — livrés avec les clés.",
+    description: "Vitrine & portfolio — présenter votre activité et valoriser votre savoir-faire.",
+    description2: "Portail client, prise de rendez-vous, formulaire métier, interface de gestion interne — livrés avec les clés.",
   },
   {
     num: "02",
     title: "Audits sécurité",
     price: "150 – 500 € / audit",
-    description:
-      "Rapport lisible, actions classées par risque, conformité RGPD vérifiée.",
+    description: "Rapport lisible, actions classées par risque, conformité RGPD vérifiée.",
   },
   {
     num: "03",
     title: "Maintenance",
     price: "29 – 99 €/mois",
-    description:
-      "Surveillance 24/7, mises à jour, sauvegardes — revenu stable et prévisible.",
+    description: "Surveillance 24/7, mises à jour, sauvegardes — revenu stable et prévisible.",
     note: "8 – 10 contrats récurrents",
   },
 ];
@@ -76,39 +72,24 @@ const card: React.CSSProperties = {
   background: "rgba(255,255,255,0.05)",
   border: "1px solid rgba(255,255,255,0.1)",
   borderRadius: 16,
-  padding: "20px 24px",
+  padding: "clamp(14px, 2.5vw, 24px)",
   display: "flex",
   flexDirection: "column",
   gap: 10,
 };
 
-const sectionLabel: React.CSSProperties = {
-  fontSize: 18,
-  fontWeight: 500,
-  letterSpacing: "0.1em",
-  textTransform: "uppercase" as const,
-  color: "rgba(255,255,255,0.3)",
-  marginBottom: 16,
-  margin: "0 0 16px",
-};
-
 function CheckItem({ text }: { text: string }) {
   return (
-    <li
-      style={{
-        display: "flex",
-        alignItems: "flex-start",
-        gap: 8,
-        fontSize: 13,
-        color: "rgba(255,255,255,0.55)",
-        listStyle: "none",
-        margin: "4px 0",
-      }}
-    >
-      <Check
-        size={14}
-        style={{ marginTop: 2, flexShrink: 0, color: "#34d399" }}
-      />
+    <li style={{
+      display: "flex",
+      alignItems: "flex-start",
+      gap: 8,
+      fontSize: "clamp(12px, 1.3vw, 14px)",
+      color: "rgba(255,255,255,0.55)",
+      listStyle: "none",
+      margin: "4px 0",
+    }}>
+      <Check size={14} style={{ marginTop: 2, flexShrink: 0, color: "#34d399" }} />
       {text}
     </li>
   );
@@ -116,239 +97,155 @@ function CheckItem({ text }: { text: string }) {
 
 export default function ServicesSection() {
   return (
-    <section
-      style={{
-        padding: "80px 24px",
-        maxWidth: 960,
-        margin: "0 auto",
-        color: "#fff",
-      }}
-    >
+    <section style={{ padding: "clamp(40px, 8vw, 80px) clamp(16px, 4vw, 24px)", maxWidth: 960, margin: "0 auto", color: "#fff" }}>
+
       {/* Hero */}
-      <div style={{ marginBottom: 56 }}>
-        <h2
-          style={{
-            fontSize: 32,
-            fontWeight: 700,
-            margin: "0 0 12px",
-            color: "#5ddfff",
-            letterSpacing: "0.01em",
-          }}
-        >
+      <div style={{ marginBottom: "clamp(32px, 6vw, 56px)" }}>
+        <h2 style={{
+          fontSize: "clamp(1.4rem, 4vw, 2rem)",
+          fontWeight: 700,
+          margin: "0 0 12px",
+          color: "#5ddfff",
+          letterSpacing: "0.01em",
+        }}>
           Conception des sites et applications web
         </h2>
-        <p
-          style={{
-            fontSize: 15,
-            color: "rgba(255,255,255,0.5)",
-            lineHeight: 1.7,
-            maxWidth: 560,
-            margin: 0,
-          }}
-        >
+        <p style={{
+          fontSize: "clamp(0.85rem, 1.5vw, 0.95rem)",
+          color: "rgba(255,255,255,0.5)",
+          lineHeight: 1.7,
+          maxWidth: 560,
+          margin: 0,
+        }}>
           Donnez vie à vos projets avec des sites web et applications rapides,
-          performants et sécurisés. De l&#39;idée initiale jusqu&#39;au
-          déploiement, tout est géré pour vous : conception, développement,
-          optimisation et mise en ligne. Une solution clé en main pensée pour
-          attirer, convaincre et faire grandir votre activité.
+          performants et sécurisés. De l&#39;idée initiale jusqu&#39;au déploiement,
+          tout est géré pour vous : conception, développement, optimisation et mise
+          en ligne. Une solution clé en main pensée pour attirer, convaincre et
+          faire grandir votre activité.
         </p>
       </div>
 
-      {/* Label */}
-      <p style={sectionLabel}>Services et tarifs</p>
+      {/* Label services */}
+      <p style={{
+        fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
+        fontWeight: 500,
+        letterSpacing: "0.1em",
+        textTransform: "uppercase",
+        color: "rgba(255,255,255,0.3)",
+        margin: "0 0 16px",
+      }}>
+        Services et tarifs
+      </p>
 
       {/* Service cards */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-          gap: 16,
-          marginBottom: 48,
-        }}
-      >
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+        gap: "clamp(10px, 2vw, 16px)",
+        marginBottom: "clamp(28px, 5vw, 48px)",
+      }}>
         {services.map((s) => (
           <div key={s.num} style={card}>
-            <span
-              style={{
-                fontSize: 32,
-                fontWeight: 700,
-                color: "rgba(255,255,255,0.15)",
-                lineHeight: 1,
-                letterSpacing: "-0.02em",
-              }}
-            >
+            <span style={{
+              fontSize: "clamp(22px, 4vw, 32px)",
+              fontWeight: 700,
+              color: "rgba(255,255,255,0.15)",
+              lineHeight: 1,
+              letterSpacing: "-0.02em",
+            }}>
               {s.num}
             </span>
-            <p
-              style={{
-                fontSize: 16,
-                fontWeight: 500,
-                margin: 0,
-                color: "#fff",
-              }}
-            >
+            <p style={{ fontSize: "clamp(14px, 1.6vw, 16px)", fontWeight: 500, margin: 0, color: "#fff" }}>
               {s.title}
             </p>
-            <p
-              style={{
-                fontSize: 24,
-                fontWeight: 600,
-                color: "#93c5fd",
-                margin: "2px 0",
-              }}
-            >
+            <p style={{ fontSize: "clamp(16px, 2.5vw, 22px)", fontWeight: 600, color: "#93c5fd", margin: "2px 0" }}>
               {s.price}
             </p>
-            <p
-              style={{
-                fontSize: 13,
-                color: "rgba(255,255,255,0.5)",
-                lineHeight: 1.6,
-                margin: 0,
-              }}
-            >
+            <p style={{ fontSize: "clamp(12px, 1.3vw, 13px)", color: "rgba(255,255,255,0.5)", lineHeight: 1.6, margin: 0 }}>
               {s.description}
             </p>
-            <p
-              style={{
-                fontSize: 13,
-                color: "rgba(255,255,255,0.5)",
-                lineHeight: 1.6,
-                margin: "6px 0 0",
-              }}
-            >
-              {s.description2}
-            </p>
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.25)" }}>
-              {s.note}
-            </span>
+            {"description2" in s && s.description2 && (
+              <p style={{ fontSize: "clamp(12px, 1.3vw, 13px)", color: "rgba(255,255,255,0.5)", lineHeight: 1.6, margin: "4px 0 0" }}>
+                {s.description2}
+              </p>
+            )}
+            {"note" in s && s.note && (
+              <span style={{ fontSize: "clamp(11px, 1.2vw, 12px)", color: "rgba(255,255,255,0.25)" }}>
+                {s.note}
+              </span>
+            )}
           </div>
         ))}
       </div>
 
-      {/* Label */}
-      <p style={sectionLabel}>Pour aller plus loin</p>
+      {/* Label pour aller plus loin */}
+      <p style={{
+        fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
+        fontWeight: 500,
+        letterSpacing: "0.1em",
+        textTransform: "uppercase",
+        color: "rgba(255,255,255,0.3)",
+        margin: "0 0 16px",
+      }}>
+        Pour aller plus loin
+      </p>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+
         {/* Audit */}
         <div style={card}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              marginBottom: 4,
-            }}
-          >
-            <ShieldCheck
-              size={20}
-              style={{ color: "#93c5fd", flexShrink: 0 }}
-            />
-            <h3
-              style={{
-                fontSize: 16,
-                fontWeight: 500,
-                margin: 0,
-                color: "#fff",
-              }}
-            >
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
+            <ShieldCheck size={20} style={{ color: "#93c5fd", flexShrink: 0 }} />
+            <h3 style={{ fontSize: "clamp(14px, 1.8vw, 16px)", fontWeight: 500, margin: 0, color: "#fff" }}>
               L&apos;audit de sécurité — qu&apos;est-ce que c&apos;est ?
             </h3>
           </div>
-          <p
-            style={{
-              fontSize: 14,
-              color: "rgba(255,255,255,0.5)",
-              lineHeight: 1.7,
-              margin: "0 0 12px",
-            }}
-          >
+          <p style={{ fontSize: "clamp(12px, 1.4vw, 14px)", color: "rgba(255,255,255,0.5)", lineHeight: 1.7, margin: "0 0 12px" }}>
             Un diagnostic complet du site existant du client :
           </p>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: 4,
-            }}
-          >
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 4 }}>
             <ul style={{ margin: 0, padding: 0 }}>
-              {auditItems.slice(0, 4).map((item) => (
-                <CheckItem key={item} text={item} />
-              ))}
+              {auditItems.slice(0, 4).map((item) => <CheckItem key={item} text={item} />)}
             </ul>
             <ul style={{ margin: 0, padding: 0 }}>
-              {auditItems.slice(4).map((item) => (
-                <CheckItem key={item} text={item} />
-              ))}
+              {auditItems.slice(4).map((item) => <CheckItem key={item} text={item} />)}
             </ul>
           </div>
         </div>
 
         {/* RGPD */}
         <div style={card}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              marginBottom: 4,
-            }}
-          >
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
             <Lock size={20} style={{ color: "#93c5fd", flexShrink: 0 }} />
-            <h3
-              style={{
-                fontSize: 16,
-                fontWeight: 500,
-                margin: 0,
-                color: "#fff",
-              }}
-            >
+            <h3 style={{ fontSize: "clamp(14px, 1.8vw, 16px)", fontWeight: 500, margin: 0, color: "#fff" }}>
               RGPD intégré dès le premier jour
             </h3>
           </div>
-          <p
-            style={{
-              fontSize: 14,
-              color: "rgba(255,255,255,0.5)",
-              lineHeight: 1.7,
-              margin: "0 0 16px",
-            }}
-          >
-            Privacy by Design — la conformité est construite dans le site dès le
-            départ, pas ajoutée après coup. Un avantage concurrentiel réel, pas
-            une contrainte.
+          <p style={{ fontSize: "clamp(12px, 1.4vw, 14px)", color: "rgba(255,255,255,0.5)", lineHeight: 1.7, margin: "0 0 16px" }}>
+            Privacy by Design — la conformité est construite dans le site dès le départ,
+            pas ajoutée après coup. Un avantage concurrentiel réel, pas une contrainte.
           </p>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-              gap: 20,
-            }}
-          >
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 20 }}>
             {rgpdCols.map((col) => (
               <div key={col.title}>
-                <p
-                  style={{
-                    fontSize: 12,
-                    fontWeight: 500,
-                    color: "rgba(255,255,255,0.35)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.07em",
-                    margin: "0 0 10px",
-                  }}
-                >
+                <p style={{
+                  fontSize: "clamp(10px, 1.1vw, 12px)",
+                  fontWeight: 500,
+                  color: "rgba(255,255,255,0.35)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.07em",
+                  margin: "0 0 10px",
+                }}>
                   {col.title}
                 </p>
                 <ul style={{ margin: 0, padding: 0 }}>
-                  {col.items.map((item) => (
-                    <CheckItem key={item} text={item} />
-                  ))}
+                  {col.items.map((item) => <CheckItem key={item} text={item} />)}
                 </ul>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
