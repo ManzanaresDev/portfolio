@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
-import ProjectsGallery from "@/components/ProjectsGallery";
+
 import ServicesSection from "@/components/ServiceSection";
+import ProjectsGallery from "@/components/ProjectsGallery";
 
 export default function Portfolio() {
   const [isMobile, setIsMobile] = useState(false);
@@ -44,6 +45,7 @@ export default function Portfolio() {
             }}
           />
         )}
+
         <div
           style={{
             position: "absolute",
@@ -56,6 +58,32 @@ export default function Portfolio() {
       </div>
 
       {/* HERO */}
+
+      {/* TOP LOGO CENTRÉ */}
+      <div
+        style={{
+          position: "fixed",
+          top: isMobile ? 22 : 40,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 20,
+        }}
+      >
+        <Image
+          src="/cabeza-marcos.png"
+          alt="background"
+          fill
+          priority
+          style={{
+            objectFit: "contain",
+            objectPosition: isMobile ? "left bottom" : "left bottom",
+            transform: isMobile ? "none" : "translateX(-38%)",
+            mixBlendMode: "luminosity",
+            opacity: 0.55,
+          }}
+        />
+      </div>
+
       <main
         style={{
           position: "relative",
@@ -98,6 +126,7 @@ export default function Portfolio() {
                 alignSelf: isMobile ? "center" : "flex-start",
               }}
             />
+
             <span
               style={{
                 color: "#5ddfff",
@@ -110,6 +139,7 @@ export default function Portfolio() {
             >
               Développement web & sécurité
             </span>
+
             <p
               style={{
                 fontSize: "clamp(0.95rem, 1.2vw, 1.3rem)",
@@ -147,6 +177,7 @@ export default function Portfolio() {
                 gap: 10,
               }}
             >
+              {/* HEADER - Contact + badge sur la même ligne */})
               <div
                 style={{
                   display: "flex",
@@ -165,6 +196,7 @@ export default function Portfolio() {
                 >
                   Contact
                 </h2>
+
                 <div
                   style={{
                     display: "inline-flex",
@@ -181,15 +213,22 @@ export default function Portfolio() {
                   🔒 Formulaire sécurisé
                 </div>
               </div>
+              {/* FORM */}
               <ContactForm />
             </div>
           </div>
         </div>
       </main>
 
-      {/* GALERIE + SERVICES — un seul bloc, dans l'ordre */}
+      {/* GALERIE + SERVICES */}
       <div style={{ position: "relative", zIndex: 10, width: "100%" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px" }}>
+        <div
+          style={{
+            maxWidth: 1200,
+            margin: "0 auto",
+            padding: "0 20px",
+          }}
+        >
           <ProjectsGallery />
           <ServicesSection />
         </div>
