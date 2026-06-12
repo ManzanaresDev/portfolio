@@ -177,7 +177,7 @@ export default function Portfolio() {
                 gap: 10,
               }}
             >
-              {/* HEADER - Contact + badge sur la même ligne */})
+              {/* HEADER - Contact + badge sur la même ligne */}
               <div
                 style={{
                   display: "flex",
