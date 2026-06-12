@@ -25,9 +25,7 @@ const services = [
     num: "03",
     title: "Maintenance",
     price: "29 – 99 €/mois",
-    description:
-      "Surveillance 24/7, mises à jour, sauvegardes — revenu stable et prévisible.",
-    note: "8 – 10 contrats récurrents",
+    description: "Surveillance 24/7, mises à jour, sauvegardes...",
   },
 ];
 
@@ -231,16 +229,6 @@ export default function ServicesSection() {
               >
                 {s.description2}
               </p>
-            )}
-            {"note" in s && s.note && (
-              <span
-                style={{
-                  fontSize: "clamp(11px, 1.2vw, 12px)",
-                  color: "rgba(255,255,255,0.25)",
-                }}
-              >
-                {s.note}
-              </span>
             )}
           </div>
         ))}

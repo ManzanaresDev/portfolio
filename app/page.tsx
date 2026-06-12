@@ -134,7 +134,7 @@ export default function Portfolio() {
                 fontWeight: 700,
                 letterSpacing: "0.05em",
                 marginBottom: 8,
-                whiteSpace: "nowrap",
+                // whiteSpace: "nowrap",
               }}
             >
               Développement web & sécurité
