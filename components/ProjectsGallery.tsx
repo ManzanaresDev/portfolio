@@ -108,6 +108,26 @@ function GitHubIcon({ size = 16 }: { size?: number }) {
   );
 }
 
+function GlobeIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
+
 export default function ProjectsGallery() {
   const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
 
@@ -288,9 +308,11 @@ export default function ProjectsGallery() {
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
-                  gap: 6,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 20,
                   marginTop: "auto",
+                  paddingTop: "clamp(12px, 4vw, 32px)",
                 }}
               >
                 {p.link && (
@@ -298,41 +320,46 @@ export default function ProjectsGallery() {
                     href={p.link}
                     target="_blank"
                     rel="noreferrer"
+                    title="Voir le projet"
                     style={{
-                      fontSize: "0.8rem",
                       color: "#5ddfff",
-                      textDecoration: "none",
                       display: "flex",
                       alignItems: "center",
-                      gap: 4,
+                      transition: "transform 0.15s ease",
                     }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = "scale(1.15)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = "scale(1)")
+                    }
                   >
-                    ↗ Visite mon projet
+                    <GlobeIcon size={28} />
                   </a>
                 )}
+
                 {p.github && (
                   <a
                     href={p.github}
                     target="_blank"
                     rel="noreferrer"
+                    title="Code source"
                     style={{
-                      fontSize: "0.8rem",
-                      color: "rgba(240,246,255,0.5)",
-                      textDecoration: "none",
+                      color: "rgba(240,246,255,0.7)",
                       display: "flex",
                       alignItems: "center",
-                      gap: 6,
-                      transition: "color 0.15s",
+                      transition: "all 0.15s ease",
                     }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "rgba(240,246,255,0.9)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "rgba(240,246,255,0.5)")
-                    }
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = "#fff";
+                      e.currentTarget.style.transform = "scale(1.15)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = "rgba(240,246,255,0.7)";
+                      e.currentTarget.style.transform = "scale(1)";
+                    }}
                   >
-                    <GitHubIcon size={14} />
-                    Visite le code source
+                    <GitHubIcon size={28} />
                   </a>
                 )}
               </div>

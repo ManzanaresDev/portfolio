@@ -157,7 +157,7 @@ export default function ServicesSection() {
       {/* Label services */}
       <p
         style={{
-          fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
+          fontSize: "clamp(1rem, 2vw, 2rem)",
           fontWeight: 500,
           letterSpacing: "0.1em",
           textTransform: "uppercase",
@@ -249,7 +249,7 @@ export default function ServicesSection() {
       {/* Label pour aller plus loin */}
       <p
         style={{
-          fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
+          fontSize: "clamp(0.9rem, 1.2vw, 1rem)",
           fontWeight: 500,
           letterSpacing: "0.1em",
           textTransform: "uppercase",
