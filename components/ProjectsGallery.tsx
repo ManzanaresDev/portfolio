@@ -96,7 +96,7 @@ const PROJECTS = [
     title: "La casita de la paella",
     desc: "Site vitrine du projet 'la casita de la paella' pour la cuisine et livraison de paellas dans le dunquerquoi",
     tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS", "neon"],
-    link: "https://github.com/ManzanaresDev/casita-de-la-paella.vercel.app",
+    link: "https://casita-de-la-paella.vercel.app/",
     github: "https://github.com/ManzanaresDev/casita-de-la-paella",
   },
 ];
