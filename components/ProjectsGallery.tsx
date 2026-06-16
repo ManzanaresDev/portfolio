@@ -16,6 +16,7 @@ const ALL_TAGS = [
   "PostgreSQL",
   "Prisma",
   "Supabase",
+  "neon",
 
   // CMS
   "Strapi",
@@ -90,6 +91,13 @@ const PROJECTS = [
     tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS"],
     link: "https://plateforme-programmation.vercel.app",
     github: "https://github.com/ManzanaresDev/plateforme-programmation",
+  },
+  {
+    title: "La casita de la paella",
+    desc: "Site vitrine du projet 'la casita de la paella' pour la cuisine et livraison de paellas dans le dunquerquoi",
+    tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS", "neon"],
+    link: "https://github.com/ManzanaresDev/casita-de-la-paella.vercel.app",
+    github: "https://github.com/ManzanaresDev/casita-de-la-paella",
   },
 ];
 
