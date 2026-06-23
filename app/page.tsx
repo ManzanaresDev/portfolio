@@ -122,8 +122,9 @@ export default function Portfolio() {
               width={isMobile ? 80 : 140}
               height={isMobile ? 80 : 140}
               style={{
-                marginBottom: 10,
-                alignSelf: isMobile ? "center" : "flex-start",
+                marginBottom: 30,
+                // alignSelf: isMobile ? "center" : "flex-start",
+                alignSelf: "center",
               }}
             />
 
