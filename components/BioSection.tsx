@@ -1,3 +1,4 @@
+"use client";
 // components/BioSection.tsx
 
 import { MapPin, Shield, Monitor, Smartphone } from "lucide-react";

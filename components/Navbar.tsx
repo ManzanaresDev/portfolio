@@ -8,6 +8,8 @@ const LINKS = [
   { label: "Projets", href: "#projets" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
+  { label: "Bio", href: "#bio" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 
 export default function Navbar() {
@@ -16,6 +18,15 @@ export default function Navbar() {
 
   // Highlight du lien actif selon la section visible
   useEffect(() => {
+    const ids = [
+      "hero",
+      "projets",
+      "services",
+      "contact",
+      "bio",
+      "testimonials",
+    ];
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -24,11 +35,23 @@ export default function Navbar() {
       },
       { threshold: 0.4 },
     );
-    ["hero", "projets", "services", "contact"].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
+
+    // Retry jusqu'à ce que tous les éléments soient disponibles
+    const observe = () => {
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    };
+
+    observe();
+    // Retry après 1s pour les sections qui chargent en async
+    const timer = setTimeout(observe, 1000);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, []);
 
   const handleClick = (href: string) => {

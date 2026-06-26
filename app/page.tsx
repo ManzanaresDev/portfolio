@@ -1,12 +1,11 @@
-"use client";
-
+// app/page.tsx
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import ServicesSection from "@/components/ServiceSection";
 import ProjectsGallery from "@/components/ProjectsGallery";
 import Navbar from "@/components/Navbar";
 import BioSection from "@/components/BioSection";
-
+import TestimonialsSection from "@/components/TestimonialSection";
 export default function Portfolio() {
   return (
     <>
@@ -174,9 +173,11 @@ export default function Portfolio() {
           <section id="projets">
             <ProjectsGallery />
           </section>
-          <BioSection />
-          <section id="services">
-            <ServicesSection />
+          <section id="bio">
+            <BioSection />
+          </section>
+          <section id="testimonials">
+            <TestimonialsSection />
           </section>
           <section id="services">
             <ServicesSection />
