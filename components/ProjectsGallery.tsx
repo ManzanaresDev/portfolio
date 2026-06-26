@@ -1,107 +1,7 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
-const ALL_TAGS = [
-  // Frontend
-  "React",
-  "Next.js",
-  "TypeScript",
-  "TailwindCSS",
-
-  // Backend
-  "Node.js",
-  "REST API",
-
-  // Bases de données & ORM
-  "PostgreSQL",
-  "Prisma",
-  "Supabase",
-  "neon",
-
-  // CMS
-  "Strapi",
-
-  // Outils & Versioning
-  "GitHub",
-
-  // Déploiement & Cloud
-  "Vercel",
-  "Cloudinary",
-
-  // Paiement
-  "Stripe",
-];
-
-const PROJECTS = [
-  {
-    title: "Zohre masajes (en espagnol)",
-    desc: "Site d'annonce d'une professionnelle du massage avec authentification pour la moderation des avis. Multilanguage.",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-      "Vercel",
-      "TailwindCSS",
-    ],
-    link: "https://zohre-masajes.vercel.app/",
-    github: "https://github.com/ManzanaresDev/zohre-masajes",
-  },
-  {
-    title: "Old Books (en espagnol)",
-    desc: "Plateforme de vente de livres rares. Authentification pour la zone d'administration des livres (création, modification, suppresion et images). Gestion d'images: agrandissement des images. Support d'achat en ligne avec carte bancaire",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-      "Vercel",
-      "TailwindCSS",
-      "Cloudinary",
-      "Stripe",
-    ],
-    link: "https://old-books-six.vercel.app/",
-    github:
-      "https://github.com/ManzanaresDev/all/tree/main/projets/11-old-books",
-  },
-  {
-    title: "Gestion de l'entreprise",
-    desc: "Système de gestion de Base de données pour la gestion des clients, factures et devis d'une entreprise. Authentification d'accès",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Supabase",
-      "Vercel",
-      "TailwindCSS",
-    ],
-    link: "https://bbdd-eta.vercel.app/dashboard",
-    github: "https://github.com/ManzanaresDev/bbdd",
-  },
-  {
-    title: "KinéApp",
-    desc: "Application web destiné à la gestion et planification de séances individuelles de rééducation adaptées, à réaliser en autonomie par le patient (type, durée, répétitions, etc.)",
-    tags: ["Next.js", "TypeScript", "Prisma", "Vercel", "TailwindCSS"],
-    link: "https://kine-app-lac.vercel.app/exercises",
-    github: "https://github.com/ManzanaresDev/kine-app",
-  },
-  {
-    title: "Plateforme programmation",
-    desc: "Plateforme d'apprentissage et de pratique de la programmation en Python, conçue pour rendre l'exécution de code et la progression des utilisateurs simples et interactives.",
-    tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS"],
-    link: "https://plateforme-programmation.vercel.app",
-    github: "https://github.com/ManzanaresDev/plateforme-programmation",
-  },
-  {
-    title: "La casita de la paella",
-    desc: "Site vitrine du projet 'la casita de la paella' pour la cuisine et livraison de paellas dans le dunquerquoi",
-    tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS", "neon"],
-    link: "https://casita-de-la-paella.vercel.app/",
-    github: "https://github.com/ManzanaresDev/casita-de-la-paella",
-  },
-];
-
-// Icône GitHub SVG inline
 function GitHubIcon({ size = 16 }: { size?: number }) {
   return (
     <svg
@@ -136,32 +36,91 @@ function GlobeIcon({ size = 16 }: { size?: number }) {
   );
 }
 
+const PROJECTS = [
+  {
+    title: "Zohre masajes",
+    desc: "Site d'annonce d'une professionnelle du massage avec authentification pour la modération des avis. Multilingue.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Vercel",
+      "TailwindCSS",
+    ],
+    link: "https://zohre-masajes.vercel.app/",
+    github: "https://github.com/ManzanaresDev/zohre-masajes",
+    image: "/images/zohre-masajes.jpg",
+  },
+  {
+    title: "Old Books",
+    desc: "Plateforme de vente de livres rares avec authentification, gestion d'images et paiement en ligne par carte bancaire.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Vercel",
+      "TailwindCSS",
+      "Cloudinary",
+      "Stripe",
+    ],
+    link: "https://old-books-six.vercel.app/",
+    github:
+      "https://github.com/ManzanaresDev/all/tree/main/projets/11-old-books",
+    image: "/images/oldbooks.jpg",
+  },
+  {
+    title: "Gestion d'entreprise",
+    desc: "Système de gestion de base de données pour les clients, factures et devis d'une entreprise. Accès sécurisé par authentification.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Supabase",
+      "Vercel",
+      "TailwindCSS",
+    ],
+    link: "https://bbdd-eta.vercel.app/dashboard",
+    github: "https://github.com/ManzanaresDev/bbdd",
+    image: "/images/bbdd.jpg",
+  },
+  {
+    title: "KinéApp",
+    desc: "Application web de gestion et planification de séances de rééducation individualisées, réalisables en autonomie par le patient.",
+    tags: ["Next.js", "TypeScript", "Prisma", "Vercel", "TailwindCSS"],
+    link: "https://kine-app-lac.vercel.app/exercises",
+    github: "https://github.com/ManzanaresDev/kine-app",
+    image: "/images/kine-app.jpg",
+  },
+  {
+    title: "Plateforme programmation",
+    desc: "Plateforme d'apprentissage du Python interactive, conçue pour rendre l'exécution de code et la progression simples et engageantes.",
+    tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS"],
+    link: "https://plateforme-programmation.vercel.app",
+    github: "https://github.com/ManzanaresDev/plateforme-programmation",
+    image: "/images/plateforme-programmation.jpg",
+  },
+  {
+    title: "La casita de la paella",
+    desc: "Site vitrine pour la cuisine et livraison de paellas dans le Dunkerquois.",
+    tags: ["Next.js", "TypeScript", "Vercel", "TailwindCSS", "neon"],
+    link: "https://casita-de-la-paella.vercel.app/",
+    github: "https://github.com/ManzanaresDev/casita-de-la-paella",
+    image: "/images/lacasitadelapaella.jpg",
+  },
+];
+
 export default function ProjectsGallery() {
-  const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
-
-  const toggleFilter = (tag: string) => {
-    setActiveFilters((prev) => {
-      const next = new Set(prev);
-      if (next.has(tag)) next.delete(tag);
-      else next.add(tag);
-      return next;
-    });
-  };
-
-  const visibleProjects = PROJECTS.filter(
-    (p) =>
-      activeFilters.size === 0 ||
-      [...activeFilters].every((f) => p.tags.includes(f)),
-  );
+  const [current, setCurrent] = useState(0);
+  const project = PROJECTS[current];
 
   return (
     <section
+      id="projets"
       style={{
-        position: "relative",
-        zIndex: 10,
-        padding: "60px 16px",
+        padding: "80px 0",
         maxWidth: 900,
-        background: "transparent",
         margin: "0 auto",
       }}
     >
@@ -170,211 +129,189 @@ export default function ProjectsGallery() {
           color: "#5ddfff",
           fontSize: "clamp(1.2rem, 4vw, 1.8rem)",
           fontWeight: 700,
-          marginBottom: 24,
+          marginBottom: 32,
         }}
       >
-        Projets réalisés
+        Quelques projets...
       </h2>
 
-      {/* FILTRES */}
+      {/* SLIDE */}
       <div
-        style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 8 }}
+        style={{
+          position: "relative",
+          borderRadius: 20,
+          overflow: "hidden",
+          border: "1px solid rgba(255,255,255,0.08)",
+          background: "rgba(255,255,255,0.04)",
+          display: "grid",
+          gridTemplateColumns: "55% 45%",
+          minHeight: 340,
+        }}
+        className="carousel-slide"
       >
-        <button
-          onClick={() => setActiveFilters(new Set())}
-          disabled={activeFilters.size === 0}
+        {/* IMAGE GAUCHE */}
+        <div style={{ position: "relative", minHeight: 280 }}>
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            style={{
+              objectFit: "cover",
+              objectPosition: "top",
+              maskImage:
+                "linear-gradient(to right, black 40%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, black 40%, transparent 100%)",
+            }}
+            priority
+          />
+        </div>
+
+        {/* TEXTE DROITE */}
+        <div
           style={{
-            padding: "4px 12px",
-            borderRadius: 999,
-            fontSize: "0.75rem",
-            cursor: activeFilters.size === 0 ? "default" : "pointer",
-            border: "1px solid rgba(255,255,255,0.15)",
-            background: "transparent",
-            color:
-              activeFilters.size === 0
-                ? "rgba(240,246,255,0.2)"
-                : "rgba(240,246,255,0.6)",
-            transition: "all 0.15s",
+            padding: "36px 32px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: 16,
+            zIndex: 1,
+            background:
+              "linear-gradient(to right, transparent, rgba(10,22,40,0.95) 30%)",
+            backdropFilter: "blur(0px)",
           }}
         >
-          ✕ Tout afficher
-        </button>
-        {ALL_TAGS.map((tag) => (
-          <button
-            key={tag}
-            onClick={() => toggleFilter(tag)}
+          {/* Compteur */}
+          <span
             style={{
-              padding: "4px 12px",
-              borderRadius: 999,
               fontSize: "0.75rem",
-              cursor: "pointer",
-              border: "1px solid",
-              borderColor: activeFilters.has(tag)
-                ? "#2563c4"
-                : "rgba(255,255,255,0.15)",
-              background: activeFilters.has(tag)
-                ? "rgba(37,99,196,0.25)"
-                : "rgba(255,255,255,0.05)",
-              color: activeFilters.has(tag)
-                ? "#5ddfff"
-                : "rgba(240,246,255,0.6)",
-              transition: "all 0.15s",
+              color: "rgba(240,246,255,0.35)",
+              letterSpacing: "0.1em",
+              fontWeight: 500,
             }}
           >
-            {tag}
-          </button>
+            {String(current + 1).padStart(2, "0")} /{" "}
+            {String(PROJECTS.length).padStart(2, "0")}
+          </span>
+
+          <h3
+            style={{
+              fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
+              fontWeight: 700,
+              color: "white",
+              margin: 0,
+              lineHeight: 1.2,
+            }}
+          >
+            {project.title}
+          </h3>
+
+          <p
+            style={{
+              fontSize: "0.875rem",
+              color: "rgba(240,246,255,0.6)",
+              lineHeight: 1.65,
+              margin: 0,
+            }}
+          >
+            {project.desc}
+          </p>
+
+          {/* Tags */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+            {project.tags.map((t) => (
+              <span key={t} className="tag">
+                {t}
+              </span>
+            ))}
+          </div>
+
+          {/* Liens */}
+          <div style={{ display: "flex", gap: 16, marginTop: 4 }}>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                title="Voir le projet"
+                style={{
+                  color: "#5ddfff",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  fontSize: "0.8rem",
+                  textDecoration: "none",
+                  transition: "opacity 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+              >
+                <GlobeIcon size={16} />
+                Voir le site
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                title="Code source"
+                style={{
+                  color: "rgba(240,246,255,0.55)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  fontSize: "0.8rem",
+                  textDecoration: "none",
+                  transition: "opacity 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+              >
+                <GitHubIcon size={16} />
+                Code source
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* DOTS */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: 8,
+          marginTop: 20,
+        }}
+      >
+        {PROJECTS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Projet ${i + 1}`}
+            style={{
+              width: i === current ? 24 : 8,
+              height: 8,
+              borderRadius: i === current ? 4 : "50%",
+              background: i === current ? "#5ddfff" : "rgba(240,246,255,0.25)",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
+              transition: "all 0.3s ease",
+            }}
+          />
         ))}
       </div>
 
-      <p
-        style={{
-          fontSize: "0.8rem",
-          color: "rgba(240,246,255,0.4)",
-          marginBottom: 24,
-        }}
-      >
-        {visibleProjects.length} projet{visibleProjects.length > 1 ? "s" : ""}
-      </p>
-
-      {/* GRILLE */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-          gap: 16,
-        }}
-      >
-        {visibleProjects.length === 0 ? (
-          <p
-            style={{
-              color: "rgba(240,246,255,0.4)",
-              gridColumn: "1/-1",
-              textAlign: "center",
-              padding: "2rem 0",
-            }}
-          >
-            Aucun projet ne correspond à ce filtre.
-          </p>
-        ) : (
-          visibleProjects.map((p) => (
-            <div
-              key={p.title}
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 16,
-                padding: "16px 18px",
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-                minHeight: 200,
-              }}
-            >
-              <h3
-                style={{
-                  margin: 0,
-                  fontSize: "1rem",
-                  fontWeight: 600,
-                  color: "white",
-                }}
-              >
-                {p.title}
-              </h3>
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: "0.85rem",
-                  color: "rgba(240,246,255,0.6)",
-                  lineHeight: 1.5,
-                }}
-              >
-                {p.desc}
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-                {p.tags.map((t) => (
-                  <span
-                    key={t}
-                    style={{
-                      padding: "2px 8px",
-                      borderRadius: 999,
-                      fontSize: "0.7rem",
-                      background: activeFilters.has(t)
-                        ? "rgba(37,99,196,0.3)"
-                        : "rgba(255,255,255,0.07)",
-                      color: activeFilters.has(t)
-                        ? "#5ddfff"
-                        : "rgba(240,246,255,0.5)",
-                      border: `1px solid ${activeFilters.has(t) ? "#2563c4" : "rgba(255,255,255,0.1)"}`,
-                    }}
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              {/* Liens en bas de carte */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 20,
-                  marginTop: "auto",
-                  paddingTop: "clamp(12px, 4vw, 32px)",
-                }}
-              >
-                {p.link && (
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    title="Voir le projet"
-                    style={{
-                      color: "#5ddfff",
-                      display: "flex",
-                      alignItems: "center",
-                      transition: "transform 0.15s ease",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.transform = "scale(1.15)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.transform = "scale(1)")
-                    }
-                  >
-                    <GlobeIcon size={28} />
-                  </a>
-                )}
-
-                {p.github && (
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    title="Code source"
-                    style={{
-                      color: "rgba(240,246,255,0.7)",
-                      display: "flex",
-                      alignItems: "center",
-                      transition: "all 0.15s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "#fff";
-                      e.currentTarget.style.transform = "scale(1.15)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "rgba(240,246,255,0.7)";
-                      e.currentTarget.style.transform = "scale(1)";
-                    }}
-                  >
-                    <GitHubIcon size={28} />
-                  </a>
-                )}
-              </div>
-            </div>
-          ))
-        )}
-      </div>
+      {/* RESPONSIVE */}
+      <style>{`
+        @media (max-width: 640px) {
+          .carousel-slide {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

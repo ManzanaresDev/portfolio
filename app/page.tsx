@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import ServicesSection from "@/components/ServiceSection";
 import ProjectsGallery from "@/components/ProjectsGallery";
 import Navbar from "@/components/Navbar";
+import BioSection from "@/components/BioSection";
 
 export default function Portfolio() {
   return (
@@ -172,6 +173,10 @@ export default function Portfolio() {
         >
           <section id="projets">
             <ProjectsGallery />
+          </section>
+          <BioSection />
+          <section id="services">
+            <ServicesSection />
           </section>
           <section id="services">
             <ServicesSection />
