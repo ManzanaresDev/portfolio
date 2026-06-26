@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -40,10 +42,10 @@ export const metadata: Metadata = {
   creator: "Marcos Manzanares",
   publisher: "Marcos Manzanares",
 
-  metadataBase: new URL("https://codercatportfolio.vercel.app"),
+  metadataBase: new URL("https://www.codercat.fr"),
 
   alternates: {
-    canonical: "/",
+    canonical: "https://www.codercat.fr",
   },
 
   openGraph: {
@@ -52,9 +54,8 @@ export const metadata: Metadata = {
     description:
       "Découvrez mon portfolio, mes projets et mes compétences en développement web Full-Stack et sécurité des applications web.",
 
-    url: "https://codercatportfolio.vercel.app",
-
-    siteName: "Marcos Manzanares Portfolio",
+    url: "https://www.codercat.fr",
+    siteName: "CoderCat — Marcos Manzanares",
 
     locale: "fr_FR",
 
@@ -93,6 +94,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -118,6 +123,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
 
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,24 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
-
 import ServicesSection from "@/components/ServiceSection";
 import ProjectsGallery from "@/components/ProjectsGallery";
+import Navbar from "@/components/Navbar";
 
 export default function Portfolio() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 900);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
   return (
     <>
+      <Navbar />
+
       {/* BACKGROUND */}
       <div
         aria-hidden
@@ -31,101 +23,49 @@ export default function Portfolio() {
             "linear-gradient(135deg, #0a1628 0%, #0d2147 30%, #1a3a6e 60%, #2563c4 85%, #4a9eff 100%)",
         }}
       >
-        {!isMobile && (
-          <Image
-            src="/cabeza-marcos.png"
-            alt="background"
-            fill
-            priority
-            style={{
-              objectFit: "contain",
-              objectPosition: "-230px 190px",
-              mixBlendMode: "luminosity",
-              opacity: 0.55,
-            }}
-          />
-        )}
-
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: isMobile
-              ? "linear-gradient(to bottom, rgba(10,22,40,0.55), rgba(10,22,40,0.97))"
-              : "linear-gradient(to right, transparent 10%, rgba(10,22,40,0.45) 40%, rgba(10,22,40,0.9) 100%)",
-          }}
-        />
-      </div>
-
-      {/* HERO */}
-
-      {/* TOP LOGO CENTRÉ */}
-      <div
-        style={{
-          position: "fixed",
-          top: isMobile ? 22 : 40,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 20,
-        }}
-      >
         <Image
           src="/cabeza-marcos.png"
-          alt="background"
+          alt=""
           fill
           priority
+          className="hero-bg-img"
           style={{
             objectFit: "contain",
-            objectPosition: isMobile ? "left bottom" : "left bottom",
-            transform: isMobile ? "none" : "translateX(-38%)",
+            objectPosition: "-230px 190px",
             mixBlendMode: "luminosity",
             opacity: 0.55,
           }}
         />
+        <div
+          className="hero-bg-overlay"
+          style={{ position: "absolute", inset: 0 }}
+        />
       </div>
 
+      {/* HERO */}
       <main
+        id="hero"
+        className="hero-padding hero-main"
         style={{
           position: "relative",
           zIndex: 10,
           minHeight: "100vh",
           display: "flex",
-          alignItems: isMobile ? "flex-start" : "center",
           justifyContent: "center",
-          padding: isMobile ? "30px 16px 40px" : "20px",
-          overflowY: isMobile ? "auto" : "visible",
         }}
       >
         <div
-          style={{
-            width: "100%",
-            maxWidth: "1200px",
-            display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-            gap: isMobile ? 32 : 100,
-            alignItems: "center",
-            transform: isMobile ? "none" : "translateX(120px)",
-          }}
+          className="hero-grid"
+          style={{ width: "100%", maxWidth: "1200px" }}
         >
           {/* LEFT TEXT */}
-          <div
-            style={{
-              textAlign: isMobile ? "center" : "left",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: isMobile ? "center" : "flex-start",
-            }}
-          >
+          <div className="hero-text">
             <Image
               src="/coderCatLogo.png"
               alt="CoderCat Logo"
-              width={isMobile ? 80 : 140}
-              height={isMobile ? 80 : 140}
-              style={{
-                marginBottom: 30,
-                // alignSelf: isMobile ? "center" : "flex-start",
-                alignSelf: "center",
-              }}
+              width={140}
+              height={140}
+              style={{ marginBottom: 30, alignSelf: "center" }}
             />
 
             <span
@@ -135,7 +75,6 @@ export default function Portfolio() {
                 fontWeight: 700,
                 letterSpacing: "0.05em",
                 marginBottom: 8,
-                // whiteSpace: "nowrap",
               }}
             >
               Développement web & sécurité
@@ -168,7 +107,7 @@ export default function Portfolio() {
                 width: "100%",
                 maxWidth: 460,
                 borderRadius: 20,
-                padding: isMobile ? "16px 14px" : "22px 26px",
+                padding: "22px 26px",
                 backdropFilter: "blur(16px)",
                 background: "rgba(255,255,255,0.06)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -178,7 +117,6 @@ export default function Portfolio() {
                 gap: 10,
               }}
             >
-              {/* HEADER - Contact + badge sur la même ligne */}
               <div
                 style={{
                   display: "flex",
@@ -189,7 +127,7 @@ export default function Portfolio() {
               >
                 <h2
                   style={{
-                    fontSize: isMobile ? "1.1rem" : "1.3rem",
+                    fontSize: "1.3rem",
                     fontWeight: 600,
                     color: "white",
                     margin: 0,
@@ -214,8 +152,10 @@ export default function Portfolio() {
                   🔒 Formulaire sécurisé
                 </div>
               </div>
-              {/* FORM */}
-              <ContactForm />
+
+              <div id="contact">
+                <ContactForm />
+              </div>
             </div>
           </div>
         </div>
@@ -230,8 +170,12 @@ export default function Portfolio() {
             padding: "0 20px",
           }}
         >
-          <ProjectsGallery />
-          <ServicesSection />
+          <section id="projets">
+            <ProjectsGallery />
+          </section>
+          <section id="services">
+            <ServicesSection />
+          </section>
         </div>
       </div>
     </>

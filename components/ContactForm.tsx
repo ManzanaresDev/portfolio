@@ -25,6 +25,13 @@ export default function ContactForm() {
 
       await sendEmail(data);
 
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "contact_form_submit", {
+          event_category: "engagement",
+          event_label: "contact",
+        });
+      }
+
       setSuccess(true);
       reset();
 
