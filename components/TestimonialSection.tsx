@@ -1,6 +1,8 @@
 import { getApprovedTestimonials } from "@/app/actions/testimonial";
 import TestimonialForm from "@/components/TestimoniaForm";
 
+export const dynamic = "force-dynamic";
+
 export default async function TestimonialsSection() {
   const testimonials = await getApprovedTestimonials();
 
