@@ -1,8 +1,20 @@
 "use server";
 
 import { neon } from "@neondatabase/serverless";
+import { unstable_noStore as noStore } from "next/cache";
 
 const sql = neon(process.env.DATABASE_URL!);
+
+export type Testimonial = {
+  id: number;
+  client_name: string;
+  company?: string;
+  project?: string;
+  message: string;
+  rating: number;
+  approved: boolean;
+  created_at: string;
+};
 
 export async function createTestimonial(data: {
   client_name: string;
@@ -17,22 +29,24 @@ export async function createTestimonial(data: {
   `;
 }
 
-export async function getApprovedTestimonials() {
+export async function getApprovedTestimonials(): Promise<Testimonial[]> {
+  noStore();
   const rows = await sql`
     SELECT * FROM testimonials
     WHERE approved = true
     ORDER BY created_at DESC
   `;
-  return rows;
+  return rows as Testimonial[];
 }
 
-export async function getPendingTestimonials() {
+export async function getPendingTestimonials(): Promise<Testimonial[]> {
+  noStore();
   const rows = await sql`
     SELECT * FROM testimonials
     WHERE approved = false
     ORDER BY created_at DESC
   `;
-  return rows;
+  return rows as Testimonial[];
 }
 
 export async function approveTestimonial(id: number) {
