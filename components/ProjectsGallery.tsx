@@ -135,7 +135,7 @@ export default function ProjectsGallery() {
         Quelques projets...
       </h2>
 
-      {/* SLIDE */}
+      {/* SLIDE — desktop uniquement */}
       <div
         style={{
           position: "relative",
@@ -181,7 +181,6 @@ export default function ProjectsGallery() {
             backdropFilter: "blur(0px)",
           }}
         >
-          {/* Compteur */}
           <span
             style={{
               fontSize: "0.75rem",
@@ -217,7 +216,6 @@ export default function ProjectsGallery() {
             {project.desc}
           </p>
 
-          {/* Tags */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
             {project.tags.map((t) => (
               <span key={t} className="tag">
@@ -226,7 +224,6 @@ export default function ProjectsGallery() {
             ))}
           </div>
 
-          {/* Liens */}
           <div style={{ display: "flex", gap: 16, marginTop: 4 }}>
             {project.link && (
               <a
@@ -276,8 +273,9 @@ export default function ProjectsGallery() {
         </div>
       </div>
 
-      {/* DOTS */}
+      {/* DOTS — desktop uniquement */}
       <div
+        className="desktop-dots"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -304,11 +302,127 @@ export default function ProjectsGallery() {
         ))}
       </div>
 
-      {/* RESPONSIVE */}
+      {/* SCROLL HORIZONTAL — mobile uniquement */}
+      <div className="mobile-scroll">
+        {PROJECTS.map((p, i) => (
+          <div key={i} className="mobile-card">
+            <div style={{ position: "relative", height: 160 }}>
+              <Image
+                src={p.image}
+                alt={p.title}
+                fill
+                style={{ objectFit: "cover", objectPosition: "top" }}
+              />
+            </div>
+            <div style={{ padding: "14px 16px" }}>
+              <h3
+                style={{
+                  color: "white",
+                  fontSize: "1rem",
+                  fontWeight: 700,
+                  margin: "0 0 6px",
+                  lineHeight: 1.2,
+                }}
+              >
+                {p.title}
+              </h3>
+              <p
+                style={{
+                  color: "rgba(240,246,255,0.55)",
+                  fontSize: "0.8rem",
+                  lineHeight: 1.6,
+                  margin: "0 0 10px",
+                }}
+              >
+                {p.desc}
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 4,
+                  marginBottom: 10,
+                }}
+              >
+                {p.tags.map((t) => (
+                  <span key={t} className="tag">
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div style={{ display: "flex", gap: 16 }}>
+                {p.link && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      color: "#5ddfff",
+                      fontSize: "0.8rem",
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                    }}
+                  >
+                    <GlobeIcon size={14} />
+                    Voir le site
+                  </a>
+                )}
+                {p.github && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      color: "rgba(240,246,255,0.45)",
+                      fontSize: "0.8rem",
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                    }}
+                  >
+                    <GitHubIcon size={14} />
+                    Code source
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <style>{`
+        /* Desktop */
+        .carousel-slide { display: grid; }
+        .desktop-dots { display: flex; }
+        .mobile-scroll { display: none; }
+
+        /* Mobile */
         @media (max-width: 640px) {
-          .carousel-slide {
-            grid-template-columns: 1fr !important;
+          .carousel-slide { display: none !important; }
+          .desktop-dots { display: none !important; }
+
+          .mobile-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 12px;
+            scrollbar-width: none;
+          }
+          .mobile-scroll::-webkit-scrollbar {
+            display: none;
+          }
+          .mobile-card {
+            flex: 0 0 80%;
+            scroll-snap-align: start;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.04);
           }
         }
       `}</style>
