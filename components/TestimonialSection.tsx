@@ -1,10 +1,26 @@
-import { getApprovedTestimonials } from "@/app/actions/testimonial";
+"use client";
+
+import { useState, useEffect } from "react";
+import {
+  getApprovedTestimonials,
+  type Testimonial,
+} from "@/app/actions/testimonial";
 import TestimonialForm from "@/components/TestimoniaForm";
 
-export const dynamic = "force-dynamic";
+export default function TestimonialsSection() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
 
-export default async function TestimonialsSection() {
-  const testimonials = await getApprovedTestimonials();
+  useEffect(() => {
+    const load = async () => {
+      const data = await getApprovedTestimonials();
+      setTestimonials(data);
+    };
+
+    load();
+
+    const interval = setInterval(load, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section style={{ maxWidth: 900, margin: "0 auto", padding: "60px 0" }}>
