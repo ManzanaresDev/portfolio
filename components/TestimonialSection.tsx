@@ -44,31 +44,14 @@ export default function TestimonialsSection() {
         }}
         className="testimonials-layout"
       >
-        {/* COLONNE GAUCHE : formulaire */}
+        {/* COLONNE GAUCHE : témoignages */}
         <div
           style={{
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 20,
-            padding: "28px 32px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 16,
           }}
-          className="testimonial-form-wrapper"
         >
-          <h3
-            style={{
-              fontSize: "1rem",
-              fontWeight: 600,
-              color: "white",
-              margin: "0 0 20px",
-            }}
-          >
-            Laisser un avis
-          </h3>
-          <TestimonialForm />
-        </div>
-
-        {/* COLONNE DROITE : témoignages */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {testimonials.length > 0 ? (
             testimonials.map((t) => (
               <div
@@ -174,6 +157,28 @@ export default function TestimonialsSection() {
               Les premiers avis arrivent bientôt...
             </p>
           )}
+        </div>
+        {/* COLONNE DROITE: formulaire */}
+        <div
+          style={{
+            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 20,
+            padding: "28px 32px",
+          }}
+          className="testimonial-form-wrapper"
+        >
+          <h3
+            style={{
+              fontSize: "1rem",
+              fontWeight: 600,
+              color: "white",
+              margin: "0 0 20px",
+            }}
+          >
+            Laisser un témoignage
+          </h3>
+          <TestimonialForm />
         </div>
       </div>
 

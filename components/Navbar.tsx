@@ -9,7 +9,7 @@ const LINKS = [
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
   { label: "Bio", href: "#bio" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Témoignages", href: "#testimonials" },
 ];
 
 export default function Navbar() {
@@ -80,11 +80,11 @@ export default function Navbar() {
           height: 56,
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "flex-end",
         }}
       >
         {/* Logo */}
-        <a
+        {/* <a
           href="#hero"
           onClick={(e) => {
             e.preventDefault();
@@ -113,7 +113,7 @@ export default function Navbar() {
           >
             CoderCat
           </span>
-        </a>
+        </a> */}
 
         {/* Liens desktop */}
         <div style={{ display: "flex", gap: 32 }} className="nav-desktop">

@@ -19,12 +19,22 @@ export default function BioSection() {
         padding: "60px 0 0",
       }}
     >
+      <h2
+        style={{
+          color: "#5ddfff",
+          fontSize: "clamp(1.2rem, 4vw, 1.8rem)",
+          fontWeight: 700,
+          marginBottom: 32,
+        }}
+      >
+        Savoir un peu sur mon parcours
+      </h2>
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1.6fr",
           gap: 48,
-          alignItems: "center",
+          alignItems: "flex-start",
           background: "rgba(255,255,255,0.04)",
           border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: 20,
@@ -37,6 +47,7 @@ export default function BioSection() {
           style={{
             display: "flex",
             flexDirection: "column",
+            alignItems: "flex-start",
             gap: 16,
             borderRight: "1px solid rgba(255,255,255,0.07)",
             paddingRight: 40,
@@ -155,21 +166,23 @@ export default function BioSection() {
             <span style={{ color: "#5ddfff", fontWeight: 500 }}>
               cybersécurité
             </span>
-            .
-          </p>
-
-          <p
-            style={{
-              fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
-              lineHeight: 1.8,
-              color: "rgba(240,246,255,0.65)",
-              margin: 0,
-            }}
-          >
-            Mon background en informatique me permet d&apos;aborder chaque
-            projet avec une vision technique complète — de l&apos;architecture à
-            la mise en production — tout en restant à l&apos;écoute des besoins
-            réels du client.
+            . <br></br>
+            <br></br>Mon background en informatique me permet d&apos;aborder
+            chaque projet avec une vision technique complète — de
+            l&apos;architecture à la mise en production — tout en restant à
+            l&apos;écoute des besoins réels du client.<br></br>
+            <br></br>Je propose aux petites structures des sites web rapides et
+            performants intégrant dès le départ les bonnes pratiques de{" "}
+            <span style={{ color: "#5ddfff", fontWeight: 500 }}>
+              cybersécurité
+            </span>
+            .<br></br>
+            <br></br>
+            Donnez vie à vos projets avec des sites web et applications rapides,
+            performants et sécurisés. De l&#39;idée initiale jusqu&#39;au
+            déploiement, tout est géré pour vous : conception, développement,
+            optimisation et mise en ligne. Une solution clé en main pensée pour
+            attirer, convaincre et faire grandir votre activité.
           </p>
 
           {/* CTA */}
