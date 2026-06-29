@@ -18,7 +18,7 @@ export default function TestimonialsSection() {
 
     load();
 
-    const interval = setInterval(load, 30000);
+    const interval = setInterval(load, 10000);
     return () => clearInterval(interval);
   }, []);
 
