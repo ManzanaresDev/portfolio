@@ -1,5 +1,5 @@
 import { getPendingTestimonials } from "@/app/actions/testimonial";
-import AdminTestimonialsList from "@/app/admin/AdminTestimonialsList";
+import AdminTestimonialsList from "@/app/dashboard/AdminTestimonialsList";
 
 export const dynamic = "force-dynamic";
 
