@@ -11,24 +11,8 @@ const SKILLS = [
 
 export default function BioSection() {
   return (
-    <section
-      id="bio"
-      style={{
-        maxWidth: 900,
-        margin: "0 auto",
-        padding: "60px 0 0",
-      }}
-    >
-      <h2
-        style={{
-          color: "#5ddfff",
-          fontSize: "clamp(1.2rem, 4vw, 1.8rem)",
-          fontWeight: 700,
-          marginBottom: 32,
-        }}
-      >
-        Savoir un peu sur mon parcours
-      </h2>
+    <div>
+      <h2>Savoir un peu sur mon parcours</h2>
       <div
         style={{
           display: "grid",
@@ -238,6 +222,6 @@ export default function BioSection() {
           }
         }
       `}</style>
-    </section>
+    </div>
   );
 }

@@ -78,7 +78,7 @@ export default function ContactForm() {
       <div>
         <textarea
           {...register("message")}
-          rows={5}
+          rows={5} /* ← repassez à 5 au lieu de 8 */
           placeholder="Votre message"
           style={{
             ...inputStyle,
@@ -144,10 +144,10 @@ export default function ContactForm() {
 
 const inputStyle = {
   width: "100%",
-  padding: "8px 10px",
-  fontSize: "0.85rem",
-  borderRadius: "10px",
-  lineHeight: 1.2,
+  padding: "16px 20px" /* ← était "8px 10px" */,
+  fontSize: "1rem" /* ← était "0.85rem" */,
+  borderRadius: "12px",
+  lineHeight: 1.5,
   border: "1px solid rgba(255,255,255,0.08)",
   background: "rgba(255,255,255,0.05)",
   color: "white",

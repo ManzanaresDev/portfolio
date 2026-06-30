@@ -1,4 +1,4 @@
-// components/ProjectsGallery.tsx  (Server Component — retire "use client")
+// components/ProjectsGallery.tsx
 import { getProjects } from "@/app/actions/projects";
 import ProjectsGalleryClient from "./ProjectsGalleryClient";
 

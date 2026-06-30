@@ -23,17 +23,8 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section style={{ maxWidth: 900, margin: "0 auto", padding: "60px 0" }}>
-      <h2
-        style={{
-          color: "#5ddfff",
-          fontSize: "clamp(1.2rem, 4vw, 1.8rem)",
-          fontWeight: 700,
-          marginBottom: 32,
-        }}
-      >
-        Témoignages clients
-      </h2>
+    <div>
+      <h2>Témoignages clients</h2>
 
       <div
         style={{
@@ -67,6 +58,7 @@ export default function TestimonialsSection() {
                   gridTemplateColumns: "1fr auto",
                   gap: "8px 20px",
                 }}
+                className="testimonial-card"
               >
                 {/* COLONNE GAUCHE de la carte : étoiles + message */}
                 <div
@@ -175,6 +167,7 @@ export default function TestimonialsSection() {
               color: "white",
               margin: "0 0 20px",
             }}
+            className="testimonial-form-title"
           >
             Laisser un témoignage
           </h3>
@@ -186,8 +179,14 @@ export default function TestimonialsSection() {
         @media (max-width: 640px) {
           .testimonials-layout { grid-template-columns: 1fr !important; }
           .testimonial-form-wrapper { padding: 20px 16px !important; }
+          .testimonial-card { grid-template-columns: 1fr !important; text-align: left !important; }
+          .testimonial-card > div:last-child { text-align: left !important; align-items: flex-start !important; }
+        }
+
+        @media (max-width: 480px) {
+          .testimonial-form-title { font-size: 0.95rem !important; }
         }
       `}</style>
-    </section>
+    </div>
   );
 }

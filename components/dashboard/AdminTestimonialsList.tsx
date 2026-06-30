@@ -1,6 +1,8 @@
+// components/dashboard/AdminTestimonialsList.tsx
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 import {
   approveTestimonial,
   deleteTestimonial,
@@ -16,30 +18,22 @@ type Testimonial = {
   created_at: string;
 };
 
-type Toast = { message: string; type: "success" | "error" } | null;
-
 export default function AdminTestimonialsList({
   initialPending,
 }: {
   initialPending: Testimonial[];
 }) {
   const [pending, setPending] = useState<Testimonial[]>(initialPending);
-  const [toast, setToast] = useState<Toast>(null);
   const [loadingId, setLoadingId] = useState<number | null>(null);
-
-  function showToast(message: string, type: "success" | "error") {
-    setToast({ message, type });
-    setTimeout(() => setToast(null), 3000);
-  }
 
   async function handleApprove(id: number) {
     setLoadingId(id);
     try {
       await approveTestimonial(id);
       setPending((prev) => prev.filter((t) => t.id !== id));
-      showToast("✓ Témoignage approuvé", "success");
+      toast.success("Témoignage approuvé");
     } catch {
-      showToast("Erreur lors de l'approbation", "error");
+      toast.error("Erreur lors de l'approbation");
     } finally {
       setLoadingId(null);
     }
@@ -50,9 +44,9 @@ export default function AdminTestimonialsList({
     try {
       await deleteTestimonial(id);
       setPending((prev) => prev.filter((t) => t.id !== id));
-      showToast("✕ Témoignage supprimé", "error");
+      toast.info("Témoignage supprimé");
     } catch {
-      showToast("Erreur lors de la suppression", "error");
+      toast.error("Erreur lors de la suppression");
     } finally {
       setLoadingId(null);
     }
@@ -68,34 +62,6 @@ export default function AdminTestimonialsList({
         fontFamily: "DM Sans, sans-serif",
       }}
     >
-      {/* Toast */}
-      {toast && (
-        <div
-          style={{
-            position: "fixed",
-            top: 24,
-            right: 24,
-            zIndex: 1000,
-            padding: "12px 20px",
-            borderRadius: 12,
-            background:
-              toast.type === "success"
-                ? "rgba(52,211,153,0.15)"
-                : "rgba(239,68,68,0.15)",
-            border: `1px solid ${toast.type === "success" ? "rgba(52,211,153,0.4)" : "rgba(239,68,68,0.4)"}`,
-            color: toast.type === "success" ? "#34d399" : "#f87171",
-            fontWeight: 600,
-            fontSize: "0.875rem",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
-            animation: "fadeIn 0.2s ease",
-          }}
-        >
-          {toast.message}
-        </div>
-      )}
-
-      <style>{`@keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }`}</style>
-
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <h1
           style={{

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const LINKS = [
@@ -67,7 +66,7 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        // borderBottom: "1px solid rgba(255,255,255,0.08)",
         background: "transparent",
         // backdropFilter: "blur(2px)",
       }}
@@ -83,38 +82,6 @@ export default function Navbar() {
           justifyContent: "flex-end",
         }}
       >
-        {/* Logo */}
-        {/* <a
-          href="#hero"
-          onClick={(e) => {
-            e.preventDefault();
-            handleClick("#hero");
-          }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            textDecoration: "none",
-          }}
-        >
-          <Image
-            src="/coderCatLogo.png"
-            alt="CoderCat"
-            width={32}
-            height={32}
-          />
-          <span
-            style={{
-              color: "white",
-              fontWeight: 600,
-              fontSize: "0.95rem",
-              letterSpacing: "0.02em",
-            }}
-          >
-            CoderCat
-          </span>
-        </a> */}
-
         {/* Liens desktop */}
         <div style={{ display: "flex", gap: 32 }} className="nav-desktop">
           {LINKS.map(({ label, href }) => {
@@ -147,18 +114,23 @@ export default function Navbar() {
         </div>
 
         {/* Burger mobile */}
+        {/* Burger mobile */}
         <button
           onClick={() => setMenuOpen((v) => !v)}
           className="nav-burger"
           style={{
-            background: "none",
-            border: "none",
+            background: "transparent",
+            border: "1px solid rgba(240,246,255,0.4)",
+            borderRadius: "12px", // Coins arrondis
             cursor: "pointer",
             color: "white",
             display: "none",
             flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
             gap: 5,
-            padding: 4,
+            padding: "10px 8px",
+            transition: "all 0.2s ease",
           }}
           aria-label="Menu"
         >
@@ -168,8 +140,8 @@ export default function Navbar() {
               style={{
                 display: "block",
                 width: 22,
-                height: 1.5,
-                background: "rgba(240,246,255,0.8)",
+                height: 2,
+                background: "rgba(240,246,255,0.9)",
                 borderRadius: 2,
               }}
             />

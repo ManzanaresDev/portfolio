@@ -42,24 +42,8 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
   const project = projects[current];
 
   return (
-    <section
-      id="projets"
-      style={{
-        padding: "80px 0",
-        maxWidth: 900,
-        margin: "0 auto",
-      }}
-    >
-      <h2
-        style={{
-          color: "#5ddfff",
-          fontSize: "clamp(1.2rem, 4vw, 1.8rem)",
-          fontWeight: 700,
-          marginBottom: 32,
-        }}
-      >
-        Quelques projets...
-      </h2>
+    <div>
+      <h2>Quelques projets...</h2>
 
       {/* SLIDE — desktop uniquement */}
       <div
@@ -320,38 +304,55 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
       </div>
 
       <style>{`
-        /* Desktop */
-        .carousel-slide { display: grid; }
-        .desktop-dots { display: flex; }
-        .mobile-scroll { display: none; }
+  /* Desktop */
+  .carousel-slide { display: grid; }
+  .desktop-dots { display: flex; }
+  .mobile-scroll { display: none; }
 
-        /* Mobile */
-        @media (max-width: 640px) {
-          .carousel-slide { display: none !important; }
-          .desktop-dots { display: none !important; }
+  /* Mobile */
+  @media (max-width: 640px) {
+    .carousel-slide { display: none !important; }
+    .desktop-dots { display: none !important; }
 
-          .mobile-scroll {
-            display: flex;
-            gap: 12px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 12px;
-            scrollbar-width: none;
-          }
-          .mobile-scroll::-webkit-scrollbar {
-            display: none;
-          }
-          .mobile-card {
-            flex: 0 0 80%;
-            scroll-snap-align: start;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(255,255,255,0.04);
-          }
-        }
-      `}</style>
-    </section>
+    .mobile-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 12px;
+      scrollbar-width: none;
+      width: 100%;
+      max-width: 100vw;
+    }
+    .mobile-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .mobile-card {
+      flex: 0 0 85%;
+      max-width: 85vw;
+      scroll-snap-align: start;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+    }
+    .mobile-card .tag {
+      font-size: 0.65rem !important;
+      padding: 2px 8px !important;
+    }
+    .mobile-card a {
+      font-size: 0.75rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .mobile-card {
+      flex: 0 0 90%;
+      max-width: 90vw;
+    }
+  }
+`}</style>
+    </div>
   );
 }
