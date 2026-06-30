@@ -43,7 +43,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
 
   return (
     <div>
-      <h2>Quelques projets...</h2>
+      <span className="title">Quelques projets...</span>
 
       {/* SLIDE — desktop uniquement */}
       <div

@@ -132,13 +132,6 @@ section {
   }
 }
 
-.section-style h2 {
-  color: var(--accent);
-  font-size: clamp(1.2rem, 4vw, 1.8rem);
-  font-weight: 700;
-  margin-bottom: 32px;
-}
-
 /* LOGIN PAGE */
 .login-wrap {
   display: flex;
@@ -307,7 +300,7 @@ section {
   text-align: center;
 }
 
-.hero-title {
+.title {
   font-family: "Playfair Display", serif;
   font-size: clamp(1.4rem, 5vw, 2.2rem);
   font-weight: 700;

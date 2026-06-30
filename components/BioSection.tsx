@@ -12,7 +12,7 @@ const SKILLS = [
 export default function BioSection() {
   return (
     <div>
-      <h2>Savoir un peu sur mon parcours</h2>
+      <span className="title">Savoir un peu sur mon parcours</span>
       <div
         style={{
           display: "grid",

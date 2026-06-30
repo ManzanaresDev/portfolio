@@ -14,7 +14,7 @@ export default function HeroSection() {
       </div>
 
       <div className="hero-text">
-        <span className="hero-title">Développement web & sécurité</span>
+        <span className="title">Développement web & sécurité</span>
         <p className="hero-desc">
           « Je conçois pour les petites structures des sites web rapides,
           sécurisés et faciles à prendre en main, afin que vous soyez autonomes

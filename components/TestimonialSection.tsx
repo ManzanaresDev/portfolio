@@ -23,8 +23,17 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <div>
-      <h2>Témoignages clients</h2>
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "1100px",
+        margin: "0 auto",
+        paddingLeft: "clamp(1rem, 4vw, 2rem)",
+        paddingRight: "clamp(1rem, 4vw, 2rem)",
+        boxSizing: "border-box",
+      }}
+    >
+      <span className="title">Témoignages clients</span>
 
       <div
         style={{
@@ -57,12 +66,19 @@ export default function TestimonialsSection() {
                   display: "grid",
                   gridTemplateColumns: "1fr auto",
                   gap: "8px 20px",
+                  boxSizing: "border-box",
+                  maxWidth: "100%",
                 }}
                 className="testimonial-card"
               >
                 {/* COLONNE GAUCHE de la carte : étoiles + message */}
                 <div
-                  style={{ display: "flex", flexDirection: "column", gap: 10 }}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 10,
+                    minWidth: 0,
+                  }}
                 >
                   <div style={{ display: "flex", gap: 2 }}>
                     {[1, 2, 3, 4, 5].map((s) => (
@@ -87,6 +103,7 @@ export default function TestimonialsSection() {
                       lineHeight: 1.65,
                       margin: 0,
                       fontStyle: "italic",
+                      wordBreak: "break-word",
                     }}
                   >
                     &ldquo;{t.message}&rdquo;
@@ -102,6 +119,7 @@ export default function TestimonialsSection() {
                     gap: 4,
                     textAlign: "right",
                   }}
+                  className="testimonial-author"
                 >
                   <p
                     style={{
@@ -150,6 +168,7 @@ export default function TestimonialsSection() {
             </p>
           )}
         </div>
+
         {/* COLONNE DROITE: formulaire */}
         <div
           style={{
@@ -157,6 +176,7 @@ export default function TestimonialsSection() {
             border: "1px solid rgba(255,255,255,0.08)",
             borderRadius: 20,
             padding: "28px 32px",
+            boxSizing: "border-box",
           }}
           className="testimonial-form-wrapper"
         >
@@ -176,16 +196,29 @@ export default function TestimonialsSection() {
       </div>
 
       <style>{`
+        .testimonials-title {
+          font-size: clamp(1.3rem, 4vw, 1.8rem);
+        }
+
+        @media (max-width: 768px) {
+          .testimonials-layout {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+        }
+
         @media (max-width: 640px) {
-          .testimonials-layout { grid-template-columns: 1fr !important; }
           .testimonial-form-wrapper {
             padding: 20px 16px !important;
-            width: 100vw !important;
-            margin-left: calc(-50vw + 50%) !important;
-            border-radius: 0 !important;
           }
-          .testimonial-card { grid-template-columns: 1fr !important; text-align: left !important; }
-          .testimonial-card > div:last-child { text-align: left !important; align-items: flex-start !important; }
+          .testimonial-card {
+            grid-template-columns: 1fr !important;
+            padding: 16px 18px !important;
+          }
+          .testimonial-author {
+            text-align: left !important;
+            align-items: flex-start !important;
+          }
         }
 
         @media (max-width: 480px) {
