@@ -178,7 +178,12 @@ export default function TestimonialsSection() {
       <style>{`
         @media (max-width: 640px) {
           .testimonials-layout { grid-template-columns: 1fr !important; }
-          .testimonial-form-wrapper { padding: 20px 16px !important; }
+          .testimonial-form-wrapper {
+            padding: 20px 16px !important;
+            width: 100vw !important;
+            margin-left: calc(-50vw + 50%) !important;
+            border-radius: 0 !important;
+          }
           .testimonial-card { grid-template-columns: 1fr !important; text-align: left !important; }
           .testimonial-card > div:last-child { text-align: left !important; align-items: flex-start !important; }
         }
