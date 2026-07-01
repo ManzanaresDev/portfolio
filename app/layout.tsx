@@ -1,4 +1,5 @@
 // app/
+import { headers } from "next/headers";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
@@ -106,7 +107,12 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const nonce = (await headers()).get("x-nonce") ?? "";
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
@@ -115,6 +121,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Script
           id="clarity-script"
           strategy="afterInteractive"
+          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){

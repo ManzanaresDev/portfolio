@@ -188,7 +188,7 @@ export default function ServicesSection() {
     <div style={{ color: "#fff" }}>
       {/* ── Hero ── */}
       <div style={{ marginBottom: "clamp(32px, 6vw, 56px)" }}>
-        <h2>Sites et applications web sécurisés</h2>
+        <h2 className="title">Formules...</h2>
         <p
           style={{
             fontSize: "clamp(0.85rem, 1.5vw, 0.95rem)",
@@ -198,10 +198,12 @@ export default function ServicesSection() {
             margin: 0,
           }}
         >
-          De l&apos;idée au déploiement — conception, développement, sécurité et
-          mise en ligne. Des solutions clé en main pensées pour les petites
-          structures qui veulent une présence sérieuse sans se noyer dans la
-          technique.
+          Chaque projet est unique. Ces formules sont là pour vous donner un
+          repère, pas pour vous enfermer dans une offre. Mon objectif est de
+          créer une solution adaptée à votre activité, avec un développement
+          soigné, des tarifs transparents et un accompagnement du premier
+          échange jusqu&apos;à la mise en ligne. Si votre besoin sort du cadre,
+          nous définissons ensemble une solution sur mesure.
         </p>
       </div>
 

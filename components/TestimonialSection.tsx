@@ -33,7 +33,7 @@ export default function TestimonialsSection() {
         boxSizing: "border-box",
       }}
     >
-      <span className="title">Témoignages clients</span>
+      <h2 className="title">Témoignages clients</h2>
 
       <div
         style={{

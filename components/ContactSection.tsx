@@ -4,6 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export default function ContactSection() {
   return (
     <div style={{ width: "100%" }}>
+      <h2 className="title">Contact</h2>
       <div
         style={{
           width: "100%",
@@ -27,17 +28,6 @@ export default function ContactSection() {
             marginBottom: 6,
           }}
         >
-          <h2
-            style={{
-              fontSize: "1.3rem",
-              fontWeight: 600,
-              color: "white",
-              margin: 0,
-            }}
-          >
-            Contact
-          </h2>
-
           <div
             style={{
               display: "inline-flex",

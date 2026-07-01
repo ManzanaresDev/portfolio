@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 
 const LINKS = [
   { label: "Accueil", href: "#hero" },
+  { label: "Bio", href: "#bio" },
   { label: "Projets", href: "#projets" },
   { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
-  { label: "Bio", href: "#bio" },
   { label: "Témoignages", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -19,23 +19,30 @@ export default function Navbar() {
   useEffect(() => {
     const ids = [
       "hero",
+      "bio",
       "projets",
       "services",
-      "contact",
-      "bio",
       "testimonials",
+      "contact",
     ];
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length === 0) return;
+
+        const topMost = visible.reduce((a, b) =>
+          a.boundingClientRect.top < b.boundingClientRect.top ? a : b,
+        );
+
+        setActive(topMost.target.id);
       },
-      { threshold: 0.4 },
+      {
+        rootMargin: "-45% 0px -50% 0px",
+        threshold: 0,
+      },
     );
 
-    // Retry jusqu'à ce que tous les éléments soient disponibles
     const observe = () => {
       ids.forEach((id) => {
         const el = document.getElementById(id);
@@ -44,7 +51,6 @@ export default function Navbar() {
     };
 
     observe();
-    // Retry après 1s pour les sections qui chargent en async
     const timer = setTimeout(observe, 1000);
 
     return () => {
@@ -68,7 +74,7 @@ export default function Navbar() {
         zIndex: 50,
         // borderBottom: "1px solid rgba(255,255,255,0.08)",
         background: "transparent",
-        // backdropFilter: "blur(2px)",
+        backdropFilter: "blur(2px)",
       }}
     >
       <div
