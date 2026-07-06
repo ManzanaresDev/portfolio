@@ -13,21 +13,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
-  // pages personnalisées (optionnel)
   pages: {
     signIn: "/login",
   },
-  // Callbacks (optionnel) - pour enrichir la session
-  // session({ session, token }) {
-  //   if (token.sub && session.user) {
-  //     session.user.id = token.sub;
-  //   }
-  //   return session;
-  // },
-  // Contrôler qu_i peut se connecter (optionnel)
-  // async signIn({ user }) {
-  // Exemple: autoriser uniquement certains domains e-mail
-  // if (!user.email?.endsWith("@votreentreprise.fr")) returns false
-  //   return true;
-  // },
+  callbacks: {
+    authorized({ auth }) {
+      // true = accès autorisé, false = redirection vers /login
+      return !!auth?.user;
+    },
+  },
 });
