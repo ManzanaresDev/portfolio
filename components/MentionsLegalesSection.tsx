@@ -3,13 +3,23 @@ export default function LegalNotice() {
   const neonHeading =
     "font-bold tracking-wide text-[#00e5ff] [text-shadow:0_0_6px_#00e5ff,0_0_14px_#00e5ff,0_0_24px_#00e5ff]";
 
+  // Échelle fluide : min 1.5rem, idéal 4vw, max 2rem (h2)
+  const h2Size = "text-[clamp(1.5rem,4vw,2rem)]";
+  // h3 un cran en dessous
+  const h3Size = "text-[clamp(1.25rem,3vw,1.5rem)]";
+  // texte courant, un peu plus grand sur mobile pour la lisibilité
+  const bodySize = "text-[clamp(0.95rem,2.2vw,1.0625rem)]";
+
   return (
-    <section className="prose prose-invert max-w-none">
-      <h2 className={`text-2xl sm:text-3xl mb-5 ${neonHeading} text-center`}>
+    <section
+      className={`prose prose-invert max-w-none ${bodySize} leading-relaxed`}
+    >
+      <h2 className={`${h2Size} mb-5 ${neonHeading} text-center`}>
         Mentions légales
       </h2>
+
       <section className="space-y-4">
-        <h3 className={`text-xl sm:text-2xl mt-8 mb-3 ${neonHeading}`}>
+        <h3 className={`${h3Size} mt-8 mb-3 ${neonHeading}`}>
           Éditeur du site
         </h3>
 
@@ -46,10 +56,9 @@ export default function LegalNotice() {
           <dd>Marcos Manzanares</dd>
         </dl>
       </section>
+
       <section className="mt-10 space-y-4">
-        <h3 className={`text-xl sm:text-2xl mt-8 mb-3 ${neonHeading}`}>
-          Hébergement
-        </h3>
+        <h3 className={`${h3Size} mt-8 mb-3 ${neonHeading}`}>Hébergement</h3>
 
         <dl className="grid gap-2 sm:grid-cols-[180px_1fr]">
           <dt className="font-medium">Hébergeur</dt>
