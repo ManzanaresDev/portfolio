@@ -1,7 +1,10 @@
+// components/Navbar.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import LegalNotice from "@/components/MentionsLegalesSection";
+import PrivacyModal from "@/components/PrivacyModal";
+import PrivacyPolicy from "@/components/PrivacyPolicy";
 
 const LINKS = [
   { label: "Accueil", href: "#hero" },
@@ -16,6 +19,7 @@ export default function Navbar() {
   const [active, setActive] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
   const [legalOpen, setLegalOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   // Highlight du lien actif selon la section visible
   useEffect(() => {
@@ -61,9 +65,9 @@ export default function Navbar() {
     };
   }, []);
 
-  // Empêche le scroll du body quand la modale est ouverte
+  // Empêche le scroll du body quand une modale est ouverte
   useEffect(() => {
-    if (legalOpen) {
+    if (legalOpen || privacyOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -71,12 +75,15 @@ export default function Navbar() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [legalOpen]);
+  }, [legalOpen, privacyOpen]);
 
   // Fermeture avec la touche Échap
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setLegalOpen(false);
+      if (e.key === "Escape") {
+        setLegalOpen(false);
+        setPrivacyOpen(false);
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
@@ -90,6 +97,11 @@ export default function Navbar() {
   const openLegal = () => {
     setMenuOpen(false);
     setLegalOpen(true);
+  };
+
+  const openPrivacy = () => {
+    setMenuOpen(false);
+    setPrivacyOpen(true);
   };
 
   return (
@@ -153,32 +165,63 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* Lien Mentions légales, séparé visuellement (petit trait + plus petit + plus discret) */}
-            <a
-              href="#mentions-legales"
-              onClick={(e) => {
-                e.preventDefault();
-                openLegal();
-              }}
+            {/* Liens secondaires (mentions légales / confidentialité), séparés visuellement */}
+            <div
               style={{
-                fontSize: "0.7rem",
-                fontWeight: 400,
-                textDecoration: "none",
-                color: "rgba(240,246,255,0.35)",
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
                 borderLeft: "1px solid rgba(240,246,255,0.2)",
                 paddingLeft: 20,
                 marginTop: 3, // légèrement plus bas que les autres liens
-                transition: "color 0.2s",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "rgba(240,246,255,0.7)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(240,246,255,0.35)")
-              }
             >
-              Mentions légales
-            </a>
+              <a
+                href="#confidentialite"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openPrivacy();
+                }}
+                style={{
+                  fontSize: "0.7rem",
+                  fontWeight: 400,
+                  textDecoration: "none",
+                  color: "rgba(240,246,255,0.35)",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "rgba(240,246,255,0.7)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "rgba(240,246,255,0.35)")
+                }
+              >
+                Politique de confidentialité
+              </a>
+
+              <a
+                href="#mentions-legales"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openLegal();
+                }}
+                style={{
+                  fontSize: "0.7rem",
+                  fontWeight: 400,
+                  textDecoration: "none",
+                  color: "rgba(240,246,255,0.35)",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "rgba(240,246,255,0.7)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "rgba(240,246,255,0.35)")
+                }
+              >
+                Mentions légales
+              </a>
+            </div>
           </div>
 
           {/* Burger mobile */}
@@ -247,25 +290,49 @@ export default function Navbar() {
               </a>
             ))}
 
-            {/* Mentions légales séparées en bas du menu mobile, plus petit */}
-            <a
-              href="#mentions-legales"
-              onClick={(e) => {
-                e.preventDefault();
-                openLegal();
-              }}
+            {/* Liens secondaires en bas du menu mobile, plus petits */}
+            <div
               style={{
-                color: "rgba(240,246,255,0.4)",
-                textDecoration: "none",
-                fontSize: "0.75rem",
-                fontWeight: 400,
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
                 borderTop: "1px solid rgba(255,255,255,0.08)",
                 paddingTop: 16,
                 marginTop: 4,
               }}
             >
-              Mentions légales
-            </a>
+              <a
+                href="#confidentialite"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openPrivacy();
+                }}
+                style={{
+                  color: "rgba(240,246,255,0.4)",
+                  textDecoration: "none",
+                  fontSize: "0.75rem",
+                  fontWeight: 400,
+                }}
+              >
+                Politique de confidentialité
+              </a>
+
+              <a
+                href="#mentions-legales"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openLegal();
+                }}
+                style={{
+                  color: "rgba(240,246,255,0.4)",
+                  textDecoration: "none",
+                  fontSize: "0.75rem",
+                  fontWeight: 400,
+                }}
+              >
+                Mentions légales
+              </a>
+            </div>
           </div>
         )}
 
@@ -336,6 +403,15 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Modale Politique de confidentialité (simple consultation, pas de blocage à l'acceptation) */}
+      <PrivacyModal
+        open={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+        onAccept={() => {}}
+      >
+        <PrivacyPolicy />
+      </PrivacyModal>
     </>
   );
 }

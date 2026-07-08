@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { createTestimonial } from "@/app/actions/testimonial";
+import PrivacyModal from "@/components/PrivacyModal";
+import PrivacyPolicy from "@/components/PrivacyPolicy";
 
 const PROJECTS = [
   "Zohre masajes",
@@ -18,6 +20,8 @@ export default function TestimonialForm() {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -26,6 +30,13 @@ export default function TestimonialForm() {
 
     if (rating === 0) {
       setError("Merci de donner une note.");
+      return;
+    }
+
+    if (!consent) {
+      setError(
+        "Merci d'accepter la politique de confidentialité pour envoyer votre témoignage.",
+      );
       return;
     }
 
@@ -43,6 +54,7 @@ export default function TestimonialForm() {
       setSuccess(true);
       form.reset();
       setRating(0);
+      setConsent(false);
     } catch {
       setError("Une erreur est survenue, veuillez réessayer.");
     } finally {
@@ -74,114 +86,170 @@ export default function TestimonialForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "flex", flexDirection: "column", gap: 14 }}
-    >
-      <div
-        style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}
-        className="form-grid"
+    <>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: "flex", flexDirection: "column", gap: 14 }}
       >
-        <div>
-          <input
-            name="client_name"
-            type="text"
-            placeholder="Votre nom *"
-            required
-            style={inputStyle}
-          />
+        <div
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}
+          className="form-grid"
+        >
+          <div>
+            <input
+              name="client_name"
+              type="text"
+              placeholder="Votre nom *"
+              required
+              style={inputStyle}
+            />
+          </div>
+          <div>
+            <input
+              name="company"
+              type="text"
+              placeholder="Entreprise (optionnel)"
+              style={inputStyle}
+            />
+          </div>
         </div>
-        <div>
-          <input
-            name="company"
-            type="text"
-            placeholder="Entreprise (optionnel)"
-            style={inputStyle}
-          />
+
+        <select name="project" style={inputStyle}>
+          <option value="">Projet concerné (optionnel)</option>
+          {PROJECTS.map((p) => (
+            <option key={p} value={p}>
+              {p}
+            </option>
+          ))}
+        </select>
+
+        <textarea
+          name="message"
+          rows={4}
+          placeholder="Votre témoignage *"
+          required
+          style={{ ...inputStyle, resize: "none" }}
+        />
+
+        {/* Étoiles */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <span style={{ fontSize: "0.8rem", color: "rgba(240,246,255,0.45)" }}>
+            Note *
+          </span>
+          <div style={{ display: "flex", gap: 4 }}>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                type="button"
+                onClick={() => setRating(star)}
+                onMouseEnter={() => setHovered(star)}
+                onMouseLeave={() => setHovered(0)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  fontSize: "1.4rem",
+                  color:
+                    star <= (hovered || rating)
+                      ? "#fbbf24"
+                      : "rgba(255,255,255,0.2)",
+                  transition: "color 0.15s",
+                  padding: "0 2px",
+                }}
+              >
+                ★
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <select name="project" style={inputStyle}>
-        <option value="">Projet concerné (optionnel)</option>
-        {PROJECTS.map((p) => (
-          <option key={p} value={p}>
-            {p}
-          </option>
-        ))}
-      </select>
-
-      <textarea
-        name="message"
-        rows={4}
-        placeholder="Votre témoignage *"
-        required
-        style={{ ...inputStyle, resize: "none" }}
-      />
-
-      {/* Étoiles */}
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <span style={{ fontSize: "0.8rem", color: "rgba(240,246,255,0.45)" }}>
-          Note *
-        </span>
-        <div style={{ display: "flex", gap: 4 }}>
-          {[1, 2, 3, 4, 5].map((star) => (
+        {/* Consentement RGPD */}
+        <label
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 10,
+            fontSize: "0.8rem",
+            color: "rgba(240,246,255,0.6)",
+            lineHeight: 1.5,
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            style={{
+              marginTop: 2,
+              width: 16,
+              height: 16,
+              flexShrink: 0,
+              accentColor: "#5ddfff",
+              cursor: "pointer",
+            }}
+          />
+          <span>
+            J&apos;accepte que mes données soient traitées conformément à la{" "}
             <button
-              key={star}
               type="button"
-              onClick={() => setRating(star)}
-              onMouseEnter={() => setHovered(star)}
-              onMouseLeave={() => setHovered(0)}
+              onClick={() => setPrivacyOpen(true)}
               style={{
                 background: "none",
                 border: "none",
+                padding: 0,
+                color: "#5ddfff",
+                textDecoration: "underline",
                 cursor: "pointer",
-                fontSize: "1.4rem",
-                color:
-                  star <= (hovered || rating)
-                    ? "#fbbf24"
-                    : "rgba(255,255,255,0.2)",
-                transition: "color 0.15s",
-                padding: "0 2px",
+                font: "inherit",
               }}
             >
-              ★
+              politique de confidentialité
             </button>
-          ))}
-        </div>
-      </div>
+            . *
+          </span>
+        </label>
 
-      {error && (
-        <p style={{ color: "#ff6b6b", fontSize: "0.8rem", margin: 0 }}>
-          {error}
-        </p>
-      )}
+        {error && (
+          <p style={{ color: "#ff6b6b", fontSize: "0.8rem", margin: 0 }}>
+            {error}
+          </p>
+        )}
 
-      <button
-        type="submit"
-        disabled={loading}
-        style={{
-          marginTop: 4,
-          height: 46,
-          border: "none",
-          cursor: loading ? "not-allowed" : "pointer",
-          background: "linear-gradient(135deg, #2563c4, #5ddfff)",
-          color: "#0a1628",
-          fontWeight: 600,
-          fontSize: "0.875rem",
-          borderRadius: 10,
-          opacity: loading ? 0.7 : 1,
-          transition: "opacity 0.2s",
-        }}
+        <button
+          type="submit"
+          disabled={loading}
+          style={{
+            marginTop: 4,
+            height: 46,
+            border: "none",
+            cursor: loading ? "not-allowed" : "pointer",
+            background: "linear-gradient(135deg, #2563c4, #5ddfff)",
+            color: "#0a1628",
+            fontWeight: 600,
+            fontSize: "0.875rem",
+            borderRadius: 10,
+            opacity: loading ? 0.7 : 1,
+            transition: "opacity 0.2s",
+          }}
+        >
+          {loading ? "Envoi..." : "Envoyer mon avis"}
+        </button>
+
+        <style>{`
+          @media (max-width: 480px) {
+            .form-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
+      </form>
+
+      <PrivacyModal
+        open={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+        onAccept={() => setConsent(true)}
       >
-        {loading ? "Envoi..." : "Envoyer mon avis"}
-      </button>
-
-      <style>{`
-        @media (max-width: 480px) {
-          .form-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
-    </form>
+        <PrivacyPolicy />
+      </PrivacyModal>
+    </>
   );
 }
 
