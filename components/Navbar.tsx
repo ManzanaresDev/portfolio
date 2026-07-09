@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import LegalNotice from "@/components/MentionsLegalesSection";
 import PrivacyModal from "@/components/PrivacyModal";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
+import CookiePreferencesModal from "@/components/CookiePreferencesModal";
 
 const LINKS = [
   { label: "Accueil", href: "#hero" },
@@ -20,6 +21,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [legalOpen, setLegalOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [cookiePrefsOpen, setCookiePrefsOpen] = useState(false);
 
   // Highlight du lien actif selon la section visible
   useEffect(() => {
@@ -67,7 +69,7 @@ export default function Navbar() {
 
   // Empêche le scroll du body quand une modale est ouverte
   useEffect(() => {
-    if (legalOpen || privacyOpen) {
+    if (legalOpen || privacyOpen || cookiePrefsOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -75,7 +77,7 @@ export default function Navbar() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [legalOpen, privacyOpen]);
+  }, [legalOpen, privacyOpen, cookiePrefsOpen]);
 
   // Fermeture avec la touche Échap
   useEffect(() => {
@@ -83,6 +85,7 @@ export default function Navbar() {
       if (e.key === "Escape") {
         setLegalOpen(false);
         setPrivacyOpen(false);
+        setCookiePrefsOpen(false);
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -221,6 +224,28 @@ export default function Navbar() {
               >
                 Mentions légales
               </a>
+              <a
+                href="#cookies"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCookiePrefsOpen(true);
+                }}
+                style={{
+                  fontSize: "0.7rem",
+                  fontWeight: 400,
+                  textDecoration: "none",
+                  color: "rgba(240,246,255,0.35)",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "rgba(240,246,255,0.7)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "rgba(240,246,255,0.35)")
+                }
+              >
+                Gérer les cookies
+              </a>
             </div>
           </div>
 
@@ -332,6 +357,22 @@ export default function Navbar() {
               >
                 Mentions légales
               </a>
+              <a
+                href="#cookies"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                  setCookiePrefsOpen(true);
+                }}
+                style={{
+                  color: "rgba(240,246,255,0.4)",
+                  textDecoration: "none",
+                  fontSize: "0.75rem",
+                  fontWeight: 400,
+                }}
+              >
+                Gérer les cookies
+              </a>
             </div>
           </div>
         )}
@@ -412,6 +453,10 @@ export default function Navbar() {
       >
         <PrivacyPolicy />
       </PrivacyModal>
+      <CookiePreferencesModal
+        open={cookiePrefsOpen}
+        onClose={() => setCookiePrefsOpen(false)}
+      />
     </>
   );
 }

@@ -259,17 +259,17 @@ section {
   gap: 2rem;
   width: 100%;
   padding: 1rem;
+  overflow: visible;
 }
 
 .hero-logo {
   flex-shrink: 0;
+  width: 220px;
+  overflow: visible;
 }
 
-.hero-logo img,
-.hero-logo span {
-  /* Next.js Image wraps in span sometimes */
-  width: 220px !important;
-  height: auto !important;
+.hero-logo img {
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
@@ -277,15 +277,13 @@ section {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 18%;
+    padding-left: 22%;
     padding-right: 2rem;
     gap: 3rem;
   }
 
-  .hero-logo img,
-  .hero-logo span {
-    width: 240px !important;
-    height: auto !important;
+  .hero-logo {
+    width: 240px;
   }
 
   .hero-text {

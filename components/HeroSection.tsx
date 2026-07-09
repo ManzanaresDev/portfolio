@@ -8,8 +8,10 @@ export default function HeroSection() {
         <Image
           src="/coderCatLogo.png"
           alt="CoderCat Logo"
-          width={250}
-          height={250}
+          width={500}
+          height={500}
+          style={{ width: "100%", height: "auto" }}
+          priority
         />
       </div>
 
