@@ -217,18 +217,18 @@ export default function TestimonialForm() {
 
         <button
           type="submit"
-          disabled={loading}
+          disabled={loading || !consent}
           style={{
             marginTop: 4,
             height: 46,
             border: "none",
-            cursor: loading ? "not-allowed" : "pointer",
+            cursor: loading || !consent ? "not-allowed" : "pointer",
             background: "linear-gradient(135deg, #2563c4, #5ddfff)",
             color: "#0a1628",
             fontWeight: 600,
             fontSize: "0.875rem",
             borderRadius: 10,
-            opacity: loading ? 0.7 : 1,
+            opacity: loading || !consent ? 0.5 : 1,
             transition: "opacity 0.2s",
           }}
         >
