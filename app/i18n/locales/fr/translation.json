@@ -1,0 +1,231 @@
+{
+  "hero": {
+    "title": "Développement web & sécurité",
+    "description": "« Je conçois pour les petites structures des sites web rapides, sécurisés et faciles à prendre en main, afin que vous soyez autonomes dès le premier jour. »"
+  },
+  "nav": {
+    "Home": "Accueil",
+    "Bio": "Biographie",
+    "Projects": "Projets",
+    "Services": "Services",
+    "Testimonials": "Témoignages",
+    "Contact": "Contact",
+    "privacy": "Confidentialité",
+    "legal": "Mentions légales",
+    "cookies": "Cookies"
+  },
+  "bio": {
+    "title": "Savoir un peu sur mon parcours",
+    "availability": "Disponible immédiatement",
+    "role": "Développeur Full-Stack",
+    "location": "Dunkerque, France",
+    "skills": {
+      "web": "Développement Web",
+      "mobile": "Développement Mobile",
+      "security": "Sécurité Web"
+    },
+    "paragraph1": "Ancien informaticien reconverti dans le développement web et mobile, j'accompagne les petites structures dans la création de sites et d'applications performants, en intégrant dès le départ les bonnes pratiques de <1>cybersécurité</1>.",
+    "paragraph2": "Mon background en informatique me permet d'aborder chaque projet avec une vision technique complète — de l'architecture à la mise en production — tout en restant à l'écoute des besoins réels du client.",
+    "paragraph3": "Je propose aux petites structures des sites web rapides et performants intégrant dès le départ les bonnes pratiques de <1>cybersécurité</1>.",
+    "paragraph4": "Donnez vie à vos projets avec des sites web et applications rapides, performants et sécurisés. De l'idée initiale jusqu'au déploiement, tout est géré pour vous : conception, développement, optimisation et mise en ligne. Une solution clé en main pensée pour attirer, convaincre et faire grandir votre activité.",
+    "cta": "Discutons de votre projet →"
+  },
+  "projects": {
+    "title": "Quelques projets...",
+    "viewSite": "Voir le site",
+    "viewCode": "Code source",
+    "dotLabel": "Projet {{number}}"
+  },
+  "services": {
+    "title": "Formules...",
+    "intro": "Chaque projet est unique. Ces formules sont là pour vous donner un repère, pas pour vous enfermer dans une offre. Mon objectif est de créer une solution adaptée à votre activité, avec un développement soigné, des tarifs transparents et un accompagnement du premier échange jusqu'à la mise en ligne. Si votre besoin sort du cadre, nous définissons ensemble une solution sur mesure.",
+    "chooseLabel": "Choisissez votre formule",
+    "compareShow": "Comparer les formules en détail ↓",
+    "compareHide": "Masquer la comparaison ↑",
+    "tableFeature": "Fonctionnalité",
+    "addonsLabel": "Options & services complémentaires",
+    "guaranteeTitle": "Satisfait ou remboursé — 14 jours",
+    "guaranteeText": "Si le livrable ne correspond pas au cahier des charges validé ensemble, je rembourse intégralement. Sans discussion.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "tag": null,
+        "price": "890 €",
+        "sub": "paiement unique",
+        "pitch": "Votre présence en ligne, propre et rapide.",
+        "features": [
+          "Site vitrine jusqu'à 5 pages",
+          "Design responsive mobile",
+          "SEO technique de base",
+          "Formulaire de contact",
+          "RGPD essentiel (mentions, cookies)",
+          "Livraison en 2 semaines"
+        ],
+        "cta": "Démarrer"
+      },
+      "pro": {
+        "name": "Pro",
+        "tag": "Le plus choisi",
+        "price": "1 990 €",
+        "sub": "paiement unique",
+        "pitch": "Un site qui travaille pour vous, pas juste qui vous représente.",
+        "features": [
+          "Tout Starter inclus",
+          "Espace client ou portail métier",
+          "Prise de rendez-vous en ligne",
+          "Tableau de bord d'administration",
+          "Audit sécurité inclus",
+          "RGPD complet (Privacy by Design)",
+          "Livraison en 3 à 4 semaines"
+        ],
+        "cta": "Choisir Pro"
+      },
+      "custom": {
+        "name": "Sur-mesure",
+        "tag": null,
+        "price": "Sur devis",
+        "sub": "selon complexité",
+        "pitch": "Application web, SaaS, logiciel métier — vous décrivez, je construis.",
+        "features": [
+          "Tout Pro inclus",
+          "Architecture scalable",
+          "API & intégrations tierces",
+          "Tests automatisés",
+          "CI/CD & déploiement cloud",
+          "Accompagnement post-livraison"
+        ],
+        "cta": "Discutons-en"
+      }
+    },
+    "comparisonRows": [
+      {
+        "label": "Pages incluses",
+        "starter": "5",
+        "pro": "Illimitées",
+        "custom": "Illimitées"
+      },
+      {
+        "label": "Design responsive",
+        "starter": true,
+        "pro": true,
+        "custom": true
+      },
+      {
+        "label": "SEO technique",
+        "starter": "Base",
+        "pro": "Avancé",
+        "custom": "Avancé"
+      },
+      {
+        "label": "Espace client",
+        "starter": false,
+        "pro": true,
+        "custom": true
+      },
+      {
+        "label": "Audit sécurité",
+        "starter": false,
+        "pro": true,
+        "custom": true
+      },
+      {
+        "label": "RGPD complet",
+        "starter": false,
+        "pro": true,
+        "custom": true
+      },
+      {
+        "label": "API & intégrations",
+        "starter": false,
+        "pro": false,
+        "custom": true
+      },
+      {
+        "label": "Support post-livraison",
+        "starter": "30 j",
+        "pro": "60 j",
+        "custom": "Sur-mesure"
+      }
+    ],
+    "addons": {
+      "security": {
+        "title": "Audit de sécurité",
+        "price": "150 – 500 €",
+        "items": [
+          "Injections SQL & XSS",
+          "Accès non protégés",
+          "Exposition des mots de passe",
+          "En-têtes HTTP sécurisés",
+          "Conformité RGPD vérifiée",
+          "Rapport clair, actions priorisées",
+          "Durée : 1 à 2 jours"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance mensuelle",
+        "price": "29 – 99 € / mois",
+        "items": [
+          "Surveillance 24/7",
+          "Mises à jour de sécurité",
+          "Sauvegardes automatiques",
+          "Rapport mensuel de performance",
+          "1h de modifications incluse"
+        ]
+      },
+      "gdpr": {
+        "title": "RGPD renforcé",
+        "price": "Inclus dans Pro & Sur-mesure",
+        "items": [
+          "Chiffrement bout en bout",
+          "Droit à l'oubli automatisé",
+          "Consentement granulaire",
+          "Registre des traitements auto",
+          "Marchés réglementés ouverts"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Témoignages clients",
+    "empty": "Les premiers avis arrivent bientôt...",
+    "formTitle": "Laisser un témoignage"
+  },
+  "testimonialForm": {
+    "errors": {
+      "noRating": "Merci de donner une note.",
+      "noConsent": "Merci d'accepter la politique de confidentialité pour envoyer votre témoignage.",
+      "generic": "Une erreur est survenue, veuillez réessayer."
+    },
+    "success": {
+      "title": "Merci pour votre avis !",
+      "text": "Il sera publié après validation."
+    },
+    "namePlaceholder": "Votre nom *",
+    "companyPlaceholder": "Entreprise (optionnel)",
+    "projectPlaceholder": "Projet concerné (optionnel)",
+    "messagePlaceholder": "Votre témoignage *",
+    "ratingLabel": "Note *",
+    "consentText": "J'accepte que mes données soient traitées conformément à la",
+    "consentLink": "politique de confidentialité",
+    "submit": "Envoyer mon avis",
+    "submitting": "Envoi..."
+  },
+  "contact": {
+    "title": "Contact",
+    "secureBadge": "Formulaire sécurisé"
+  },
+  "contactForm": {
+    "namePlaceholder": "Nom",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Votre message",
+    "submit": "Envoyer",
+    "submitting": "Envoi...",
+    "successMessage": "Message envoyé avec succès.",
+    "errorMessage": "Une erreur est survenue lors de l'envoi du message."
+  },
+  "errors": {
+    "nameTooShort": "Nom trop court (min 2 caractères) !",
+    "emailInvalid": "Email invalide (format nom@serveur.dom) !",
+    "messageTooShort": "Message trop court (min 10 caractères) !"
+  }
+}

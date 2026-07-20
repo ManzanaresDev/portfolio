@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { createTestimonial } from "@/app/actions/testimonial";
 import PrivacyModal from "@/components/PrivacyModal";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
@@ -15,6 +16,7 @@ const PROJECTS = [
 ];
 
 export default function TestimonialForm() {
+  const { t } = useTranslation();
   const [rating, setRating] = useState(0);
   const [hovered, setHovered] = useState(0);
   const [success, setSuccess] = useState(false);
@@ -29,14 +31,12 @@ export default function TestimonialForm() {
     const data = new FormData(form);
 
     if (rating === 0) {
-      setError("Merci de donner une note.");
+      setError(t("testimonialForm.errors.noRating"));
       return;
     }
 
     if (!consent) {
-      setError(
-        "Merci d'accepter la politique de confidentialité pour envoyer votre témoignage.",
-      );
+      setError(t("testimonialForm.errors.noConsent"));
       return;
     }
 
@@ -56,7 +56,7 @@ export default function TestimonialForm() {
       setRating(0);
       setConsent(false);
     } catch {
-      setError("Une erreur est survenue, veuillez réessayer.");
+      setError(t("testimonialForm.errors.generic"));
     } finally {
       setLoading(false);
     }
@@ -76,10 +76,10 @@ export default function TestimonialForm() {
       >
         <span style={{ fontSize: "2.5rem" }}>🙏</span>
         <h3 style={{ color: "white", fontWeight: 600, margin: 0 }}>
-          Merci pour votre avis !
+          {t("testimonialForm.success.title")}
         </h3>
         <p style={{ color: "rgba(240,246,255,0.55)", fontSize: "0.875rem" }}>
-          Il sera publié après validation.
+          {t("testimonialForm.success.text")}
         </p>
       </div>
     );
@@ -99,7 +99,7 @@ export default function TestimonialForm() {
             <input
               name="client_name"
               type="text"
-              placeholder="Votre nom *"
+              placeholder={t("testimonialForm.namePlaceholder")}
               required
               style={inputStyle}
             />
@@ -108,14 +108,14 @@ export default function TestimonialForm() {
             <input
               name="company"
               type="text"
-              placeholder="Entreprise (optionnel)"
+              placeholder={t("testimonialForm.companyPlaceholder")}
               style={inputStyle}
             />
           </div>
         </div>
 
         <select name="project" style={inputStyle}>
-          <option value="">Projet concerné (optionnel)</option>
+          <option value="">{t("testimonialForm.projectPlaceholder")}</option>
           {PROJECTS.map((p) => (
             <option key={p} value={p}>
               {p}
@@ -126,7 +126,7 @@ export default function TestimonialForm() {
         <textarea
           name="message"
           rows={4}
-          placeholder="Votre témoignage *"
+          placeholder={t("testimonialForm.messagePlaceholder")}
           required
           style={{ ...inputStyle, resize: "none" }}
         />
@@ -134,7 +134,7 @@ export default function TestimonialForm() {
         {/* Étoiles */}
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <span style={{ fontSize: "0.8rem", color: "rgba(240,246,255,0.45)" }}>
-            Note *
+            {t("testimonialForm.ratingLabel")}
           </span>
           <div style={{ display: "flex", gap: 4 }}>
             {[1, 2, 3, 4, 5].map((star) => (
@@ -189,7 +189,7 @@ export default function TestimonialForm() {
             }}
           />
           <span>
-            J&apos;accepte que mes données soient traitées conformément à la{" "}
+            {t("testimonialForm.consentText")}{" "}
             <button
               type="button"
               onClick={() => setPrivacyOpen(true)}
@@ -203,7 +203,7 @@ export default function TestimonialForm() {
                 font: "inherit",
               }}
             >
-              politique de confidentialité
+              {t("testimonialForm.consentLink")}
             </button>
             . *
           </span>
@@ -232,7 +232,9 @@ export default function TestimonialForm() {
             transition: "opacity 0.2s",
           }}
         >
-          {loading ? "Envoi..." : "Envoyer mon avis"}
+          {loading
+            ? t("testimonialForm.submitting")
+            : t("testimonialForm.submit")}
         </button>
 
         <style>{`

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   getApprovedTestimonials,
   type Testimonial,
@@ -8,6 +9,7 @@ import {
 import TestimonialForm from "@/components/TestimoniaForm";
 
 export default function TestimonialsSection() {
+  const { t } = useTranslation();
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
 
   useEffect(() => {
@@ -33,7 +35,7 @@ export default function TestimonialsSection() {
         boxSizing: "border-box",
       }}
     >
-      <h2 className="title">Témoignages clients</h2>
+      <h2 className="title">{t("testimonials.title")}</h2>
 
       <div
         style={{
@@ -53,9 +55,9 @@ export default function TestimonialsSection() {
           }}
         >
           {testimonials.length > 0 ? (
-            testimonials.map((t) => (
+            testimonials.map((item) => (
               <div
-                key={t.id}
+                key={item.id}
                 style={{
                   background:
                     "linear-gradient(135deg, rgba(37, 99, 196, 0.75), rgba(93, 223, 255, 0.75))",
@@ -87,7 +89,7 @@ export default function TestimonialsSection() {
                         style={{
                           fontSize: "0.9rem",
                           color:
-                            s <= t.rating
+                            s <= item.rating
                               ? "#fbbf24"
                               : "rgba(255,255,255,0.15)",
                         }}
@@ -106,7 +108,7 @@ export default function TestimonialsSection() {
                       wordBreak: "break-word",
                     }}
                   >
-                    &ldquo;{t.message}&rdquo;
+                    &ldquo;{item.message}&rdquo;
                   </p>
                 </div>
 
@@ -129,9 +131,9 @@ export default function TestimonialsSection() {
                       color: "white",
                     }}
                   >
-                    {t.client_name}
+                    {item.client_name}
                   </p>
-                  {t.company && (
+                  {item.company && (
                     <p
                       style={{
                         margin: 0,
@@ -139,10 +141,10 @@ export default function TestimonialsSection() {
                         color: "rgba(240,246,255,0.4)",
                       }}
                     >
-                      {t.company}
+                      {item.company}
                     </p>
                   )}
-                  {t.project && (
+                  {item.project && (
                     <p
                       style={{
                         margin: 0,
@@ -150,7 +152,7 @@ export default function TestimonialsSection() {
                         color: "#5ddfff",
                       }}
                     >
-                      {t.project}
+                      {item.project}
                     </p>
                   )}
                 </div>
@@ -164,7 +166,7 @@ export default function TestimonialsSection() {
                 fontStyle: "italic",
               }}
             >
-              Les premiers avis arrivent bientôt...
+              {t("testimonials.empty")}
             </p>
           )}
         </div>
@@ -189,7 +191,7 @@ export default function TestimonialsSection() {
             }}
             className="testimonial-form-title"
           >
-            Laisser un témoignage
+            {t("testimonials.formTitle")}
           </h3>
           <TestimonialForm />
         </div>

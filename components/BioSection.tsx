@@ -1,18 +1,21 @@
 "use client";
 // components/BioSection.tsx
 
+import { Trans, useTranslation } from "react-i18next";
 import { MapPin, Shield, Monitor, Smartphone } from "lucide-react";
 
-const SKILLS = [
-  { icon: <Monitor size={16} />, label: "Développement Web" },
-  { icon: <Smartphone size={16} />, label: "Développement Mobile" },
-  { icon: <Shield size={16} />, label: "Sécurité Web" },
-];
-
 export default function BioSection() {
+  const { t } = useTranslation();
+
+  const SKILLS = [
+    { icon: <Monitor size={16} />, label: t("bio.skills.web") },
+    { icon: <Smartphone size={16} />, label: t("bio.skills.mobile") },
+    { icon: <Shield size={16} />, label: t("bio.skills.security") },
+  ];
+
   return (
     <div>
-      <span className="title">Savoir un peu sur mon parcours</span>
+      <span className="title">{t("bio.title")}</span>
       <div
         style={{
           display: "grid",
@@ -64,7 +67,7 @@ export default function BioSection() {
                 boxShadow: "0 0 6px #34d399",
               }}
             />
-            Disponible immédiatement
+            {t("bio.availability")}
           </div>
 
           {/* Nom */}
@@ -88,7 +91,7 @@ export default function BioSection() {
                 marginTop: 4,
               }}
             >
-              Développeur Full-Stack
+              {t("bio.role")}
             </p>
           </div>
 
@@ -103,7 +106,7 @@ export default function BioSection() {
             }}
           >
             <MapPin size={13} />
-            Dunkerque, France
+            {t("bio.location")}
           </div>
 
           {/* Spécialités */}
@@ -143,30 +146,26 @@ export default function BioSection() {
               margin: 0,
             }}
           >
-            Ancien informaticien reconverti dans le développement web et mobile,
-            j&apos;accompagne les petites structures dans la création de sites
-            et d&apos;applications performants, en intégrant dès le départ les
-            bonnes pratiques de{" "}
-            <span style={{ color: "#5ddfff", fontWeight: 500 }}>
-              cybersécurité
-            </span>
-            . <br></br>
-            <br></br>Mon background en informatique me permet d&apos;aborder
-            chaque projet avec une vision technique complète — de
-            l&apos;architecture à la mise en production — tout en restant à
-            l&apos;écoute des besoins réels du client.<br></br>
-            <br></br>Je propose aux petites structures des sites web rapides et
-            performants intégrant dès le départ les bonnes pratiques de{" "}
-            <span style={{ color: "#5ddfff", fontWeight: 500 }}>
-              cybersécurité
-            </span>
-            .<br></br>
-            <br></br>
-            Donnez vie à vos projets avec des sites web et applications rapides,
-            performants et sécurisés. De l&#39;idée initiale jusqu&#39;au
-            déploiement, tout est géré pour vous : conception, développement,
-            optimisation et mise en ligne. Une solution clé en main pensée pour
-            attirer, convaincre et faire grandir votre activité.
+            <Trans
+              i18nKey="bio.paragraph1"
+              components={{
+                1: <span style={{ color: "#5ddfff", fontWeight: 500 }} />,
+              }}
+            />
+            <br />
+            <br />
+            {t("bio.paragraph2")}
+            <br />
+            <br />
+            <Trans
+              i18nKey="bio.paragraph3"
+              components={{
+                1: <span style={{ color: "#5ddfff", fontWeight: 500 }} />,
+              }}
+            />
+            <br />
+            <br />
+            {t("bio.paragraph4")}
           </p>
 
           {/* CTA */}
@@ -202,7 +201,7 @@ export default function BioSection() {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            Discutons de votre projet →
+            {t("bio.cta")}
           </a>
         </div>
       </div>

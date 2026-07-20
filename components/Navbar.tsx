@@ -2,21 +2,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import LegalNotice from "@/components/MentionsLegalesSection";
 import PrivacyModal from "@/components/PrivacyModal";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
 import CookiePreferencesModal from "@/components/CookiePreferencesModal";
 
 const LINKS = [
-  { label: "Accueil", href: "#hero" },
-  { label: "Bio", href: "#bio" },
-  { label: "Projets", href: "#projets" },
-  { label: "Services", href: "#services" },
-  { label: "Témoignages", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { key: "nav.Home", href: "#hero" },
+  { key: "nav.Bio", href: "#bio" },
+  { key: "nav.Projects", href: "#projets" },
+  { key: "nav.Services", href: "#services" },
+  { key: "nav.Testimonials", href: "#testimonials" },
+  { key: "nav.Contact", href: "#contact" },
+];
+
+const LANGUAGES = [
+  { code: "fr", label: "Français" },
+  { code: "es", label: "Español" },
 ];
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [active, setActive] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
   const [legalOpen, setLegalOpen] = useState(false);
@@ -128,17 +135,47 @@ export default function Navbar() {
             height: 56,
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-end",
+            justifyContent: "space-between",
             gap: 20,
           }}
         >
-          {/* Liens desktop */}
+          {/* Liens language */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              gap: 12,
+            }}
+          >
+            {LANGUAGES.map(({ code, label }) => (
+              <button
+                key={code}
+                onClick={() => i18n.changeLanguage(code)}
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  fontSize: "0.8rem",
+                  fontWeight: 600,
+                  color:
+                    i18n.language === code
+                      ? "#5ddfff"
+                      : "rgba(240,246,255,0.45)",
+                  transition: ".2s",
+                }}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {/* Liens sections */}
           <div
             style={{ display: "flex", alignItems: "center", gap: 32 }}
             className="nav-desktop"
           >
             <div style={{ display: "flex", gap: 32 }}>
-              {LINKS.map(({ label, href }) => {
+              {LINKS.map(({ key, href }) => {
                 const id = href.replace("#", "");
                 return (
                   <a
@@ -162,7 +199,7 @@ export default function Navbar() {
                       transition: "color 0.2s, border-color 0.2s",
                     }}
                   >
-                    {label}
+                    {t(key)}
                   </a>
                 );
               })}
@@ -199,7 +236,7 @@ export default function Navbar() {
                   (e.currentTarget.style.color = "rgba(240,246,255,0.35)")
                 }
               >
-                Politique de confidentialité
+                {t("nav.privacy")}
               </a>
 
               <a
@@ -222,7 +259,7 @@ export default function Navbar() {
                   (e.currentTarget.style.color = "rgba(240,246,255,0.35)")
                 }
               >
-                Mentions légales
+                {t("nav.legal")}
               </a>
               <a
                 href="#cookies"
@@ -244,7 +281,7 @@ export default function Navbar() {
                   (e.currentTarget.style.color = "rgba(240,246,255,0.35)")
                 }
               >
-                Gérer les cookies
+                {t("nav.cookies")}
               </a>
             </div>
           </div>
@@ -296,7 +333,7 @@ export default function Navbar() {
               gap: 20,
             }}
           >
-            {LINKS.map(({ label, href }) => (
+            {LINKS.map(({ key, href }) => (
               <a
                 key={href}
                 href={href}
@@ -311,7 +348,7 @@ export default function Navbar() {
                   fontWeight: 500,
                 }}
               >
-                {label}
+                {t(key)}
               </a>
             ))}
 
@@ -339,7 +376,7 @@ export default function Navbar() {
                   fontWeight: 400,
                 }}
               >
-                Politique de confidentialité
+                {t("nav.privacy")}
               </a>
 
               <a
@@ -355,7 +392,7 @@ export default function Navbar() {
                   fontWeight: 400,
                 }}
               >
-                Mentions légales
+                {t("nav.legal")}
               </a>
               <a
                 href="#cookies"
@@ -371,7 +408,7 @@ export default function Navbar() {
                   fontWeight: 400,
                 }}
               >
-                Gérer les cookies
+                {t("nav.cookies")}
               </a>
             </div>
           </div>

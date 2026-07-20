@@ -1,10 +1,15 @@
 // components/ContactSection.tsx
+"use client";
+
+import { useTranslation } from "react-i18next";
 import ContactForm from "@/components/ContactForm";
 
 export default function ContactSection() {
+  const { t } = useTranslation();
+
   return (
     <div style={{ width: "100%" }}>
-      <h2 className="title">Contact</h2>
+      <h2 className="title">{t("contact.title")}</h2>
       <div
         style={{
           width: "100%",
@@ -41,7 +46,7 @@ export default function ContactSection() {
               border: "1px solid rgba(93,223,255,0.25)",
             }}
           >
-            🔒 Formulaire sécurisé
+            🔒 {t("contact.secureBadge")}
           </div>
         </div>
 

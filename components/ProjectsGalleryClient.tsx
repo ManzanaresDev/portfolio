@@ -2,6 +2,7 @@
 import type { Project } from "@/lib/types";
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 function GitHubIcon({ size = 16 }: { size?: number }) {
   return (
@@ -38,12 +39,13 @@ function GlobeIcon({ size = 16 }: { size?: number }) {
 }
 
 export default function ProjectsGallery({ projects }: { projects: Project[] }) {
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
   const project = projects[current];
 
   return (
     <div>
-      <h2 className="title">Quelques projets...</h2>
+      <h2 className="title">{t("projects.title")}</h2>
 
       {/* SLIDE — desktop uniquement */}
       <div
@@ -140,7 +142,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
-                title="Voir le projet"
+                title={t("projects.viewSite")}
                 style={{
                   color: "#5ddfff",
                   display: "flex",
@@ -154,7 +156,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
               >
                 <GlobeIcon size={16} />
-                Voir le site
+                {t("projects.viewSite")}
               </a>
             )}
             {project.github && (
@@ -162,7 +164,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                title="Code source"
+                title={t("projects.viewCode")}
                 style={{
                   color: "rgba(240,246,255,0.55)",
                   display: "flex",
@@ -176,7 +178,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
               >
                 <GitHubIcon size={16} />
-                Code source
+                {t("projects.viewCode")}
               </a>
             )}
           </div>
@@ -197,7 +199,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            aria-label={`Projet ${i + 1}`}
+            aria-label={t("projects.dotLabel", { number: i + 1 })}
             style={{
               width: i === current ? 24 : 8,
               height: 8,
@@ -276,7 +278,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
                     }}
                   >
                     <GlobeIcon size={14} />
-                    Voir le site
+                    {t("projects.viewSite")}
                   </a>
                 )}
                 {p.github && (
@@ -294,7 +296,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
                     }}
                   >
                     <GitHubIcon size={14} />
-                    Code source
+                    {t("projects.viewCode")}
                   </a>
                 )}
               </div>

@@ -4,132 +4,55 @@
 
 import { Check, X, ShieldCheck, Lock, Zap } from "lucide-react";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
-// ─── Data ───────────────────────────────────────────────────────────────────
+// ─── Types ──────────────────────────────────────────────────────────────────
 
-const plans = [
-  {
-    id: "starter",
-    name: "Starter",
-    tag: null,
-    price: "890 €",
-    sub: "paiement unique",
-    pitch: "Votre présence en ligne, propre et rapide.",
-    features: [
-      "Site vitrine jusqu'à 5 pages",
-      "Design responsive mobile",
-      "SEO technique de base",
-      "Formulaire de contact",
-      "RGPD essentiel (mentions, cookies)",
-      "Livraison en 2 semaines",
-    ],
-    cta: "Démarrer",
-    accent: "#93c5fd",
-    highlight: false,
-  },
-  {
-    id: "pro",
-    name: "Pro",
-    tag: "Le plus choisi",
-    price: "1 990 €",
-    sub: "paiement unique",
-    pitch: "Un site qui travaille pour vous, pas juste qui vous représente.",
-    features: [
-      "Tout Starter inclus",
-      "Espace client ou portail métier",
-      "Prise de rendez-vous en ligne",
-      "Tableau de bord d'administration",
-      "Audit sécurité inclus",
-      "RGPD complet (Privacy by Design)",
-      "Livraison en 3 à 4 semaines",
-    ],
-    cta: "Choisir Pro",
-    accent: "#5ddfff",
-    highlight: true,
-  },
-  {
-    id: "custom",
-    name: "Sur-mesure",
-    tag: null,
-    price: "Sur devis",
-    sub: "selon complexité",
-    pitch:
-      "Application web, SaaS, logiciel métier — vous décrivez, je construis.",
-    features: [
-      "Tout Pro inclus",
-      "Architecture scalable",
-      "API & intégrations tierces",
-      "Tests automatisés",
-      "CI/CD & déploiement cloud",
-      "Accompagnement post-livraison",
-    ],
-    cta: "Discutons-en",
-    accent: "#a78bfa",
-    highlight: false,
-  },
-];
+type PlanContent = {
+  name: string;
+  tag: string | null;
+  price: string;
+  sub: string;
+  pitch: string;
+  features: string[];
+  cta: string;
+};
 
-const comparisonRows = [
-  {
-    label: "Pages incluses",
-    starter: "5",
-    pro: "Illimitées",
-    custom: "Illimitées",
-  },
-  { label: "Design responsive", starter: true, pro: true, custom: true },
-  { label: "SEO technique", starter: "Base", pro: "Avancé", custom: "Avancé" },
-  { label: "Espace client", starter: false, pro: true, custom: true },
-  { label: "Audit sécurité", starter: false, pro: true, custom: true },
-  { label: "RGPD complet", starter: false, pro: true, custom: true },
-  { label: "API & intégrations", starter: false, pro: false, custom: true },
-  {
-    label: "Support post-livraison",
-    starter: "30 j",
-    pro: "60 j",
-    custom: "Sur-mesure",
-  },
-];
+type AddonContent = {
+  title: string;
+  price: string;
+  items: string[];
+};
 
-const addons = [
+type ComparisonRow = {
+  label: string;
+  starter: string | boolean;
+  pro: string | boolean;
+  custom: string | boolean;
+};
+
+// ─── Config non traduisible (couleurs, icônes, mise en avant) ───────────────
+
+const PLAN_META = [
+  { id: "starter", accent: "#93c5fd", highlight: false },
+  { id: "pro", accent: "#5ddfff", highlight: true },
+  { id: "custom", accent: "#a78bfa", highlight: false },
+] as const;
+
+const ADDON_META = [
   {
+    id: "security",
     icon: <ShieldCheck size={20} style={{ color: "#93c5fd", flexShrink: 0 }} />,
-    title: "Audit de sécurité",
-    price: "150 – 500 €",
-    items: [
-      "Injections SQL & XSS",
-      "Accès non protégés",
-      "Exposition des mots de passe",
-      "En-têtes HTTP sécurisés",
-      "Conformité RGPD vérifiée",
-      "Rapport clair, actions priorisées",
-      "Durée : 1 à 2 jours",
-    ],
   },
   {
+    id: "maintenance",
     icon: <Zap size={20} style={{ color: "#fbbf24", flexShrink: 0 }} />,
-    title: "Maintenance mensuelle",
-    price: "29 – 99 € / mois",
-    items: [
-      "Surveillance 24/7",
-      "Mises à jour de sécurité",
-      "Sauvegardes automatiques",
-      "Rapport mensuel de performance",
-      "1h de modifications incluse",
-    ],
   },
   {
+    id: "gdpr",
     icon: <Lock size={20} style={{ color: "#34d399", flexShrink: 0 }} />,
-    title: "RGPD renforcé",
-    price: "Inclus dans Pro & Sur-mesure",
-    items: [
-      "Chiffrement bout en bout",
-      "Droit à l'oubli automatisé",
-      "Consentement granulaire",
-      "Registre des traitements auto",
-      "Marchés réglementés ouverts",
-    ],
   },
-];
+] as const;
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
@@ -173,7 +96,30 @@ function CellValue({ val }: { val: string | boolean }) {
 // ─── Main component ──────────────────────────────────────────────────────────
 
 export default function ServicesSection() {
+  const { t } = useTranslation();
   const [showComparison, setShowComparison] = useState(false);
+
+  const plansContent = t("services.plans", {
+    returnObjects: true,
+  }) as Record<string, PlanContent>;
+
+  const addonsContent = t("services.addons", {
+    returnObjects: true,
+  }) as Record<string, AddonContent>;
+
+  const comparisonRows = t("services.comparisonRows", {
+    returnObjects: true,
+  }) as ComparisonRow[];
+
+  const plans = PLAN_META.map((meta) => ({
+    ...meta,
+    ...plansContent[meta.id],
+  }));
+
+  const addons = ADDON_META.map((meta) => ({
+    ...meta,
+    ...addonsContent[meta.id],
+  }));
 
   const labelStyle: React.CSSProperties = {
     fontSize: "clamp(0.7rem, 1.1vw, 0.75rem)",
@@ -188,7 +134,7 @@ export default function ServicesSection() {
     <div style={{ color: "#fff" }}>
       {/* ── Hero ── */}
       <div style={{ marginBottom: "clamp(32px, 6vw, 56px)" }}>
-        <h2 className="title">Formules...</h2>
+        <h2 className="title">{t("services.title")}</h2>
         <p
           style={{
             fontSize: "clamp(0.85rem, 1.5vw, 0.95rem)",
@@ -198,17 +144,12 @@ export default function ServicesSection() {
             margin: 0,
           }}
         >
-          Chaque projet est unique. Ces formules sont là pour vous donner un
-          repère, pas pour vous enfermer dans une offre. Mon objectif est de
-          créer une solution adaptée à votre activité, avec un développement
-          soigné, des tarifs transparents et un accompagnement du premier
-          échange jusqu&apos;à la mise en ligne. Si votre besoin sort du cadre,
-          nous définissons ensemble une solution sur mesure.
+          {t("services.intro")}
         </p>
       </div>
 
       {/* ── Formules ── */}
-      <p style={labelStyle}>Choisissez votre formule</p>
+      <p style={labelStyle}>{t("services.chooseLabel")}</p>
 
       <div
         style={{
@@ -372,8 +313,8 @@ export default function ServicesSection() {
           }}
         >
           {showComparison
-            ? "Masquer la comparaison ↑"
-            : "Comparer les formules en détail ↓"}
+            ? t("services.compareHide")
+            : t("services.compareShow")}
         </button>
       </div>
 
@@ -399,7 +340,7 @@ export default function ServicesSection() {
                     fontSize: 12,
                   }}
                 >
-                  Fonctionnalité
+                  {t("services.tableFeature")}
                 </th>
                 {plans.map((p) => (
                   <th
@@ -452,7 +393,7 @@ export default function ServicesSection() {
       )}
 
       {/* ── Addons ── */}
-      <p style={labelStyle}>Options & services complémentaires</p>
+      <p style={labelStyle}>{t("services.addonsLabel")}</p>
 
       <div
         style={{
@@ -463,7 +404,7 @@ export default function ServicesSection() {
       >
         {addons.map((addon) => (
           <div
-            key={addon.title}
+            key={addon.id}
             style={{
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.09)",
@@ -530,7 +471,7 @@ export default function ServicesSection() {
               color: "#34d399",
             }}
           >
-            Satisfait ou remboursé — 14 jours
+            {t("services.guaranteeTitle")}
           </p>
           <p
             style={{
@@ -540,8 +481,7 @@ export default function ServicesSection() {
               lineHeight: 1.6,
             }}
           >
-            Si le livrable ne correspond pas au cahier des charges validé
-            ensemble, je rembourse intégralement. Sans discussion.
+            {t("services.guaranteeText")}
           </p>
         </div>
       </div>

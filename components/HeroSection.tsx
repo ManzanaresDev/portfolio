@@ -1,7 +1,11 @@
 // components/HeroSection.tsx
+"use client";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <div className="hero-content">
       <div className="hero-logo">
@@ -16,12 +20,8 @@ export default function HeroSection() {
       </div>
 
       <div className="hero-text">
-        <h2 className="title">Développement web & sécurité</h2>
-        <p className="hero-desc">
-          « Je conçois pour les petites structures des sites web rapides,
-          sécurisés et faciles à prendre en main, afin que vous soyez autonomes
-          dès le premier jour. »
-        </p>
+        <h2 className="title">{t("hero.title")}</h2>
+        <p className="hero-desc">{t("hero.description")}</p>
       </div>
     </div>
   );

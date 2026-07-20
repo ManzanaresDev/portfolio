@@ -118,17 +118,18 @@ section {
 /* ─── Section style unifié ─── */
 
 .section-style {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-top: clamp(40px, 8vw, 80px);
   padding-bottom: clamp(40px, 8vw, 80px);
-  padding-left: 1rem;
-  padding-right: clamp(16px, 4vw, 24px);
+  padding-left: clamp(16px, 4vw, 40px);
+  padding-right: clamp(16px, 4vw, 40px);
 }
 
 @media (min-width: 768px) {
   .section-style {
-    padding-left: 18%;
+    padding-left: clamp(24px, 6vw, 64px);
+    padding-right: clamp(24px, 6vw, 64px);
   }
 }
 

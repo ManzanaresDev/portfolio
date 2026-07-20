@@ -1,14 +1,18 @@
 "use client";
 
 import { sendEmail } from "@/app/actions/sendEmail";
-import { contactSchema, type ContactFormData } from "@/lib/contactSchema";
+import { createContactSchema, type ContactFormData } from "@/lib/contactSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
+  const { t, i18n } = useTranslation();
   const [success, setSuccess] = useState(false);
   const [serverError, setServerError] = useState("");
+
+  const contactSchema = useMemo(() => createContactSchema(t), [i18n.language]);
 
   const {
     register,
@@ -40,7 +44,7 @@ export default function ContactForm() {
       }, 4000);
     } catch (error) {
       console.error(error);
-      setServerError("Une erreur est survenue lors de l'envoi du message.");
+      setServerError(t("contactForm.errorMessage"));
     }
   };
 
@@ -57,7 +61,7 @@ export default function ContactForm() {
         <input
           {...register("name")}
           type="text"
-          placeholder="Nom"
+          placeholder={t("contactForm.namePlaceholder")}
           style={inputStyle}
         />
 
@@ -68,7 +72,7 @@ export default function ContactForm() {
         <input
           {...register("email")}
           type="email"
-          placeholder="Email"
+          placeholder={t("contactForm.emailPlaceholder")}
           style={inputStyle}
         />
 
@@ -78,8 +82,8 @@ export default function ContactForm() {
       <div>
         <textarea
           {...register("message")}
-          rows={5} /* ← repassez à 5 au lieu de 8 */
-          placeholder="Votre message"
+          rows={5}
+          placeholder={t("contactForm.messagePlaceholder")}
           style={{
             ...inputStyle,
             resize: "none",
@@ -114,7 +118,7 @@ export default function ContactForm() {
           opacity: isSubmitting ? 0.7 : 1,
         }}
       >
-        {isSubmitting ? "Envoi..." : "Envoyer"}
+        {isSubmitting ? t("contactForm.submitting") : t("contactForm.submit")}
       </button>
 
       {success && (
@@ -124,7 +128,7 @@ export default function ContactForm() {
             textAlign: "center",
           }}
         >
-          Message envoyé avec succès.
+          {t("contactForm.successMessage")}
         </p>
       )}
 
@@ -144,8 +148,8 @@ export default function ContactForm() {
 
 const inputStyle = {
   width: "100%",
-  padding: "16px 20px" /* ← était "8px 10px" */,
-  fontSize: "1rem" /* ← était "0.85rem" */,
+  padding: "16px 20px",
+  fontSize: "1rem",
   borderRadius: "12px",
   lineHeight: 1.5,
   border: "1px solid rgba(255,255,255,0.08)",

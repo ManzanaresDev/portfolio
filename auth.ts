@@ -2,7 +2,11 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 
-if (!process.env.AUTH_GOOGLE_ID || !process.env.AUTH_SECRET) {
+if (
+  !process.env.AUTH_GOOGLE_ID ||
+  !process.env.AUTH_GOOGLE_SECRET ||
+  !process.env.AUTH_SECRET
+) {
   throw new Error("GOOGLE AUTH CONFIGURATION is not defined");
 }
 

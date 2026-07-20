@@ -1,10 +1,22 @@
 // lib/contactSchema.ts
 import { z } from "zod";
+import type { TFunction } from "i18next";
 
+// Schéma traduit, utilisé côté client (ContactForm.tsx)
+export const createContactSchema = (t: TFunction) =>
+  z.object({
+    name: z.string().min(2, t("errors.nameTooShort")),
+    email: z.string().email(t("errors.emailInvalid")),
+    message: z.string().min(10, t("errors.messageTooShort")),
+    website: z.string().optional(),
+    formLoadedAt: z.number().optional(),
+  });
+
+// Schéma statique, utilisé côté serveur (sendEmail.ts) — validation de sécurité, pas d'UX
 export const contactSchema = z.object({
-  name: z.string().min(2, "Nom trop court (min 2 caractères)!"),
-  email: z.string().email("Email invalide ' (format nom@server.dom)!"),
-  message: z.string().min(10, "Message trop court  (min 10 caractères)!"),
+  name: z.string().min(2),
+  email: z.string().email(),
+  message: z.string().min(10),
   website: z.string().optional(),
   formLoadedAt: z.number().optional(),
 });

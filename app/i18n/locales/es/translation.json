@@ -1,0 +1,231 @@
+{
+  "hero": {
+    "title": "Desarrollo web y seguridad",
+    "description": "« Desarrollo sitios web rápidos, seguros y fáciles de gestionar para pequeñas empresas, para que puedas trabajar en autonomía desde el primer día. »"
+  },
+  "nav": {
+    "Home": "Inicio",
+    "Bio": "Biografía",
+    "Projects": "Proyectos",
+    "Services": "Servicios",
+    "Testimonials": "Testimonios",
+    "Contact": "Contacto",
+    "privacy": "Privacidad",
+    "legal": "Aviso legal",
+    "cookies": "Cookies"
+  },
+  "bio": {
+    "title": "Conoce un poco sobre mi trayectoria",
+    "availability": "Disponible de inmediato",
+    "role": "Desarrollador Full-Stack",
+    "location": "Dunkerque, Francia",
+    "skills": {
+      "web": "Desarrollo Web",
+      "mobile": "Desarrollo Móvil",
+      "security": "Seguridad Web"
+    },
+    "paragraph1": "Antiguo informático reconvertido al desarrollo web y móvil, acompaño a las pequeñas empresas en la creación de sitios y aplicaciones eficaces, integrando desde el inicio las buenas prácticas de <1>ciberseguridad</1>.",
+    "paragraph2": "Mi formación en informática me permite abordar cada proyecto con una visión técnica completa — desde la arquitectura hasta la puesta en producción — sin perder de vista las necesidades reales del cliente.",
+    "paragraph3": "Ofrezco a las pequeñas empresas sitios web rápidos y eficaces que integran desde el inicio las buenas prácticas de <1>ciberseguridad</1>.",
+    "paragraph4": "Da vida a tus proyectos con sitios web y aplicaciones rápidas, eficaces y seguras. Desde la idea inicial hasta el despliegue, todo está gestionado para ti: diseño, desarrollo, optimización y publicación. Una solución llave en mano pensada para atraer, convencer y hacer crecer tu negocio.",
+    "cta": "Hablemos de tu proyecto →"
+  },
+  "projects": {
+    "title": "Algunos proyectos...",
+    "viewSite": "Ver el sitio",
+    "viewCode": "Código fuente",
+    "dotLabel": "Proyecto {{number}}"
+  },
+  "services": {
+    "title": "Planes...",
+    "intro": "Cada proyecto es único. Estos planes están para darte una referencia, no para encasillarte en una oferta. Mi objetivo es crear una solución adaptada a tu actividad, con un desarrollo cuidado, precios transparentes y un acompañamiento desde el primer contacto hasta la puesta en línea. Si tu necesidad va más allá, definimos juntos una solución a medida.",
+    "chooseLabel": "Elige tu plan",
+    "compareShow": "Comparar los planes en detalle ↓",
+    "compareHide": "Ocultar la comparación ↑",
+    "tableFeature": "Función",
+    "addonsLabel": "Opciones y servicios adicionales",
+    "guaranteeTitle": "Satisfecho o reembolsado — 14 días",
+    "guaranteeText": "Si el entregable no corresponde al pliego de condiciones validado juntos, reembolso íntegramente. Sin discusión.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "tag": null,
+        "price": "890 €",
+        "sub": "pago único",
+        "pitch": "Tu presencia en línea, limpia y rápida.",
+        "features": [
+          "Sitio web de hasta 5 páginas",
+          "Diseño responsive móvil",
+          "SEO técnico básico",
+          "Formulario de contacto",
+          "RGPD esencial (avisos, cookies)",
+          "Entrega en 2 semanas"
+        ],
+        "cta": "Empezar"
+      },
+      "pro": {
+        "name": "Pro",
+        "tag": "El más elegido",
+        "price": "1.990 €",
+        "sub": "pago único",
+        "pitch": "Un sitio que trabaja para ti, no solo que te representa.",
+        "features": [
+          "Todo lo de Starter incluido",
+          "Área de cliente o portal profesional",
+          "Reserva de citas en línea",
+          "Panel de administración",
+          "Auditoría de seguridad incluida",
+          "RGPD completo (Privacy by Design)",
+          "Entrega en 3 a 4 semanas"
+        ],
+        "cta": "Elegir Pro"
+      },
+      "custom": {
+        "name": "A medida",
+        "tag": null,
+        "price": "Bajo presupuesto",
+        "sub": "según complejidad",
+        "pitch": "Aplicación web, SaaS, software profesional — tú describes, yo construyo.",
+        "features": [
+          "Todo lo de Pro incluido",
+          "Arquitectura escalable",
+          "API e integraciones de terceros",
+          "Pruebas automatizadas",
+          "CI/CD y despliegue en la nube",
+          "Acompañamiento posterior a la entrega"
+        ],
+        "cta": "Hablemos"
+      }
+    },
+    "comparisonRows": [
+      {
+        "label": "Páginas incluidas",
+        "starter": "5",
+        "pro": "Ilimitadas",
+        "custom": "Ilimitadas"
+      },
+      {
+        "label": "Diseño responsive",
+        "starter": true,
+        "pro": true,
+        "custom": true
+      },
+      {
+        "label": "SEO técnico",
+        "starter": "Básico",
+        "pro": "Avanzado",
+        "custom": "Avanzado"
+      },
+      {
+        "label": "Área de cliente",
+        "starter": false,
+        "pro": true,
+        "custom": true
+      },
+      {
+        "label": "Auditoría de seguridad",
+        "starter": false,
+        "pro": true,
+        "custom": true
+      },
+      {
+        "label": "RGPD completo",
+        "starter": false,
+        "pro": true,
+        "custom": true
+      },
+      {
+        "label": "API e integraciones",
+        "starter": false,
+        "pro": false,
+        "custom": true
+      },
+      {
+        "label": "Soporte posterior a la entrega",
+        "starter": "30 d",
+        "pro": "60 d",
+        "custom": "A medida"
+      }
+    ],
+    "addons": {
+      "security": {
+        "title": "Auditoría de seguridad",
+        "price": "150 – 500 €",
+        "items": [
+          "Inyecciones SQL y XSS",
+          "Accesos no protegidos",
+          "Exposición de contraseñas",
+          "Cabeceras HTTP seguras",
+          "Conformidad RGPD verificada",
+          "Informe claro, acciones priorizadas",
+          "Duración: 1 a 2 días"
+        ]
+      },
+      "maintenance": {
+        "title": "Mantenimiento mensual",
+        "price": "29 – 99 € / mes",
+        "items": [
+          "Vigilancia 24/7",
+          "Actualizaciones de seguridad",
+          "Copias de seguridad automáticas",
+          "Informe mensual de rendimiento",
+          "1h de modificaciones incluida"
+        ]
+      },
+      "gdpr": {
+        "title": "RGPD reforzado",
+        "price": "Incluido en Pro y A medida",
+        "items": [
+          "Cifrado de extremo a extremo",
+          "Derecho al olvido automatizado",
+          "Consentimiento granular",
+          "Registro de tratamientos automático",
+          "Mercados regulados abiertos"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Testimonios de clientes",
+    "empty": "Las primeras opiniones llegarán pronto...",
+    "formTitle": "Dejar un testimonio"
+  },
+  "testimonialForm": {
+    "errors": {
+      "noRating": "Por favor, indica una puntuación.",
+      "noConsent": "Por favor, acepta la política de privacidad para enviar tu testimonio.",
+      "generic": "Se ha producido un error, inténtalo de nuevo."
+    },
+    "success": {
+      "title": "¡Gracias por tu opinión!",
+      "text": "Se publicará tras su validación."
+    },
+    "namePlaceholder": "Tu nombre *",
+    "companyPlaceholder": "Empresa (opcional)",
+    "projectPlaceholder": "Proyecto relacionado (opcional)",
+    "messagePlaceholder": "Tu testimonio *",
+    "ratingLabel": "Puntuación *",
+    "consentText": "Acepto que mis datos sean tratados conforme a la",
+    "consentLink": "política de privacidad",
+    "submit": "Enviar mi opinión",
+    "submitting": "Enviando..."
+  },
+  "contact": {
+    "title": "Contacto",
+    "secureBadge": "Formulario seguro"
+  },
+  "contactForm": {
+    "namePlaceholder": "Nombre",
+    "emailPlaceholder": "Correo electrónico",
+    "messagePlaceholder": "Tu mensaje",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "successMessage": "Mensaje enviado con éxito.",
+    "errorMessage": "Se ha producido un error al enviar el mensaje."
+  },
+  "errors": {
+    "nameTooShort": "Nombre demasiado corto (mín. 2 caracteres)!",
+    "emailInvalid": "Email inválido (formato nombre@servidor.dom)!",
+    "messageTooShort": "Mensaje demasiado corto (mín. 10 caracteres)!"
+  }
+}

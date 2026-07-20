@@ -7,6 +7,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CookieConsentProvider } from "@/contexte/CookieConsentContext";
 import CookieBanner from "@/components/CookieBanner";
 import AnalyticsScripts from "@/components/AnalyticsScripts";
+
+// translation
+import Providers from "./providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -119,12 +122,14 @@ export default async function RootLayout({
   return (
     <html lang="fr">
       <body>
-        <CookieConsentProvider>
-          {children}
+        <Providers>
+          <CookieConsentProvider>
+            {children}
 
-          <CookieBanner />
-          <AnalyticsScripts gaId={gaId} nonce={nonce} />
-        </CookieConsentProvider>
+            <CookieBanner />
+            <AnalyticsScripts gaId={gaId} nonce={nonce} />
+          </CookieConsentProvider>
+        </Providers>
 
         <Analytics />
         <SpeedInsights />
