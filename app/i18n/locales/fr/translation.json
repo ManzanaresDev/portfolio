@@ -223,6 +223,9 @@
     "successMessage": "Message envoyé avec succès.",
     "errorMessage": "Une erreur est survenue lors de l'envoi du message."
   },
+  "privacyPolicy": {
+    "lastUpdated": "Dernière mise à jour : {{date}}."
+  },
   "errors": {
     "nameTooShort": "Nom trop court (min 2 caractères) !",
     "emailInvalid": "Email invalide (format nom@serveur.dom) !",

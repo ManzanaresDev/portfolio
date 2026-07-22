@@ -104,9 +104,9 @@ export default function CookieBanner() {
       <PrivacyModal
         open={privacyOpen}
         onClose={() => setPrivacyOpen(false)}
-        onAccept={() => {}}
+        onAccept={() => setPrivacyOpen(false)}
       >
-        <PrivacyPolicy />
+        <PrivacyPolicy hideTitle />
       </PrivacyModal>
     </>
   );
