@@ -63,7 +63,7 @@ Sujeto a su consentimiento, el sitio también utiliza los siguientes servicios:
 - **Google Analytics**, para medir la audiencia y analizar el uso del sitio.
 - **Microsoft Clarity**, para comprender las interacciones de los visitantes con las páginas y mejorar la ergonomía del sitio.
 
-Las cookies de medición de audiencia se conservan durante un período máximo de **13 meses**. Los datos estadísticos asociados se conservan durante un período no superior a **25 meses**, de conformidad con las recomendaciones de la CNIL.
+Las cookies de medición de audiencia se conservan durante un período máximo de **13 meses**. Los datos estadísticos asociados se conservan durante un período no superior a **25 meses**, de conformidad con las recomendaciones de las autoridades de protección de datos.
 
 Puede aceptar, rechazar o retirar su consentimiento en cualquier momento a través del gestor de cookies del sitio.
 
