@@ -254,5 +254,154 @@
     "nameTooShort": "Nombre demasiado corto (mín. 2 caracteres)!",
     "emailInvalid": "Email inválido (formato nombre@servidor.dom)!",
     "messageTooShort": "Mensaje demasiado corto (mín. 10 caracteres)!"
+  },
+  "legalNotice": {
+    "title": "Aviso legal",
+    "lastUpdate": "Última actualización: julio de 2026.",
+
+    "definitions": {
+      "title": "Definiciones",
+      "client": "<0>Cliente:</0> todo profesional o persona física con capacidad jurídica en el sentido de los artículos 1123 y siguientes del Código Civil francés, o persona jurídica, que visite el Sitio objeto de las presentes condiciones generales.",
+      "services": "<0>Prestaciones y Servicios:</0> <1>https://codercat.fr</1> pone a disposición de los Clientes servicios de desarrollo web.",
+      "content": "<0>Contenido:</0> Conjunto de elementos que constituyen la información presente en el Sitio, en particular textos, imágenes, vídeos.",
+      "clientInfo": "<0>Información de clientes:</0> En adelante denominada «Información(es)», que corresponde al conjunto de datos personales que puede conservar <1>https://codercat.fr</1> para la gestión de su cuenta, la gestión de la relación con el cliente y con fines de análisis y estadísticas.",
+      "user": "<0>Usuario:</0> Internauta que se conecta y utiliza el sitio mencionado.",
+      "personalInfo": "<0>Información personal:</0> «La información que permite, de cualquier forma, directa o indirectamente, la identificación de las personas físicas a las que se aplica» (artículo 4 de la ley n.º 78-17 del 6 de enero de 1978).",
+      "gdprTerms": "Los términos «datos de carácter personal», «interesado», «encargado del tratamiento» y «datos sensibles» tienen el significado definido por el Reglamento General de Protección de Datos (RGPD: n.º 2016-679)."
+    },
+
+    "section1": {
+      "title": "1. Presentación del sitio web",
+      "intro": "En virtud del artículo 6 de la ley n.º 2004-575 del 21 de junio de 2004 para la confianza en la economía digital, se informa a los usuarios del sitio web <1>https://codercat.fr</1> de la identidad de los distintos intervinientes en el marco de su realización y seguimiento:",
+      "owner": "<0>Propietario:</0> Asociación declarada (Ley de 1901) codercat, sin capital social — 4 rue du parc, 59240 Dunkerque",
+      "publisher": "<0>Responsable de publicación:</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
+      "webmaster": "<0>Webmaster:</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
+      "host": "<0>Alojamiento:</0> Vercel Inc. — 440 N Barranca Avenue #4133, Covina, CA 91723, Estados Unidos — <1>vercel.com</1>",
+      "dpo": "<0>Delegado de protección de datos:</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
+      "domain": "El nombre de dominio está registrado ante OVHcloud y los DNS se gestionan a través de Cloudflare, Inc., sin incidencia en el alojamiento del contenido del sitio.",
+      "credit": "El aviso legal se basa en el modelo propuesto por el <1>generador gratuito ofrecido por Orson.io</1>."
+    },
+
+    "section2": {
+      "title": "2. Condiciones generales de uso del sitio y de los servicios ofrecidos",
+      "paragraph1": "El Sitio constituye una obra intelectual protegida por las disposiciones del Código de Propiedad Intelectual y las normativas internacionales aplicables. El Cliente no puede en ningún caso reutilizar, ceder o explotar por su propia cuenta la totalidad o parte de los elementos o trabajos del Sitio.",
+      "paragraph2": "El uso del sitio <1>https://codercat.fr</1> implica la aceptación plena y total de las condiciones generales de uso descritas a continuación. Estas condiciones de uso pueden modificarse o completarse en cualquier momento; por ello, se invita a los usuarios del sitio a consultarlas de manera regular.",
+      "paragraph3": "Este sitio web es normalmente accesible en todo momento para los usuarios. No obstante, el sitio puede decidir una interrupción por motivos de mantenimiento técnico, esforzándose en comunicar previamente a los usuarios las fechas y horas de la intervención. El sitio web se actualiza regularmente por su responsable. Del mismo modo, el aviso legal puede modificarse en cualquier momento: se impone, no obstante, al usuario, quien debe consultarlo con la mayor frecuencia posible para tener conocimiento de él."
+    },
+
+    "section3": {
+      "title": "3. Descripción de los servicios prestados",
+      "paragraph1": "El sitio web <1>https://codercat.fr</1> tiene como objetivo proporcionar información sobre el conjunto de actividades de la empresa. Se esfuerza por ofrecer información lo más precisa posible. No obstante, no podrá ser considerado responsable de las omisiones, inexactitudes y carencias en la actualización, ya sean de su propia responsabilidad o de terceros que le proporcionen dicha información.",
+      "paragraph2": "Toda la información indicada en el sitio se proporciona a título orientativo y está sujeta a cambios. Además, la información que figura en el sitio no es exhaustiva. Se ofrece con la salvedad de las modificaciones que se hayan podido introducir desde su publicación."
+    },
+
+    "section4": {
+      "title": "4. Limitaciones contractuales sobre los datos técnicos",
+      "paragraph1": "El sitio utiliza la tecnología JavaScript. No podrá ser considerado responsable de los daños materiales derivados del uso del sitio. Además, el usuario del sitio se compromete a acceder a él utilizando un equipo reciente, sin virus y con un navegador de última generación actualizado.",
+      "paragraph2": "El sitio <1>https://codercat.fr</1> está alojado en un proveedor situado en el territorio de la Unión Europea, de conformidad con las disposiciones del Reglamento General de Protección de Datos (RGPD: n.º 2016-679).",
+      "paragraph3": "El objetivo es ofrecer una prestación que garantice la mejor tasa de accesibilidad. El proveedor de alojamiento asegura la continuidad de su servicio las 24 horas del día, todos los días del año. No obstante, se reserva la posibilidad de interrumpir el servicio de alojamiento durante los periodos más breves posibles, en particular con fines de mantenimiento, mejora de sus infraestructuras, avería de las mismas o si las Prestaciones y Servicios generan un tráfico considerado anormal.",
+      "paragraph4": "El sitio y el proveedor de alojamiento no podrán ser considerados responsables en caso de mal funcionamiento de la red de Internet, de las líneas telefónicas o del equipo informático y de telefonía relacionado, en particular, con la congestión de la red que impida el acceso al servidor."
+    },
+
+    "section5": {
+      "title": "5. Propiedad intelectual y falsificaciones",
+      "paragraph1": "El sitio es propietario de los derechos de propiedad intelectual y posee los derechos de uso sobre todos los elementos accesibles en el sitio web, en particular textos, imágenes, gráficos, logotipos, vídeos, iconos y sonidos. Queda prohibida cualquier reproducción, representación, modificación, publicación o adaptación de la totalidad o parte de los elementos del sitio, cualquiera que sea el medio o procedimiento utilizado, salvo autorización previa por escrito.",
+      "paragraph2": "Cualquier explotación no autorizada del sitio o de cualquiera de los elementos que contiene se considerará constitutiva de una infracción y será perseguida de conformidad con las disposiciones de los artículos L.335-2 y siguientes del Código de Propiedad Intelectual."
+    },
+
+    "section6": {
+      "title": "6. Limitaciones de responsabilidad",
+      "paragraph1": "El sitio actúa como editor del sitio y es responsable de la calidad y veracidad del Contenido que publica.",
+      "paragraph2": "El sitio no podrá ser considerado responsable de los daños directos e indirectos causados al equipo del usuario al acceder al sitio web, y que resulten bien del uso de un equipo que no cumpla con las especificaciones indicadas en el punto 4, bien de la aparición de un fallo o de una incompatibilidad.",
+      "paragraph3": "El sitio tampoco podrá ser considerado responsable de los daños indirectos (como, por ejemplo, una pérdida de mercado o de una oportunidad) derivados del uso del sitio. Se ponen a disposición de los usuarios espacios interactivos (posibilidad de hacer preguntas en el espacio de contacto). El sitio se reserva el derecho de eliminar, sin previo aviso, cualquier contenido publicado en dicho espacio que infrinja la legislación aplicable en Francia, en particular las disposiciones relativas a la protección de datos. En su caso, el sitio se reserva también la posibilidad de exigir responsabilidad civil y/o penal al usuario, en particular en caso de mensajes de carácter racista, injurioso, difamatorio o pornográfico, sea cual sea el soporte utilizado (texto, fotografía…)."
+    },
+
+    "section7": {
+      "title": "7. Gestión de los datos personales",
+      "intro": "El Cliente está informado de las normativas relativas a la comunicación de marketing, la ley del 21 de junio de 2004 para la confianza en la Economía Digital, la Ley de Informática y Libertades del 6 de agosto de 2004, así como del Reglamento General de Protección de Datos (RGPD: n.º 2016-679).",
+      "collectors": {
+        "title": "7.1 Responsables de la recogida de datos personales",
+        "paragraph1": "Para los Datos Personales recogidos en el marco de la creación de la cuenta personal del Usuario y de su navegación por el Sitio, el responsable del tratamiento de los Datos Personales es codercat, representada por Marcos Manzanares, su representante legal.",
+        "paragraph2": "Como responsable del tratamiento de los datos que recoge, el sitio se compromete a respetar el marco de las disposiciones legales vigentes. Le corresponde, en particular, establecer las finalidades de sus tratamientos de datos, proporcionar a sus prospectos y clientes, a partir de la recogida de sus consentimientos, información completa sobre el tratamiento de sus datos personales, y mantener un registro de tratamientos conforme a la realidad. Cada vez que el sitio trata Datos Personales, adopta todas las medidas razonables para garantizar la exactitud y pertinencia de los Datos Personales en relación con las finalidades para las que los trata."
+      },
+      "purpose": {
+        "title": "7.2 Finalidad de los datos recogidos",
+        "intro": "El sitio puede tratar la totalidad o parte de los datos:",
+        "item1": "para permitir la navegación por el Sitio y la gestión y trazabilidad de las prestaciones y servicios solicitados por el usuario: datos de conexión y uso del Sitio, facturación, historial de pedidos, etc.",
+        "item2": "para prevenir y combatir el fraude informático (spam, hacking…): equipo informático utilizado para la navegación, dirección IP, contraseña (cifrada)",
+        "item3": "para mejorar la navegación por el Sitio: datos de conexión y uso",
+        "item4": "para realizar encuestas de satisfacción opcionales: dirección de correo electrónico",
+        "item5": "para llevar a cabo campañas de comunicación (SMS, correo electrónico): número de teléfono, dirección de correo electrónico",
+        "noSale": "El sitio no comercializa sus datos personales, que se utilizan únicamente por necesidad o con fines estadísticos y de análisis."
+      },
+      "rights": {
+        "title": "7.3 Derecho de acceso, rectificación y oposición",
+        "intro": "De conformidad con la normativa europea vigente, los Usuarios disponen de los siguientes derechos:",
+        "item1": "derecho de acceso (artículo 15 RGPD) y de rectificación (artículo 16 RGPD), de actualización, de completitud de los datos de los Usuarios, derecho de bloqueo o de supresión de los datos personales de los Usuarios (artículo 17 del RGPD), cuando sean inexactos, incompletos, equívocos, caducados, o cuya recogida, uso, comunicación o conservación esté prohibida",
+        "item2": "derecho a retirar en cualquier momento un consentimiento (artículo 13-2c RGPD)",
+        "item3": "derecho a la limitación del tratamiento de los datos de los Usuarios (artículo 18 RGPD)",
+        "item4": "derecho de oposición al tratamiento de los datos de los Usuarios (artículo 21 RGPD)",
+        "item5": "derecho a la portabilidad de los datos que los Usuarios hayan proporcionado, cuando dichos datos sean objeto de tratamientos automatizados basados en su consentimiento o en un contrato (artículo 20 RGPD)",
+        "item6": "derecho a definir el destino de los datos de los Usuarios después de su fallecimiento y a elegir a quién deberá comunicar (o no) el sitio sus datos a un tercero previamente designado",
+        "death": "En cuanto el sitio tenga conocimiento del fallecimiento de un Usuario y, a falta de instrucciones por su parte, se compromete a destruir sus datos, salvo que su conservación resulte necesaria con fines probatorios o para responder a una obligación legal.",
+        "contact": "Si el Usuario desea saber cómo utiliza el sitio sus Datos Personales, solicitar su rectificación u oponerse a su tratamiento, puede contactar con el sitio por escrito a la siguiente dirección:",
+        "contactName": "codercat — DPO, Marcos Manzanares",
+        "contactAddress": "4 rue du parc, 59240 Dunkerque",
+        "identification": "En ese caso, el Usuario deberá indicar los Datos Personales que desea que el sitio corrija, actualice o elimine, identificándose de manera precisa mediante una copia de un documento de identidad (carné de identidad o pasaporte).",
+        "cnil": "Las solicitudes de eliminación de Datos Personales estarán sujetas a las obligaciones impuestas al sitio por la ley, en particular en materia de conservación o archivo de documentos. Por último, los Usuarios pueden presentar una reclamación ante las autoridades de control, en particular ante la CNIL (<1>cnil.fr/fr/plaintes</1>"
+      },
+      "noDisclosure": {
+        "title": "7.4 No comunicación de los datos personales",
+        "paragraph1": "El sitio se prohíbe tratar, alojar o transferir la Información recogida sobre sus Clientes hacia un país situado fuera de la Unión Europea o considerado «no adecuado» por la Comisión Europea sin informar previamente al cliente. No obstante, sigue siendo libre de elegir a sus subcontratistas técnicos y comerciales siempre que presenten las garantías suficientes en relación con las exigencias del RGPD (n.º 2016-679).",
+        "paragraph2": "El sitio se compromete a tomar todas las precauciones necesarias para preservar la seguridad de la Información y, en particular, a que no sea comunicada a personas no autorizadas. Sin embargo, si se pone en su conocimiento un incidente que afecte a la integridad o confidencialidad de la Información del Cliente, deberá informar al Cliente lo antes posible y comunicarle las medidas correctoras adoptadas. Por lo demás, el sitio no recoge ningún «dato sensible».",
+        "paragraph3": "Los Datos Personales del Usuario pueden ser tratados por filiales del sitio y por subcontratistas (proveedores de servicios), exclusivamente para llevar a cabo las finalidades de la presente política. Dentro de los límites de sus respectivas atribuciones y para las finalidades mencionadas anteriormente, las principales personas con posible acceso a los datos de los Usuarios son principalmente los agentes de nuestro servicio de atención al cliente."
+      },
+      "dataTypes": {
+        "title": "7.5 Tipos de datos recogidos",
+        "paragraph1": "En cuanto a los usuarios del sitio, recogemos los siguientes datos, indispensables para el funcionamiento del servicio, que se conservarán durante un período máximo de 13 meses tras el fin de la relación contractual: nombre, empresa, proyecto.",
+        "paragraph2": "El sitio recoge además información que permite mejorar la experiencia del usuario y ofrecer consejos contextualizados, en particular gracias a herramientas de medición de audiencia y análisis de navegación como Google Analytics y Microsoft Clarity.",
+        "paragraph3": "Estos datos se conservan durante un período máximo de 13 meses tras el fin de la relación contractual."
+      }
+    },
+
+    "section8": {
+      "title": "8. Notificación de incidentes",
+      "paragraph1": "Sean cuales sean los esfuerzos realizados, ningún método de transmisión por Internet ni ningún método de almacenamiento electrónico es completamente seguro. En consecuencia, no podemos garantizar una seguridad absoluta. Si tuviéramos conocimiento de una brecha de seguridad, avisaríamos a los usuarios afectados para que pudieran tomar las medidas oportunas. Nuestros procedimientos de notificación de incidentes tienen en cuenta nuestras obligaciones legales, ya sean a nivel nacional o europeo. Nos comprometemos a informar plenamente a nuestros clientes de todas las cuestiones relativas a la seguridad de su cuenta y a proporcionarles toda la información necesaria para ayudarles a cumplir sus propias obligaciones normativas en materia de reporte.",
+      "paragraph2": "Ninguna información personal del usuario del sitio se publica sin su conocimiento, se intercambia, se transfiere, se cede o se vende en ningún soporte a terceros. Solo en el supuesto de venta del sitio y de sus derechos se permitiría la transmisión de dicha información al eventual comprador, quien a su vez quedaría sujeto a la misma obligación de conservación y modificación de los datos respecto al usuario.",
+      "security": {
+        "title": "Seguridad",
+        "paragraph1": "Para garantizar la seguridad y confidencialidad de los Datos Personales y de los Datos Personales de Salud, el sitio utiliza redes protegidas por dispositivos estándar como cortafuegos, seudonimización, cifrado y contraseña.",
+        "paragraph2": "Durante el tratamiento de los Datos Personales, el sitio adopta todas las medidas razonables para protegerlos contra cualquier pérdida, uso indebido, acceso no autorizado, divulgación, alteración o destrucción."
+      }
+    },
+
+    "section9": {
+      "title": "9. Enlaces hipertextuales, «cookies» y balizas («tags») de internet",
+      "paragraph1": "El sitio contiene varios enlaces hipertextuales hacia otros sitios, colocados con su autorización. Sin embargo, el sitio no tiene la posibilidad de verificar el contenido de los sitios así visitados y, en consecuencia, no asumirá ninguna responsabilidad al respecto.",
+      "paragraph2": "Salvo que decida desactivar las cookies, usted acepta que el sitio pueda utilizarlas. Puede desactivar estas cookies en cualquier momento y de forma gratuita a partir de las posibilidades de desactivación que se le ofrecen y que se recuerdan a continuación, sabiendo que ello puede reducir o impedir el acceso a la totalidad o parte de los Servicios ofrecidos por el sitio.",
+      "cookies": {
+        "title": "9.1 Cookies",
+        "paragraph1": "Una «cookie» es un pequeño archivo de información enviado al navegador del Usuario y registrado en el terminal del Usuario (por ejemplo, ordenador, smartphone). Este archivo incluye información como el nombre de dominio del Usuario, el proveedor de acceso a Internet del Usuario, el sistema operativo del Usuario, así como la fecha y hora de acceso. Las Cookies no pueden en ningún caso dañar el terminal del Usuario.",
+        "paragraph2": "El sitio puede tratar la información del Usuario relativa a su visita al Sitio, como las páginas consultadas o las búsquedas realizadas. Esta información le permite mejorar el contenido del Sitio y la navegación del Usuario.",
+        "paragraph3": "Dado que las Cookies facilitan la navegación y/o la prestación de los servicios ofrecidos por el Sitio, el Usuario puede configurar su navegador para decidir si desea aceptarlas o no, de manera que las Cookies se registren en el terminal o, por el contrario, se rechacen, ya sea sistemáticamente o según su emisor. El Usuario también puede configurar su software de navegación de manera que se le proponga la aceptación o el rechazo de las Cookies puntualmente, antes de que una Cookie pueda registrarse en su terminal. El sitio informa al Usuario de que, en ese caso, es posible que no todas las funcionalidades de su software de navegación estén disponibles.",
+        "paragraph4": "Si el Usuario rechaza el registro de Cookies en su terminal o navegador, o elimina las ya registradas, su navegación y experiencia en el Sitio pueden verse limitadas. Esto también podría ocurrir cuando el sitio o uno de sus proveedores no pueda reconocer, por razones de compatibilidad técnica, el tipo de navegador utilizado por el terminal, los parámetros de idioma y visualización, o el país desde el que el terminal parece estar conectado a Internet.",
+        "paragraph5": "En su caso, el sitio declina toda responsabilidad por las consecuencias derivadas del funcionamiento degradado del Sitio y de los servicios eventualmente ofrecidos, resultantes (i) del rechazo de Cookies por parte del Usuario, (ii) de la imposibilidad para el sitio de registrar o consultar las Cookies necesarias para su funcionamiento debido a la elección del Usuario. Para la gestión de las Cookies y las opciones del Usuario, la configuración de cada navegador es diferente. Se describe en el menú de ayuda del navegador, que indicará de qué manera el Usuario puede modificar sus preferencias en materia de Cookies.",
+        "paragraph6": "En cualquier momento, el Usuario puede elegir expresar y modificar sus preferencias en materia de Cookies. El sitio podrá además recurrir a los servicios de proveedores externos para ayudarle a recopilar y tratar la información descrita en esta sección.",
+        "paragraph7": "Por último, al hacer clic en los iconos dedicados a las redes sociales que figuran en el Sitio o en su aplicación móvil, y si el Usuario ha aceptado el depósito de cookies al continuar su navegación, dichas redes sociales también pueden depositar cookies en sus terminales (ordenador, tableta, teléfono móvil).",
+        "paragraph8": "Este tipo de cookies solo se depositan en sus terminales si usted lo consiente, al continuar su navegación por el Sitio o la aplicación móvil. En cualquier momento, el Usuario puede, no obstante, retirar su consentimiento a que se deposite este tipo de cookies."
+      },
+      "tags": {
+        "title": "9.2 Balizas («tags») de internet",
+        "paragraph1": "El sitio puede emplear ocasionalmente balizas de Internet (también llamadas «tags», o balizas de acción, GIF de un píxel, GIF transparentes, GIF invisibles y GIF de uno a uno) y desplegarlas a través de un socio especializado en análisis web que puede encontrarse (y por tanto almacenar la información correspondiente, incluida la dirección IP del Usuario) en un país extranjero.",
+        "paragraph2": "Estas balizas se colocan tanto en la publicidad en línea que permite a los internautas acceder al Sitio, como en las distintas páginas del mismo.",
+        "paragraph3": "Esta tecnología permite al sitio evaluar las respuestas de los visitantes ante el Sitio y la eficacia de sus acciones (por ejemplo, el número de veces que se abre una página y la información consultada), así como el uso de este Sitio por parte del Usuario.",
+        "paragraph4": "El proveedor externo podrá eventualmente recopilar información sobre los visitantes del Sitio y de otros sitios de Internet gracias a estas balizas, elaborar informes sobre la actividad del Sitio para el sitio, y prestar otros servicios relacionados con el uso de este y de Internet."
+      }
+    },
+
+    "section10": {
+      "title": "10. Derecho aplicable y atribución de jurisdicción",
+      "paragraph1": "Todo litigio relacionado con el uso del sitio <1>https://codercat.fr</1> se somete al derecho francés. Salvo en los casos en que la ley no lo permita, se atribuye competencia exclusiva a los tribunales de Dunkerque."
+    }
   }
 }
