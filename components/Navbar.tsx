@@ -7,6 +7,7 @@ import LegalNotice from "@/components/MentionsLegalesSection";
 import PrivacyModal from "@/components/PrivacyModal";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
 import CookiePreferencesModal from "@/components/CookiePreferencesModal";
+import LanguageSlider from "@/components/LanguageSlider";
 
 const LINKS = [
   { key: "nav.Home", href: "#hero" },
@@ -139,8 +140,44 @@ export default function Navbar() {
             gap: 20,
           }}
         >
-          {/* Liens language */}
+          {/* Burger mobile, aligné à gauche sur mobile */}
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="nav-burger"
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(240,246,255,0.4)",
+              borderRadius: "12px",
+              cursor: "pointer",
+              color: "white",
+              display: "none",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 5,
+              padding: "10px 8px",
+              transition: "all 0.2s ease",
+              flexShrink: 0,
+            }}
+            aria-label="Menu"
+          >
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                style={{
+                  display: "block",
+                  width: 22,
+                  height: 2,
+                  background: "rgba(240,246,255,0.9)",
+                  borderRadius: 2,
+                }}
+              />
+            ))}
+          </button>
+
+          {/* Liens language desktop (masqués sur mobile) */}
           <div
+            className="lang-desktop"
             style={{
               display: "flex",
               alignItems: "flex-start",
@@ -286,39 +323,44 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Burger mobile */}
-          <button
-            onClick={() => setMenuOpen((v) => !v)}
-            className="nav-burger"
-            style={{
-              background: "transparent",
-              border: "1px solid rgba(240,246,255,0.4)",
-              borderRadius: "12px",
-              cursor: "pointer",
-              color: "white",
-              display: "none",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 5,
-              padding: "10px 8px",
-              transition: "all 0.2s ease",
-            }}
-            aria-label="Menu"
-          >
-            {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                style={{
-                  display: "block",
-                  width: 22,
-                  height: 2,
-                  background: "rgba(240,246,255,0.9)",
-                  borderRadius: 2,
-                }}
-              />
-            ))}
-          </button>
+          {/* Bloc mobile : slider de langue + burger, aligné à droite */}
+          <div className="mobile-right">
+            <LanguageSlider size="compact" />
+
+            {/* <button
+              onClick={() => setMenuOpen((v) => !v)}
+              className="nav-burger"
+              style={{
+                background: "transparent",
+                border: "1px solid rgba(240,246,255,0.4)",
+                borderRadius: "12px",
+                cursor: "pointer",
+                color: "white",
+                display: "none",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 5,
+                padding: "10px 8px",
+                transition: "all 0.2s ease",
+                flexShrink: 0,
+              }}
+              aria-label="Menu"
+            >
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  style={{
+                    display: "block",
+                    width: 22,
+                    height: 2,
+                    background: "rgba(240,246,255,0.9)",
+                    borderRadius: 2,
+                  }}
+                />
+              ))}
+            </button> */}
+          </div>
         </div>
 
         {/* Menu mobile déroulant */}
@@ -415,9 +457,19 @@ export default function Navbar() {
         )}
 
         <style>{`
+          .mobile-right {
+            display: none;
+            align-items: center;
+            gap: 12px;
+          }
           @media (max-width: 640px) {
             .nav-desktop { display: none !important; }
+            .lang-desktop { display: none !important; }
             .nav-burger { display: flex !important; }
+            .mobile-right {
+              display: flex !important;
+              margin-left: auto;
+            }
           }
         `}</style>
       </nav>
