@@ -1,12 +1,13 @@
-// components/CookieBanner.tsx
 "use client";
 
 import { useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { useCookieConsent } from "@/contexte/CookieConsentContext";
 import PrivacyModal from "@/components/PrivacyModal";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
 
 export default function CookieBanner() {
+  const { t } = useTranslation();
   const { hasChosen, acceptCookies, refuseCookies } = useCookieConsent();
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
@@ -16,7 +17,7 @@ export default function CookieBanner() {
     <>
       <div
         role="dialog"
-        aria-label="Gestion des cookies"
+        aria-label={t("cookieBanner.ariaLabel") as string}
         style={{
           position: "fixed",
           bottom: 0,
@@ -43,26 +44,26 @@ export default function CookieBanner() {
             lineHeight: 1.5,
           }}
         >
-          Ce site utilise des cookies de mesure d&apos;audience (Google
-          Analytics, Microsoft Clarity). Ils ne sont déposés qu&apos;avec votre
-          accord. Plus d&apos;infos dans notre{" "}
-          <button
-            type="button"
-            onClick={() => setPrivacyOpen(true)}
-            style={{
-              background: "none",
-              border: "none",
-              padding: 0,
-              color: "#5ddfff",
-              textDecoration: "underline",
-              cursor: "pointer",
-              font: "inherit",
-            }}
-          >
-            politique de confidentialité
-          </button>
-          . Vous pourrez modifier votre choix à tout moment depuis le lien{" "}
-          <strong>« Gérer les cookies »</strong> en bas du menu de navigation.
+          <Trans
+            i18nKey="cookieBanner.text"
+            components={[
+              <button
+                key="privacy-link"
+                type="button"
+                onClick={() => setPrivacyOpen(true)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  color: "#5ddfff",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                  font: "inherit",
+                }}
+              />,
+              <strong key="manage-cookies" />,
+            ]}
+          />
         </p>
 
         <div style={{ display: "flex", gap: 10, flexShrink: 0 }}>
@@ -80,7 +81,7 @@ export default function CookieBanner() {
               cursor: "pointer",
             }}
           >
-            Refuser
+            {t("cookieBanner.refuse")}
           </button>
           <button
             type="button"
@@ -96,7 +97,7 @@ export default function CookieBanner() {
               cursor: "pointer",
             }}
           >
-            Accepter
+            {t("cookieBanner.accept")}
           </button>
         </div>
       </div>

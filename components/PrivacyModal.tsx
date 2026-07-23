@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type PrivacyModalProps = {
   open: boolean;
@@ -16,6 +17,7 @@ export default function PrivacyModal({
   onAccept,
   children,
 }: PrivacyModalProps) {
+  const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canAccept, setCanAccept] = useState(false);
 
@@ -82,11 +84,12 @@ export default function PrivacyModal({
               fontSize: "1.1rem",
             }}
           >
-            Politique de confidentialité
+            {t("privacyModal.title")}
           </h2>
 
           <button
             onClick={onClose}
+            aria-label={t("common.close") as string}
             style={{
               width: 34,
               height: 34,
@@ -131,8 +134,7 @@ export default function PrivacyModal({
                 fontSize: ".85rem",
               }}
             >
-              Faites défiler jusqu&apos;en bas pour pouvoir accepter la
-              politique de confidentialité.
+              {t("privacyModal.scrollHint")}
             </span>
           )}
 
@@ -153,7 +155,7 @@ export default function PrivacyModal({
               opacity: canAccept ? 1 : 0.5,
             }}
           >
-            J&apos;ai lu et compris cette politique
+            {t("privacyModal.acceptButton")}
           </button>
         </div>
       </div>

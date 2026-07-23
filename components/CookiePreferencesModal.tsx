@@ -1,6 +1,7 @@
 // components/CookiePreferencesModal.tsx
 "use client";
 
+import { useTranslation } from "react-i18next";
 import { useCookieConsent } from "@/contexte/CookieConsentContext";
 
 export default function CookiePreferencesModal({
@@ -10,15 +11,23 @@ export default function CookiePreferencesModal({
   open: boolean;
   onClose: () => void;
 }) {
+  const { t } = useTranslation();
   const { consent, acceptCookies, refuseCookies } = useCookieConsent();
 
   if (!open) return null;
+
+  const statusLabel =
+    consent === "accepted"
+      ? t("cookieModal.statusAccepted")
+      : consent === "refused"
+        ? t("cookieModal.statusRefused")
+        : t("cookieModal.statusNone");
 
   return (
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Gérer les cookies"
+      aria-label={t("cookieModal.title") as string}
       onClick={onClose}
       style={{
         position: "fixed",
@@ -47,7 +56,7 @@ export default function CookiePreferencesModal({
       >
         <button
           onClick={onClose}
-          aria-label="Fermer"
+          aria-label={t("common.close") as string}
           style={{
             position: "absolute",
             top: 16,
@@ -67,7 +76,7 @@ export default function CookiePreferencesModal({
         </button>
 
         <h3 style={{ margin: "0 0 12px", fontWeight: 600 }}>
-          Gérer les cookies
+          {t("cookieModal.title")}
         </h3>
 
         <p
@@ -78,9 +87,7 @@ export default function CookiePreferencesModal({
             marginBottom: 20,
           }}
         >
-          Nous utilisons Google Analytics et Microsoft Clarity pour mesurer
-          l&apos;audience du site. Ces cookies ne sont pas essentiels et ne sont
-          déposés qu&apos;avec votre consentement.
+          {t("cookieModal.description")}
         </p>
 
         <p
@@ -90,14 +97,7 @@ export default function CookiePreferencesModal({
             marginBottom: 20,
           }}
         >
-          Statut actuel :{" "}
-          <strong>
-            {consent === "accepted"
-              ? "cookies acceptés"
-              : consent === "refused"
-                ? "cookies refusés"
-                : "aucun choix"}
-          </strong>
+          {t("cookieModal.statusLabel")} <strong>{statusLabel}</strong>
         </p>
 
         <div style={{ display: "flex", gap: 10 }}>
@@ -119,7 +119,7 @@ export default function CookiePreferencesModal({
               cursor: "pointer",
             }}
           >
-            Refuser
+            {t("cookieModal.refuse")}
           </button>
           <button
             type="button"
@@ -139,7 +139,7 @@ export default function CookiePreferencesModal({
               cursor: "pointer",
             }}
           >
-            Accepter
+            {t("cookieModal.accept")}
           </button>
         </div>
       </div>

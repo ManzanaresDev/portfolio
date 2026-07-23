@@ -226,6 +226,30 @@
   "privacyPolicy": {
     "lastUpdated": "Última actualización: {{date}}."
   },
+  "common": {
+    "close": "Cerrar"
+  },
+  "privacyModal": {
+    "title": "Política de privacidad",
+    "scrollHint": "Desplácese hasta el final para poder aceptar la política de privacidad.",
+    "acceptButton": "He leído y comprendido esta política"
+  },
+  "cookieModal": {
+    "title": "Gestionar las cookies",
+    "description": "Utilizamos Google Analytics y Microsoft Clarity para medir la audiencia del sitio. Estas cookies no son esenciales y solo se depositan con su consentimiento.",
+    "statusLabel": "Estado actual:",
+    "statusAccepted": "cookies aceptadas",
+    "statusRefused": "cookies rechazadas",
+    "statusNone": "ninguna elección",
+    "refuse": "Rechazar",
+    "accept": "Aceptar"
+  },
+  "cookieBanner": {
+    "ariaLabel": "Gestión de cookies",
+    "text": "Este sitio utiliza cookies de medición de audiencia (Google Analytics, Microsoft Clarity). Solo se depositan con tu consentimiento. Más información en nuestra <0>política de privacidad</0>. Podrás modificar tu elección en cualquier momento desde el enlace <1>« Gestionar las cookies »</1> en la parte inferior del menú de navegación.",
+    "refuse": "Rechazar",
+    "accept": "Aceptar"
+  },
   "errors": {
     "nameTooShort": "Nombre demasiado corto (mín. 2 caracteres)!",
     "emailInvalid": "Email inválido (formato nombre@servidor.dom)!",
