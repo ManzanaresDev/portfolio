@@ -1,6 +1,5 @@
 "use client";
 import type { Project } from "@/lib/types";
-import { useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
@@ -38,323 +37,189 @@ function GlobeIcon({ size = 16 }: { size?: number }) {
   );
 }
 
+function ProjectCard({ project }: { project: Project }) {
+  const { t } = useTranslation();
+  return (
+    <div className="marquee-card">
+      <div style={{ position: "relative", height: 170 }}>
+        <Image
+          src={project.image ?? ""}
+          alt={project.title}
+          fill
+          style={{ objectFit: "cover", objectPosition: "top" }}
+          sizes="340px"
+        />
+      </div>
+      <div style={{ padding: "16px 18px" }}>
+        <h3
+          style={{
+            color: "white",
+            fontSize: "1rem",
+            fontWeight: 700,
+            margin: "0 0 6px",
+            lineHeight: 1.2,
+          }}
+        >
+          {project.title}
+        </h3>
+        <p
+          style={{
+            color: "rgba(240,246,255,0.55)",
+            fontSize: "0.8rem",
+            lineHeight: 1.6,
+            margin: "0 0 10px",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+          }}
+        >
+          {project.description}
+        </p>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 4,
+            marginBottom: 10,
+          }}
+        >
+          {project.tags.map((tag) => (
+            <span key={tag.id} className="tag">
+              {tag.name}
+            </span>
+          ))}
+        </div>
+        <div style={{ display: "flex", gap: 16 }}>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              title={t("projects.viewSite")}
+              style={{
+                color: "#5ddfff",
+                fontSize: "0.8rem",
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+              }}
+            >
+              <GlobeIcon size={14} />
+              {t("projects.viewSite")}
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              title={t("projects.viewCode")}
+              style={{
+                color: "rgba(240,246,255,0.45)",
+                fontSize: "0.8rem",
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+              }}
+            >
+              <GitHubIcon size={14} />
+              {t("projects.viewCode")}
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ProjectsGallery({ projects }: { projects: Project[] }) {
   const { t } = useTranslation();
-  const [current, setCurrent] = useState(0);
-  const project = projects[current];
+
+  // Duplicated once so the track can scroll from 0% to -50% and loop seamlessly.
+  const track = [...projects, ...projects];
 
   return (
     <div>
       <h2 className="title">{t("projects.title")}</h2>
 
-      {/* SLIDE — desktop uniquement */}
-      <div
-        style={{
-          position: "relative",
-          borderRadius: 20,
-          overflow: "hidden",
-          border: "1px solid rgba(255,255,255,0.08)",
-          background: "rgba(255,255,255,0.04)",
-          display: "grid",
-          gridTemplateColumns: "55% 45%",
-          minHeight: 340,
-        }}
-        className="carousel-slide"
-      >
-        {/* IMAGE GAUCHE */}
-        <div style={{ position: "relative", minHeight: 280 }}>
-          <Image
-            src={project.image ?? ""}
-            alt={project.title}
-            fill
-            style={{
-              objectFit: "cover",
-              objectPosition: "top",
-              maskImage:
-                "linear-gradient(to right, black 40%, transparent 100%)",
-              WebkitMaskImage:
-                "linear-gradient(to right, black 40%, transparent 100%)",
-            }}
-            priority
-          />
-        </div>
-
-        {/* TEXTE DROITE */}
+      <div className="marquee-viewport">
         <div
-          style={{
-            padding: "36px 32px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: 16,
-            zIndex: 1,
-            background:
-              "linear-gradient(to right, transparent, rgba(10,22,40,0.95) 30%)",
-            backdropFilter: "blur(0px)",
-          }}
+          className="marquee-track"
+          style={{ ["--count" as string]: projects.length }}
         >
-          <span
-            style={{
-              fontSize: "0.75rem",
-              color: "rgba(240,246,255,0.35)",
-              letterSpacing: "0.1em",
-              fontWeight: 500,
-            }}
-          >
-            {String(current + 1).padStart(2, "0")} /{" "}
-            {String(projects.length).padStart(2, "0")}
-          </span>
-
-          <h3
-            style={{
-              fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
-              fontWeight: 700,
-              color: "white",
-              margin: 0,
-              lineHeight: 1.2,
-            }}
-          >
-            {project.title}
-          </h3>
-
-          <p
-            style={{
-              fontSize: "0.875rem",
-              color: "rgba(240,246,255,0.6)",
-              lineHeight: 1.65,
-              margin: 0,
-            }}
-          >
-            {project.description}
-          </p>
-
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-            {project.tags.map((t) => (
-              <span key={t.id} className="tag">
-                {t.name}
-              </span>
-            ))}
-          </div>
-
-          <div style={{ display: "flex", gap: 16, marginTop: 4 }}>
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                title={t("projects.viewSite")}
-                style={{
-                  color: "#5ddfff",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                  fontSize: "0.8rem",
-                  textDecoration: "none",
-                  transition: "opacity 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-              >
-                <GlobeIcon size={16} />
-                {t("projects.viewSite")}
-              </a>
-            )}
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                title={t("projects.viewCode")}
-                style={{
-                  color: "rgba(240,246,255,0.55)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                  fontSize: "0.8rem",
-                  textDecoration: "none",
-                  transition: "opacity 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-              >
-                <GitHubIcon size={16} />
-                {t("projects.viewCode")}
-              </a>
-            )}
-          </div>
+          {track.map((p, i) => (
+            <ProjectCard key={`${p.id ?? p.title}-${i}`} project={p} />
+          ))}
         </div>
-      </div>
-
-      {/* DOTS — desktop uniquement */}
-      <div
-        className="desktop-dots"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 8,
-          marginTop: 20,
-        }}
-      >
-        {projects.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            aria-label={t("projects.dotLabel", { number: i + 1 })}
-            style={{
-              width: i === current ? 24 : 8,
-              height: 8,
-              borderRadius: i === current ? 4 : "50%",
-              background: i === current ? "#5ddfff" : "rgba(240,246,255,0.25)",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-              transition: "all 0.3s ease",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* SCROLL HORIZONTAL — mobile uniquement */}
-      <div className="mobile-scroll">
-        {projects.map((p, i) => (
-          <div key={i} className="mobile-card">
-            <div style={{ position: "relative", height: 160 }}>
-              <Image
-                src={p.image ?? ""}
-                alt={p.title}
-                fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
-              />
-            </div>
-            <div style={{ padding: "14px 16px" }}>
-              <h3
-                style={{
-                  color: "white",
-                  fontSize: "1rem",
-                  fontWeight: 700,
-                  margin: "0 0 6px",
-                  lineHeight: 1.2,
-                }}
-              >
-                {p.title}
-              </h3>
-              <p
-                style={{
-                  color: "rgba(240,246,255,0.55)",
-                  fontSize: "0.8rem",
-                  lineHeight: 1.6,
-                  margin: "0 0 10px",
-                }}
-              >
-                {p.description}
-              </p>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 4,
-                  marginBottom: 10,
-                }}
-              >
-                {p.tags.map((t) => (
-                  <span key={t.id} className="tag">
-                    {t.name}
-                  </span>
-                ))}
-              </div>
-              <div style={{ display: "flex", gap: 16 }}>
-                {p.link && (
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      color: "#5ddfff",
-                      fontSize: "0.8rem",
-                      textDecoration: "none",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    <GlobeIcon size={14} />
-                    {t("projects.viewSite")}
-                  </a>
-                )}
-                {p.github && (
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      color: "rgba(240,246,255,0.45)",
-                      fontSize: "0.8rem",
-                      textDecoration: "none",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    <GitHubIcon size={14} />
-                    {t("projects.viewCode")}
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
       </div>
 
       <style>{`
-  /* Desktop */
-  .carousel-slide { display: grid; }
-  .desktop-dots { display: flex; }
-  .mobile-scroll { display: none; }
+        .marquee-viewport {
+          overflow: hidden;
+          -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            black 40px,
+            black calc(100% - 40px),
+            transparent 100%
+          );
+          mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            black 40px,
+            black calc(100% - 40px),
+            transparent 100%
+          );
+        }
 
-  /* Mobile */
-  @media (max-width: 640px) {
-    .carousel-slide { display: none !important; }
-    .desktop-dots { display: none !important; }
+        .marquee-track {
+          display: flex;
+          gap: 16px;
+          width: max-content;
+          animation: marquee-scroll calc(var(--count) * 8s) linear infinite;
+        }
 
-    .mobile-scroll {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 12px;
-      scrollbar-width: none;
-      width: 100%;
-      max-width: 100vw;
-    }
-    .mobile-scroll::-webkit-scrollbar {
-      display: none;
-    }
-    .mobile-card {
-      flex: 0 0 85%;
-      max-width: 85vw;
-      scroll-snap-align: start;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-    }
-    .mobile-card .tag {
-      font-size: 0.65rem !important;
-      padding: 2px 8px !important;
-    }
-    .mobile-card a {
-      font-size: 0.75rem !important;
-    }
-  }
+        .marquee-viewport:hover .marquee-track,
+        .marquee-track:active {
+          animation-play-state: paused;
+        }
 
-  @media (max-width: 480px) {
-    .mobile-card {
-      flex: 0 0 90%;
-      max-width: 90vw;
-    }
-  }
-`}</style>
+        .marquee-card {
+          flex: 0 0 320px;
+          width: 320px;
+          border-radius: 16px;
+          overflow: hidden;
+          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,0.04);
+        }
+
+        .marquee-card .tag {
+          font-size: 0.7rem;
+        }
+
+        @keyframes marquee-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 640px) {
+          .marquee-card {
+            flex: 0 0 82vw;
+            width: 82vw;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-track {
+            animation: none;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+          }
+        }
+      `}</style>
     </div>
   );
 }
