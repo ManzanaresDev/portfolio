@@ -212,7 +212,8 @@
   },
   "contact": {
     "title": "Contacto",
-    "secureBadge": "Formulario seguro"
+    "secureBadge": "Formulario seguro",
+    "description": "¿Tienes una idea o un proyecto en mente? Cuéntame qué necesitas, cuál es tu objetivo o simplemente en qué punto te encuentras. Te responderé en un plazo de 24 a 48 horas para que podamos encontrar la mejor solución juntos."
   },
   "contactForm": {
     "namePlaceholder": "Nombre",

@@ -9,7 +9,19 @@ export default function ContactSection() {
 
   return (
     <div style={{ width: "100%" }}>
-      <h2 className="title">{t("contact.title")}</h2>
+      <h2 className="title">{t("contact.title")}</h2>{" "}
+      <p
+        style={{
+          width: "100%",
+          maxWidth: "70ch",
+          fontSize: "clamp(0.9rem, 1vw + 0.7rem, 1rem)",
+          color: "rgba(255,255,255,0.5)",
+          lineHeight: 1.75,
+          marginBottom: "clamp(20px, 3vw, 32px)",
+        }}
+      >
+        {t("contact.description")}
+      </p>
       <div
         style={{
           width: "100%",
