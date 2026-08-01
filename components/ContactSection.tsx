@@ -63,6 +63,30 @@ export default function ContactSection() {
         </div>
 
         <ContactForm />
+
+        {/* WhatsApp CTA */}
+        <p
+          style={{
+            fontSize: "0.85rem",
+            color: "rgba(255,255,255,0.4)",
+            textAlign: "center",
+            marginTop: 8,
+          }}
+        >
+          {t("contact.whatsapp.text")}{" "}
+          <a
+            href="https://wa.me/33780385362"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#25D366",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            {t("contact.whatsapp.link")}
+          </a>
+        </p>
       </div>
     </div>
   );

@@ -57,6 +57,27 @@ export default function ContactForm() {
         gap: 18,
       }}
     >
+      {success && (
+        <p
+          style={{
+            color: "#5ddfff",
+            textAlign: "center",
+          }}
+        >
+          {t("contactForm.successMessage")}
+        </p>
+      )}
+
+      {serverError && (
+        <p
+          style={{
+            color: "#ff6b6b",
+            textAlign: "center",
+          }}
+        >
+          {serverError}
+        </p>
+      )}
       <div>
         <input
           {...register("name")}
@@ -120,28 +141,6 @@ export default function ContactForm() {
       >
         {isSubmitting ? t("contactForm.submitting") : t("contactForm.submit")}
       </button>
-
-      {success && (
-        <p
-          style={{
-            color: "#5ddfff",
-            textAlign: "center",
-          }}
-        >
-          {t("contactForm.successMessage")}
-        </p>
-      )}
-
-      {serverError && (
-        <p
-          style={{
-            color: "#ff6b6b",
-            textAlign: "center",
-          }}
-        >
-          {serverError}
-        </p>
-      )}
     </form>
   );
 }

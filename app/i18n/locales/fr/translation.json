@@ -220,7 +220,11 @@
   "contact": {
     "title": "Contact",
     "secureBadge": "Formulaire sécurisé",
-    "description": "Vous avez un projet ou une question ? Remplissez le formulaire ci-dessous et je vous répondrai sous 24 à 48 heures afin que nous trouvions ensemble la solution la plus adaptée."
+    "description": "Vous avez un projet ou une question ? Remplissez le formulaire ci-dessous et je vous répondrai sous 24 à 48 heures afin que nous trouvions ensemble la solution la plus adaptée.",
+    "whatsapp": {
+      "text": "Vous préférez un échange rapide ?",
+      "link": "Contactez-moi sur WhatsApp"
+    }
   },
   "contactForm": {
     "namePlaceholder": "Nom",
