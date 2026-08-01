@@ -10,6 +10,7 @@ import AnalyticsScripts from "@/components/AnalyticsScripts";
 
 // translation
 import Providers from "./providers";
+
 import "./globals.css";
 
 export const metadata: Metadata = {

@@ -131,7 +131,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <div style={{ color: "#fff" }}>
+    <div className="section-container" style={{ color: "#fff" }}>
       {/* ── Hero ── */}
       <div style={{ marginBottom: "clamp(32px, 6vw, 56px)" }}>
         <h2 className="title">{t("services.title")}</h2>
@@ -140,7 +140,7 @@ export default function ServicesSection() {
             fontSize: "clamp(0.85rem, 1.5vw, 0.95rem)",
             color: "rgba(255,255,255,0.5)",
             lineHeight: 1.75,
-            maxWidth: 560,
+            width: "100%",
             margin: 0,
           }}
         >

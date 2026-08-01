@@ -10,20 +10,21 @@ import es from "./locales/es/translation.json";
 
 if (!i18n.isInitialized) {
   i18n
-    .use(LanguageDetector) // Detecte la langue de l'utilisateur
-    .use(initReactI18next) // Connecte i18next à React
+    .use(LanguageDetector)
+    .use(initReactI18next)
     .init({
       resources: {
         fr: { translation: fr },
         es: { translation: es },
       },
-      fallbackLng: "fr", // Langue par défaut si la détection échoue
+      lng: "fr", // <-- force le rendu initial en français, identique au serveur
+      fallbackLng: "fr",
       interpolation: {
-        escapeValue: false, // React se charge déjà de l'échappement
+        escapeValue: false,
       },
       detection: {
         order: ["localStorage", "navigator", "htmlTag"],
-        caches: ["localStorage"], // Mémorise la langue de l'utilisateur dans le localStorage
+        caches: ["localStorage"],
       },
     });
 }

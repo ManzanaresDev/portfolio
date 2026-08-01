@@ -1,3 +1,4 @@
+// components/ProjectsGalleryClient.tsx
 "use client";
 import type { Project } from "@/lib/types";
 import Image from "next/image";
@@ -142,8 +143,47 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
   const track = [...projects, ...projects];
 
   return (
-    <div>
-      <h2 className="title">{t("projects.title")}</h2>
+    <div className="section-container" style={{ color: "#fff" }}>
+      {/* ── Hero ── */}
+      <div style={{ marginBottom: "clamp(32px, 6vw, 56px)" }}>
+        <h2 className="title">{t("projects.title")}</h2>
+        <p
+          style={{
+            fontSize: "clamp(0.85rem, 1.5vw, 0.95rem)",
+            color: "rgba(255,255,255,0.5)",
+            lineHeight: 1.75,
+            width: "100%",
+            minWidth: 0,
+            margin: 0,
+          }}
+        >
+          {t("projects.intro1")}
+        </p>
+        <p
+          style={{
+            fontSize: "clamp(0.85rem, 1.5vw, 0.95rem)",
+            color: "rgba(255,255,255,0.5)",
+            lineHeight: 1.75,
+            width: "100%",
+            minWidth: 0,
+            margin: "16px 0 0",
+          }}
+        >
+          {t("projects.intro2")}
+        </p>
+        <p
+          style={{
+            fontSize: "clamp(0.85rem, 1.5vw, 0.95rem)",
+            color: "rgba(255,255,255,0.5)",
+            lineHeight: 1.75,
+            width: "100%",
+            minWidth: 0,
+            margin: "16px 0 0",
+          }}
+        >
+          {t("projects.intro3")}
+        </p>
+      </div>
 
       <div className="marquee-viewport">
         <div
@@ -158,6 +198,8 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
 
       <style>{`
         .marquee-viewport {
+          width: 100%;
+          min-width: 0;
           overflow: hidden;
           -webkit-mask-image: linear-gradient(
             to right,

@@ -15,7 +15,7 @@
     "cookies": "Cookies"
   },
   "bio": {
-    "title": "Savoir un peu sur mon parcours",
+    "title": "À propos de moi",
     "availability": "Disponible immédiatement",
     "role": "Développeur Full-Stack",
     "location": "Dunkerque, France",
@@ -24,14 +24,21 @@
       "mobile": "Développement Mobile",
       "security": "Sécurité Web"
     },
-    "paragraph1": "Ancien informaticien reconverti dans le développement web et mobile, j'accompagne les petites structures dans la création de sites et d'applications performants, en intégrant dès le départ les bonnes pratiques de <1>cybersécurité</1>.",
-    "paragraph2": "Mon background en informatique me permet d'aborder chaque projet avec une vision technique complète — de l'architecture à la mise en production — tout en restant à l'écoute des besoins réels du client.",
-    "paragraph3": "Je propose aux petites structures des sites web rapides et performants intégrant dès le départ les bonnes pratiques de <1>cybersécurité</1>.",
-    "paragraph4": "Donnez vie à vos projets avec des sites web et applications rapides, performants et sécurisés. De l'idée initiale jusqu'au déploiement, tout est géré pour vous : conception, développement, optimisation et mise en ligne. Une solution clé en main pensée pour attirer, convaincre et faire grandir votre activité.",
-    "cta": "Discutons de votre projet →"
+    "paragraph1": "J'accompagne les <1>petites entreprises</1> dans la création d'applications web et mobiles modernes, rapides et sécurisées, conçues pour répondre à leurs besoins réels.",
+
+    "paragraph2": "Mon expérience en informatique me permet de concevoir des solutions complètes, de l'architecture jusqu'au déploiement, en privilégiant toujours les performances, la qualité du code et une expérience utilisateur soignée.",
+
+    "paragraph3": "La <1>cybersécurité</1> fait partie intégrante de ma façon de travailler. Elle est prise en compte dès le début du projet et tout au long du développement, plutôt que d'être ajoutée à la fin.",
+
+    "paragraph4": "Mon objectif est de développer des solutions fiables, évolutives et faciles à maintenir, capables d'apporter une réelle valeur aux entreprises et d'évoluer avec leurs besoins.",
+
+    "cta": "Parlons de votre projet"
   },
   "projects": {
     "title": "Quelques projets...",
+    "intro1": "Derrière chaque projet se cache une idée, un défi et de nombreuses heures d'apprentissage. J'aime concevoir des solutions utiles, simples et réfléchies, en accordant autant d'importance à l'aspect technique qu'à l'expérience des personnes qui les utilisent.",
+    "intro2": "Vous trouverez ici des projets qui reflètent ma manière de travailler : la curiosité, la persévérance et l'envie de progresser en permanence. Certains sont nés pour répondre à des besoins concrets, d'autres pour expérimenter de nouvelles technologies et continuer à apprendre.",
+    "intro3": "Chacun représente une étape de mon parcours de développeur. J'espère que vous prendrez autant de plaisir à les découvrir que j'en ai eu à les réaliser.",
     "viewSite": "Voir le site",
     "viewCode": "Code source",
     "dotLabel": "Projet {{number}}"

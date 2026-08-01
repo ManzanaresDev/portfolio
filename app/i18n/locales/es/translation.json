@@ -15,8 +15,8 @@
     "cookies": "Cookies"
   },
   "bio": {
-    "title": "Conoce un poco sobre mi trayectoria",
-    "availability": "Disponible de inmediato",
+    "title": "Sobre mí",
+    "availability": "Disponible inmediatamente",
     "role": "Desarrollador Full-Stack",
     "location": "Dunkerque, Francia",
     "skills": {
@@ -24,17 +24,24 @@
       "mobile": "Desarrollo Móvil",
       "security": "Seguridad Web"
     },
-    "paragraph1": "Antiguo informático reconvertido al desarrollo web y móvil, acompaño a las pequeñas empresas en la creación de sitios y aplicaciones eficaces, integrando desde el inicio las buenas prácticas de <1>ciberseguridad</1>.",
-    "paragraph2": "Mi formación en informática me permite abordar cada proyecto con una visión técnica completa — desde la arquitectura hasta la puesta en producción — sin perder de vista las necesidades reales del cliente.",
-    "paragraph3": "Ofrezco a las pequeñas empresas sitios web rápidos y eficaces que integran desde el inicio las buenas prácticas de <1>ciberseguridad</1>.",
-    "paragraph4": "Da vida a tus proyectos con sitios web y aplicaciones rápidas, eficaces y seguras. Desde la idea inicial hasta el despliegue, todo está gestionado para ti: diseño, desarrollo, optimización y publicación. Una solución llave en mano pensada para atraer, convencer y hacer crecer tu negocio.",
-    "cta": "Hablemos de tu proyecto →"
+    "paragraph1": "Ayudo a <1>pequeñas empresas</1> a desarrollar aplicaciones web y móviles modernas, rápidas y seguras, adaptadas a sus necesidades reales.",
+
+    "paragraph2": "Mi experiencia en informática me permite diseñar soluciones completas, desde la arquitectura hasta el despliegue, priorizando siempre el rendimiento, la calidad del código y una experiencia de usuario cuidada.",
+
+    "paragraph3": "La <1>ciberseguridad</1> forma parte de mi forma de trabajar desde el primer día, integrando buenas prácticas durante todo el desarrollo y no como una tarea añadida al final del proyecto.",
+
+    "paragraph4": "Mi objetivo es crear soluciones fiables, escalables y fáciles de mantener, que aporten valor al negocio y puedan evolucionar junto con las necesidades de cada cliente.",
+
+    "cta": "Hablemos de tu proyecto"
   },
   "projects": {
     "title": "Algunos proyectos...",
     "viewSite": "Ver el sitio",
     "viewCode": "Código fuente",
-    "dotLabel": "Proyecto {{number}}"
+    "dotLabel": "Proyecto {{number}}",
+    "intro1": "Detrás de cada proyecto hay una idea, un reto y muchas horas de aprendizaje. Me gusta crear soluciones útiles, claras y bien pensadas, prestando atención tanto a la parte técnica como a la experiencia de quienes las utilizan.",
+    "intro2": "Aquí encontrarás proyectos que reflejan mi forma de trabajar: curiosidad, constancia y ganas de seguir mejorando. Algunos nacieron para resolver necesidades reales, otros para experimentar con nuevas tecnologías y seguir aprendiendo.",
+    "intro3": "Cada uno representa un paso más en mi recorrido como desarrollador. Espero que disfrutes descubriéndolos tanto como yo disfruté creándolos."
   },
   "services": {
     "title": "Planes...",

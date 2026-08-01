@@ -21,7 +21,7 @@ export default function HeroSection() {
 
       <div className="hero-text">
         <h2 className="title">{t("hero.title")}</h2>
-        <p className="hero-desc">{t("hero.description")}</p>
+        <p className="hero-description">{t("hero.description")}</p>
       </div>
     </div>
   );

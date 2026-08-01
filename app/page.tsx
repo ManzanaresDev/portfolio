@@ -18,50 +18,23 @@ export default function Portfolio() {
           <HeroSection />
         </section>
 
-        <section
-          id="bio"
-          className="section-style"
-          style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}
-        >
+        <section id="bio" className="page-section">
           <BioSection />
         </section>
 
-        <section
-          id="projets"
-          className="section-style section-offset"
-          style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}
-        >
+        <section id="projets" className="page-section">
           <ProjectsGallery />
         </section>
 
-        <section
-          id="services"
-          className="section-style"
-          style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}
-        >
+        <section id="services" className="page-section">
           <ServicesSection />
         </section>
 
-        <section
-          id="testimonials"
-          className="section-style"
-          style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}
-        >
+        <section id="testimonials" className="page-section">
           <TestimonialsSection />
         </section>
 
-        <section
-          id="contact"
-          style={{
-            maxWidth: "1100px",
-            margin: "0 auto",
-            paddingLeft: "clamp(1rem, 4vw, 2rem)",
-            paddingRight: "clamp(1rem, 4vw, 2rem)",
-            minHeight: "100vh",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <section id="contact" className="page-section">
           <ContactSection />
         </section>
       </main>
