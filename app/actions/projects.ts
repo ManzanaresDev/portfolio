@@ -180,3 +180,28 @@ export async function deleteTag(id: number) {
 
   revalidatePath("/admin/projects");
 }
+
+export async function getProjectById(id: number): Promise<Project | null> {
+  const rows = await sql`
+    SELECT
+      p.*,
+      COALESCE(
+        JSON_AGG(
+          JSON_BUILD_OBJECT(
+            'id', t.id,
+            'name', t.name
+          )
+          ORDER BY t.name
+        ) FILTER (WHERE t.id IS NOT NULL),
+        '[]'::json
+      ) AS tags
+    FROM projects p
+    LEFT JOIN project_tags pt
+      ON pt.project_id = p.id
+    LEFT JOIN tags t
+      ON t.id = pt.tag_id
+    WHERE p.id = ${id}
+    GROUP BY p.id;
+  `;
+  return (rows[0] as unknown as Project) ?? null;
+}
