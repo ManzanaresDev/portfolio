@@ -6,6 +6,7 @@ import TestimonialsSection from "@/components/TestimonialSection";
 import ServicesSection from "@/components/ServiceSection";
 import ContactSection from "@/components/ContactSection";
 import BackgroundLayer from "@/components/BackgroundLayer";
+import StorySection from "@/components/StoryTelling/StorySection";
 
 export default function Portfolio() {
   return (
@@ -16,6 +17,10 @@ export default function Portfolio() {
       <main className="main-wrapper">
         <section id="hero" className="hero-padding hero-main">
           <HeroSection />
+        </section>
+
+        <section id="story" className="page-section">
+          <StorySection />
         </section>
 
         <section id="bio" className="page-section">

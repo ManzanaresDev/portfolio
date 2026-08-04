@@ -6,6 +6,7 @@
   "nav": {
     "Home": "Inicio",
     "Bio": "Biografía",
+    "Story": "Historia",
     "Projects": "Proyectos",
     "Services": "Servicios",
     "Testimonials": "Testimonios",
@@ -415,5 +416,11 @@
       "title": "10. Derecho aplicable y atribución de jurisdicción",
       "paragraph1": "Todo litigio relacionado con el uso del sitio <1>https://codercat.fr</1> se somete al derecho francés. Salvo en los casos en que la ley no lo permita, se atribuye competencia exclusiva a los tribunales de Dunkerque."
     }
+  },
+  "story": {
+    "eyebrow": "Por qué importa",
+    "searchPlaceholder": "cafetería abierta cerca de mí",
+    "resultActive": "El café de enfrente — abierto",
+    "visualCaption": "La búsqueda que decide adónde va la gente."
   }
 }

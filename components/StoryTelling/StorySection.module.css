@@ -1,0 +1,240 @@
+.story {
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+}
+
+.inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Colonne texte ---------- */
+
+.eyebrow {
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, #3ed6c4);
+  margin: 0 0 0.75rem;
+}
+
+.headline {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0 0 2rem;
+  color: var(--fg, #f2f1ed);
+}
+
+.beats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 2px solid var(--border, rgba(255, 255, 255, 0.12));
+  padding-left: 1.25rem;
+}
+
+.beat {
+  position: relative;
+}
+
+.beatLabel {
+  display: inline-block;
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted, #9a968c);
+  margin-bottom: 0.4rem;
+}
+
+.beatText {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--fg-soft, #d8d6d0);
+}
+
+.stat {
+  color: var(--accent, #3ed6c4);
+  font-weight: 600;
+}
+
+.moral {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--fg-soft, #d8d6d0);
+  margin: 0 0 1.5rem;
+}
+
+.punchline {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--fg, #f2f1ed);
+  border-top: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+  padding-top: 1.5rem;
+  margin: 0;
+}
+
+/* ---------- Skeleton de chargement (pendant le fetch du .md) ---------- */
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-top: 0.5rem;
+}
+
+.skeletonLine {
+  height: 14px;
+  border-radius: 6px;
+  background: var(--border, rgba(255, 255, 255, 0.1));
+  animation: skeletonPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes skeletonPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonLine {
+    animation: none;
+  }
+}
+
+/* ---------- Colonne visuelle : mock de recherche mobile ---------- */
+
+.visualCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 2rem;
+}
+
+@media (max-width: 860px) {
+  .visualCol {
+    position: static;
+  }
+}
+
+.phone {
+  width: 220px;
+  border-radius: 28px;
+  padding: 10px;
+  background: var(--panel, #17171b);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.14));
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.phoneNotch {
+  width: 40%;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--border, rgba(255, 255, 255, 0.14));
+  margin: 0 auto 10px;
+}
+
+.phoneScreen {
+  background: var(--bg, #0e0e10);
+  border-radius: 18px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--panel, #1f1f24);
+  border-radius: 999px;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+}
+
+.searchDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent, #3ed6c4);
+  flex-shrink: 0;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .searchDot {
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+}
+
+.searchText {
+  font-size: 0.7rem;
+  color: var(--fg-soft, #d8d6d0);
+}
+
+.resultRowGhost {
+  height: 10px;
+  border-radius: 4px;
+  background: var(--border, rgba(255, 255, 255, 0.08));
+  width: 80%;
+}
+
+.resultRow {
+  font-size: 0.72rem;
+  color: var(--muted, #9a968c);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+}
+
+.resultActive {
+  color: var(--fg, #f2f1ed);
+  font-weight: 600;
+}
+
+.resultPin {
+  color: var(--accent, #3ed6c4);
+  font-size: 0.6rem;
+}
+
+.visualCaption {
+  font-size: 0.75rem;
+  color: var(--muted, #9a968c);
+  text-align: center;
+  max-width: 220px;
+  margin: 0;
+}

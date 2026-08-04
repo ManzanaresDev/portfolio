@@ -6,6 +6,7 @@
   "nav": {
     "Home": "Accueil",
     "Bio": "Biographie",
+    "Story": "Histoire",
     "Projects": "Projets",
     "Services": "Services",
     "Testimonials": "Témoignages",
@@ -415,5 +416,11 @@
       "title": "10. Droit applicable et attribution de juridiction",
       "paragraph1": "Tout litige en relation avec l'utilisation du site <1>https://codercat.fr</1> est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Dunkerque."
     }
+  },
+  "story": {
+    "eyebrow": "Pourquoi ça compte",
+    "searchPlaceholder": "café ouvert près de moi",
+    "resultActive": "Le café d'en face — ouvert",
+    "visualCaption": "La recherche qui décide où les gens vont."
   }
 }

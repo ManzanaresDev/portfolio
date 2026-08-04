@@ -11,6 +11,7 @@ import LanguageSlider from "@/components/LanguageSlider";
 
 const LINKS = [
   { key: "nav.Home", href: "#hero" },
+  { key: "nav.Story", href: "#story" },
   { key: "nav.Bio", href: "#bio" },
   { key: "nav.Projects", href: "#projets" },
   { key: "nav.Services", href: "#services" },
@@ -35,6 +36,7 @@ export default function Navbar() {
   useEffect(() => {
     const ids = [
       "hero",
+      "story",
       "bio",
       "projets",
       "services",
@@ -326,40 +328,6 @@ export default function Navbar() {
           {/* Bloc mobile : slider de langue + burger, aligné à droite */}
           <div className="mobile-right">
             <LanguageSlider size="compact" />
-
-            {/* <button
-              onClick={() => setMenuOpen((v) => !v)}
-              className="nav-burger"
-              style={{
-                background: "transparent",
-                border: "1px solid rgba(240,246,255,0.4)",
-                borderRadius: "12px",
-                cursor: "pointer",
-                color: "white",
-                display: "none",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: 5,
-                padding: "10px 8px",
-                transition: "all 0.2s ease",
-                flexShrink: 0,
-              }}
-              aria-label="Menu"
-            >
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  style={{
-                    display: "block",
-                    width: 22,
-                    height: 2,
-                    background: "rgba(240,246,255,0.9)",
-                    borderRadius: 2,
-                  }}
-                />
-              ))}
-            </button> */}
           </div>
         </div>
 
