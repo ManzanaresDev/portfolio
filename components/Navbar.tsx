@@ -177,13 +177,16 @@ export default function Navbar() {
             ))}
           </button>
 
-          {/* Liens language desktop (masqués sur mobile) */}
+          {/* Liens language desktop (masqués sur mobile) — bordure ajoutée */}
           <div
             className="lang-desktop"
             style={{
               display: "flex",
-              alignItems: "flex-start",
+              alignItems: "center",
               gap: 12,
+              border: "1px solid rgba(240,246,255,0.25)",
+              borderRadius: 10,
+              padding: "6px 14px",
             }}
           >
             {LANGUAGES.map(({ code, label }) => (
