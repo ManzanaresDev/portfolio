@@ -1,8 +1,9 @@
 {
   "hero": {
-    "title": "Développement web & sécurité",
-    "description": "« Je conçois pour les petites structures des sites web rapides, sécurisés et faciles à prendre en main, afin que vous soyez autonomes dès le premier jour. »"
+    "title": "Sites web sécurisés pour les petites entreprises",
+    "description": "Je conçois des sites web rapides, professionnels et sécurisés dès leur conception. Vous avez déjà un site WordPress ? Commencez par un audit de sécurité pour identifier les points à améliorer."
   },
+
   "nav": {
     "Home": "Accueil",
     "Bio": "Biographie",
@@ -15,6 +16,7 @@
     "legal": "Mentions légales",
     "cookies": "Cookies"
   },
+
   "bio": {
     "title": "À propos de moi",
     "availability": "Disponible immédiatement",
@@ -26,15 +28,12 @@
       "security": "Sécurité Web"
     },
     "paragraph1": "J'accompagne les <1>petites entreprises</1> dans la création d'applications web et mobiles modernes, rapides et sécurisées, conçues pour répondre à leurs besoins réels.",
-
     "paragraph2": "Mon expérience en informatique me permet de concevoir des solutions complètes, de l'architecture jusqu'au déploiement, en privilégiant toujours les performances, la qualité du code et une expérience utilisateur soignée.",
-
     "paragraph3": "La <1>cybersécurité</1> fait partie intégrante de ma façon de travailler. Elle est prise en compte dès le début du projet et tout au long du développement, plutôt que d'être ajoutée à la fin.",
-
     "paragraph4": "Mon objectif est de développer des solutions fiables, évolutives et faciles à maintenir, capables d'apporter une réelle valeur aux entreprises et d'évoluer avec leurs besoins.",
-
     "cta": "Parlons de votre projet"
   },
+
   "projects": {
     "title": "Quelques projets...",
     "intro1": "Derrière chaque projet se cache une idée, un défi et de nombreuses heures d'apprentissage. J'aime concevoir des solutions utiles, simples et réfléchies, en accordant autant d'importance à l'aspect technique qu'à l'expérience des personnes qui les utilisent.",
@@ -44,160 +43,199 @@
     "viewCode": "Code source",
     "dotLabel": "Projet {{number}}"
   },
-  "services": {
-    "title": "Formules...",
-    "intro": "Chaque projet est unique. Ces formules sont là pour vous donner un repère, pas pour vous enfermer dans une offre. Mon objectif est de créer une solution adaptée à votre activité, avec un développement soigné, des tarifs transparents et un accompagnement du premier échange jusqu'à la mise en ligne. Si votre besoin sort du cadre, nous définissons ensemble une solution sur mesure.",
-    "chooseLabel": "Choisissez votre formule",
-    "compareShow": "Comparer les formules en détail ↓",
-    "compareHide": "Masquer la comparaison ↑",
-    "tableFeature": "Fonctionnalité",
-    "addonsLabel": "Options & services complémentaires",
-    "guaranteeTitle": "Satisfait ou remboursé — 14 jours",
-    "guaranteeText": "Si le livrable ne correspond pas au cahier des charges validé ensemble, je rembourse intégralement. Sans discussion.",
-    "plans": {
-      "starter": {
-        "name": "Starter",
-        "tag": null,
-        "price": "890 €",
-        "sub": "paiement unique",
-        "pitch": "Votre présence en ligne, propre et rapide.",
-        "features": [
-          "Site vitrine jusqu'à 5 pages",
-          "Design responsive mobile",
-          "SEO technique de base",
-          "Formulaire de contact",
-          "RGPD essentiel (mentions, cookies)",
-          "Livraison en 2 semaines"
-        ],
-        "cta": "Démarrer"
-      },
-      "pro": {
-        "name": "Pro",
-        "tag": "Le plus choisi",
-        "price": "1 990 €",
-        "sub": "paiement unique",
-        "pitch": "Un site qui travaille pour vous, pas juste qui vous représente.",
-        "features": [
-          "Tout Starter inclus",
-          "Espace client ou portail métier",
-          "Prise de rendez-vous en ligne",
-          "Tableau de bord d'administration",
-          "Audit sécurité inclus",
-          "RGPD complet (Privacy by Design)",
-          "Livraison en 3 à 4 semaines"
-        ],
-        "cta": "Choisir Pro"
-      },
-      "custom": {
-        "name": "Sur-mesure",
-        "tag": null,
-        "price": "Sur devis",
-        "sub": "selon complexité",
-        "pitch": "Application web, SaaS, logiciel métier — vous décrivez, je construis.",
-        "features": [
-          "Tout Pro inclus",
-          "Architecture scalable",
-          "API & intégrations tierces",
-          "Tests automatisés",
-          "CI/CD & déploiement cloud",
-          "Accompagnement post-livraison"
-        ],
-        "cta": "Discutons-en"
-      }
+
+"services": {
+  "title": "Mes services",
+
+  "intro": "Je conçois des sites web modernes, rapides et professionnels, avec la sécurité intégrée dès leur conception. Si vous avez déjà un site WordPress, vous pouvez commencer par un diagnostic de sécurité pour identifier les points à corriger et déterminer s'il vaut mieux sécuriser l'existant ou repartir sur une base saine.",
+
+  "chooseLabel": "Création de sites web sécurisés",
+  "compareShow": "Comparer les formules en détail ↓",
+  "compareHide": "Masquer la comparaison ↑",
+  "tableFeature": "Fonctionnalité",
+
+  "securityEntry": {
+    "eyebrow": "VOUS AVEZ DÉJÀ UN SITE WORDPRESS ?",
+    "title": "Commencez par un diagnostic de sécurité",
+    "description": "Avant de modifier ou de reconstruire votre site, je vérifie sa configuration, ses protections et les principales vulnérabilités courantes. Vous obtenez un état des lieux clair ainsi que des recommandations priorisées.",
+    "priceLabel": "À partir de",
+    "price": "150 – 500 €",
+    "cta": "Faire diagnostiquer mon site",
+    "followupTitle": "Et si votre site doit être repensé ?",
+    "followupText": "Le diagnostic peut aussi être le point de départ d'une refonte. Si votre site est difficile à maintenir, obsolète ou mal adapté à vos besoins, je peux vous accompagner vers un nouveau site moderne et sécurisé dès sa conception.",
+    "followupCta": "Découvrir les sites sécurisés"
+  },
+
+  "addonsLabel": "Après le diagnostic",
+  "addonsIntro": "Selon les résultats du diagnostic, plusieurs solutions sont possibles : corriger l'existant, assurer sa maintenance ou envisager une refonte vers un site conçu avec la sécurité dès le départ.",
+
+  "guaranteeTitle": "Une prestation claire et transparente",
+  "guaranteeText": "Chaque projet est défini selon un périmètre précis. Les fonctionnalités, délais et livrables sont validés ensemble avant le début du développement. Un diagnostic ne vous engage pas à refaire votre site.",
+
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "tag": null,
+      "price": "890 €",
+      "sub": "paiement unique",
+      "pitch": "Une présence en ligne professionnelle, rapide et sécurisée dès sa conception.",
+      "features": [
+        "Site vitrine jusqu'à 5 pages",
+        "Design responsive mobile",
+        "SEO technique de base",
+        "Formulaire de contact",
+        "HTTPS & configuration sécurisée",
+        "RGPD essentiel",
+        "Contrôles de sécurité avant mise en ligne",
+        "Livraison en 2 semaines"
+      ],
+      "cta": "Créer mon site"
     },
-    "comparisonRows": [
-      {
-        "label": "Pages incluses",
-        "starter": "5",
-        "pro": "Illimitées",
-        "custom": "Illimitées"
-      },
-      {
-        "label": "Design responsive",
-        "starter": true,
-        "pro": true,
-        "custom": true
-      },
-      {
-        "label": "SEO technique",
-        "starter": "Base",
-        "pro": "Avancé",
-        "custom": "Avancé"
-      },
-      {
-        "label": "Espace client",
-        "starter": false,
-        "pro": true,
-        "custom": true
-      },
-      {
-        "label": "Audit sécurité",
-        "starter": false,
-        "pro": true,
-        "custom": true
-      },
-      {
-        "label": "RGPD complet",
-        "starter": false,
-        "pro": true,
-        "custom": true
-      },
-      {
-        "label": "API & intégrations",
-        "starter": false,
-        "pro": false,
-        "custom": true
-      },
-      {
-        "label": "Support post-livraison",
-        "starter": "30 j",
-        "pro": "60 j",
-        "custom": "Sur-mesure"
-      }
-    ],
-    "addons": {
-      "security": {
-        "title": "Audit de sécurité",
-        "price": "150 – 500 €",
-        "items": [
-          "Injections SQL & XSS",
-          "Accès non protégés",
-          "Exposition des mots de passe",
-          "En-têtes HTTP sécurisés",
-          "Conformité RGPD vérifiée",
-          "Rapport clair, actions priorisées",
-          "Durée : 1 à 2 jours"
-        ]
-      },
-      "maintenance": {
-        "title": "Maintenance mensuelle",
-        "price": "29 – 99 € / mois",
-        "items": [
-          "Surveillance 24/7",
-          "Mises à jour de sécurité",
-          "Sauvegardes automatiques",
-          "Rapport mensuel de performance",
-          "1h de modifications incluse"
-        ]
-      },
-      "gdpr": {
-        "title": "RGPD renforcé",
-        "price": "Inclus dans Pro & Sur-mesure",
-        "items": [
-          "Chiffrement bout en bout",
-          "Droit à l'oubli automatisé",
-          "Consentement granulaire",
-          "Registre des traitements auto",
-          "Marchés réglementés ouverts"
-        ]
-      }
+
+    "pro": {
+      "name": "Pro",
+      "tag": "Le plus choisi",
+      "price": "1 990 €",
+      "sub": "paiement unique",
+      "pitch": "Un site métier conçu pour accompagner votre activité avec des fonctionnalités avancées et une sécurité renforcée.",
+      "features": [
+        "Tout Starter inclus",
+        "Espace client ou portail métier",
+        "Prise de rendez-vous en ligne",
+        "Tableau de bord d'administration",
+        "Sécurité renforcée",
+        "Contrôles de sécurité approfondis",
+        "Protection des données dès la conception",
+        "Optimisation des performances",
+        "Livraison en 3 à 4 semaines"
+      ],
+      "cta": "Choisir Pro"
+    },
+
+    "custom": {
+      "name": "Sur-mesure",
+      "tag": null,
+      "price": "Sur devis",
+      "sub": "selon le projet",
+      "pitch": "Application web, SaaS ou logiciel métier : une solution conçue autour de vos besoins et de votre niveau de risque.",
+      "features": [
+        "Tout Pro inclus",
+        "Analyse des besoins et des risques",
+        "Architecture adaptée au projet",
+        "API & intégrations tierces",
+        "Tests automatisés",
+        "CI/CD & déploiement",
+        "Sécurité adaptée à l'architecture",
+        "Accompagnement post-livraison",
+        "Évolutions sur mesure"
+      ],
+      "cta": "Discutons-en"
     }
   },
+
+  "comparisonRows": [
+    {
+      "label": "Pages incluses",
+      "starter": "5",
+      "pro": "Selon projet",
+      "custom": "Sur mesure"
+    },
+    {
+      "label": "Design responsive",
+      "starter": true,
+      "pro": true,
+      "custom": true
+    },
+    {
+      "label": "SEO technique",
+      "starter": "Base",
+      "pro": "Avancé",
+      "custom": "Avancé"
+    },
+    {
+      "label": "Espace client",
+      "starter": false,
+      "pro": true,
+      "custom": true
+    },
+    {
+      "label": "Contrôles de sécurité",
+      "starter": "Avant mise en ligne",
+      "pro": "Approfondis",
+      "custom": "Adaptés au projet"
+    },
+    {
+      "label": "Protection des données",
+      "starter": "Essentielle",
+      "pro": "Renforcée",
+      "custom": "Selon projet"
+    },
+    {
+      "label": "API & intégrations",
+      "starter": false,
+      "pro": false,
+      "custom": true
+    },
+    {
+      "label": "Support post-livraison",
+      "starter": "30 j",
+      "pro": "60 j",
+      "custom": "Sur mesure"
+    }
+  ],
+
+  "addons": {
+    "security": {
+      "title": "Diagnostic de sécurité WordPress",
+      "price": "150 – 500 €",
+      "items": [
+        "Analyse de la configuration WordPress",
+        "Vérification du CMS, des extensions et du thème",
+        "Vérification des headers HTTP",
+        "HTTPS, cookies et protections du navigateur",
+        "Recherche de vulnérabilités web courantes",
+        "Vérification des accès et fonctionnalités exposées",
+        "Recherche d'informations sensibles accessibles",
+        "Vérification des principales protections du site",
+        "Rapport clair avec recommandations priorisées",
+        "Conseils pour sécuriser ou faire évoluer le site"
+      ]
+    },
+
+    "maintenance": {
+      "title": "Maintenance & sécurité",
+      "price": "29 – 99 € / mois",
+      "items": [
+        "Mises à jour techniques et de sécurité",
+        "Surveillance de disponibilité",
+        "Sauvegardes selon l'hébergement",
+        "Vérification régulière du site",
+        "Petites corrections et modifications",
+        "Accompagnement en cas de problème"
+      ]
+    },
+
+    "gdpr": {
+      "title": "Protection des données",
+      "price": "Sur devis",
+      "items": [
+        "Configuration technique liée à la protection des données",
+        "Gestion des consentements",
+        "Configuration des cookies",
+        "Réduction de la collecte de données",
+        "Protection des données personnelles",
+        "Accompagnement technique sur les besoins RGPD"
+      ]
+    }
+  }
+},
+
   "testimonials": {
     "title": "Témoignages clients",
     "empty": "Les premiers avis arrivent bientôt...",
     "formTitle": "Laisser un témoignage"
   },
+
   "testimonialForm": {
     "errors": {
       "noRating": "Merci de donner une note.",
@@ -218,15 +256,17 @@
     "submit": "Envoyer mon avis",
     "submitting": "Envoi..."
   },
+
   "contact": {
     "title": "Contact",
     "secureBadge": "Formulaire sécurisé",
-    "description": "Vous avez un projet ou une question ? Remplissez le formulaire ci-dessous et je vous répondrai sous 24 à 48 heures afin que nous trouvions ensemble la solution la plus adaptée.",
+    "description": "Vous avez un projet, un site WordPress à faire vérifier ou une question ? Remplissez le formulaire ci-dessous et je vous répondrai sous 24 à 48 heures afin que nous trouvions ensemble la solution la plus adaptée.",
     "whatsapp": {
       "text": "Vous préférez un échange rapide ?",
       "link": "Contactez-moi sur WhatsApp"
     }
   },
+
   "contactForm": {
     "namePlaceholder": "Nom",
     "emailPlaceholder": "Email",
@@ -236,17 +276,21 @@
     "successMessage": "Message envoyé avec succès.",
     "errorMessage": "Une erreur est survenue lors de l'envoi du message."
   },
+
   "privacyPolicy": {
     "lastUpdated": "Dernière mise à jour : {{date}}."
   },
+
   "common": {
     "close": "Fermer"
   },
+
   "privacyModal": {
     "title": "Politique de confidentialité",
     "scrollHint": "Faites défiler jusqu'en bas pour pouvoir accepter la politique de confidentialité.",
     "acceptButton": "J'ai lu et compris cette politique"
   },
+
   "cookieModal": {
     "title": "Gérer les cookies",
     "description": "Nous utilisons Google Analytics et Microsoft Clarity pour mesurer l'audience du site. Ces cookies ne sont pas essentiels et ne sont déposés qu'avec votre consentement.",
@@ -257,21 +301,23 @@
     "refuse": "Refuser",
     "accept": "Accepter"
   },
+
   "cookieBanner": {
     "ariaLabel": "Gestion des cookies",
     "text": "Ce site utilise des cookies de mesure d'audience (Google Analytics, Microsoft Clarity). Ils ne sont déposés qu'avec votre accord. Plus d'infos dans notre <0>politique de confidentialité</0>. Vous pourrez modifier votre choix à tout moment depuis le lien <1>« Gérer les cookies »</1> en bas du menu de navigation.",
     "refuse": "Refuser",
     "accept": "Accepter"
   },
+
   "errors": {
     "nameTooShort": "Nom trop court (min 2 caractères) !",
     "emailInvalid": "Email invalide (format nom@serveur.dom) !",
     "messageTooShort": "Message trop court (min 10 caractères) !"
   },
+
   "legalNotice": {
     "title": "Mentions légales",
     "lastUpdate": "Dernière mise à jour : juillet 2026.",
-
     "definitions": {
       "title": "Définitions",
       "client": "<0>Client :</0> tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.",
@@ -282,7 +328,6 @@
       "personalInfo": "<0>Informations personnelles :</0> « Les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).",
       "gdprTerms": "Les termes « données à caractère personnel », « personne concernée », « sous-traitant » et « données sensibles » ont le sens défini par le Règlement Général sur la Protection des Données (RGPD : n° 2016-679)."
     },
-
     "section1": {
       "title": "1. Présentation du site internet",
       "intro": "En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet <1>https://codercat.fr</1> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :",
@@ -294,20 +339,17 @@
       "domain": "Le nom de domaine est enregistré auprès d'OVHcloud et les DNS sont gérés via Cloudflare, Inc., sans incidence sur l'hébergement du contenu du site.",
       "credit": "Les mentions légales sont issues du modèle proposé par le <1>générateur gratuit offert par Orson.io</1>."
     },
-
     "section2": {
       "title": "2. Conditions générales d'utilisation du site et des services proposés",
       "paragraph1": "Le Site constitue une œuvre de l'esprit protégée par les dispositions du Code de la Propriété Intellectuelle et des Réglementations Internationales applicables. Le Client ne peut en aucune manière réutiliser, céder ou exploiter pour son propre compte tout ou partie des éléments ou travaux du Site.",
       "paragraph2": "L'utilisation du site <1>https://codercat.fr</1> implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites. Ces conditions d'utilisation sont susceptibles d'être modifiées ou complétées à tout moment ; les utilisateurs du site sont donc invités à les consulter de manière régulière.",
       "paragraph3": "Ce site internet est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par le site, qui s'efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l'intervention. Le site web est mis à jour régulièrement par son responsable. De la même façon, les mentions légales peuvent être modifiées à tout moment : elles s'imposent néanmoins à l'utilisateur qui est invité à s'y référer le plus souvent possible afin d'en prendre connaissance."
     },
-
     "section3": {
       "title": "3. Description des services fournis",
       "paragraph1": "Le site internet <1>https://codercat.fr</1> a pour objet de fournir une information concernant l'ensemble des activités de la société. Il s'efforce de fournir des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des oublis, des inexactitudes et des carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.",
       "paragraph2": "Toutes les informations indiquées sur le site sont données à titre indicatif, et sont susceptibles d'évoluer. Par ailleurs, les renseignements figurant sur le site ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne."
     },
-
     "section4": {
       "title": "4. Limitations contractuelles sur les données techniques",
       "paragraph1": "Le site utilise la technologie JavaScript. Il ne pourra être tenu responsable de dommages matériels liés à l'utilisation du site. De plus, l'utilisateur du site s'engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis à jour.",
@@ -315,20 +357,17 @@
       "paragraph3": "L'objectif est d'apporter une prestation qui assure le meilleur taux d'accessibilité. L'hébergeur assure la continuité de son service 24 heures sur 24, tous les jours de l'année. Il se réserve néanmoins la possibilité d'interrompre le service d'hébergement pour les durées les plus courtes possibles, notamment à des fins de maintenance, d'amélioration de ses infrastructures, de défaillance de ses infrastructures ou si les Prestations et Services génèrent un trafic réputé anormal.",
       "paragraph4": "Le site et l'hébergeur ne pourront être tenus responsables en cas de dysfonctionnement du réseau Internet, des lignes téléphoniques ou du matériel informatique et de téléphonie lié notamment à l'encombrement du réseau empêchant l'accès au serveur."
     },
-
     "section5": {
       "title": "5. Propriété intellectuelle et contrefaçons",
       "paragraph1": "Le site est propriétaire des droits de propriété intellectuelle et détient les droits d'usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, icônes et sons. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable.",
       "paragraph2": "Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle."
     },
-
     "section6": {
       "title": "6. Limitations de responsabilité",
       "paragraph1": "Le site agit en tant qu'éditeur du site et est responsable de la qualité et de la véracité du Contenu qu'il publie.",
       "paragraph2": "Le site ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l'utilisateur, lors de l'accès au site internet, et résultant soit de l'utilisation d'un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l'apparition d'un bug ou d'une incompatibilité.",
       "paragraph3": "Le site ne pourra également être tenu responsable des dommages indirects (tels par exemple qu'une perte de marché ou perte d'une chance) consécutifs à l'utilisation du site. Des espaces interactifs (possibilité de poser des questions dans l'espace contact) sont à la disposition des utilisateurs. Le site se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données. Le cas échéant, le site se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l'utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie…)."
     },
-
     "section7": {
       "title": "7. Gestion des données personnelles",
       "intro": "Le Client est informé des réglementations concernant la communication marketing, la loi du 21 juin 2004 pour la confiance dans l'Économie Numérique, la Loi Informatique et Libertés du 6 août 2004 ainsi que du Règlement Général sur la Protection des Données (RGPD : n° 2016-679).",
@@ -376,7 +415,6 @@
         "paragraph3": "Ces données sont conservées pour une période maximale de 13 mois après la fin de la relation contractuelle."
       }
     },
-
     "section8": {
       "title": "8. Notification d'incident",
       "paragraph1": "Quels que soient les efforts fournis, aucune méthode de transmission sur Internet et aucune méthode de stockage électronique n'est complètement sûre. Nous ne pouvons en conséquence pas garantir une sécurité absolue. Si nous prenions connaissance d'une brèche de la sécurité, nous avertirions les utilisateurs concernés afin qu'ils puissent prendre les mesures appropriées. Nos procédures de notification d'incident tiennent compte de nos obligations légales, qu'elles se situent au niveau national ou européen. Nous nous engageons à informer pleinement nos clients de toutes les questions relevant de la sécurité de leur compte et à leur fournir toutes les informations nécessaires pour les aider à respecter leurs propres obligations réglementaires en matière de reporting.",
@@ -387,7 +425,6 @@
         "paragraph2": "Lors du traitement des Données Personnelles, le site prend toutes les mesures raisonnables visant à les protéger contre toute perte, utilisation détournée, accès non autorisé, divulgation, altération ou destruction."
       }
     },
-
     "section9": {
       "title": "9. Liens hypertextes, « cookies » et balises (« tags ») internet",
       "paragraph1": "Le site contient un certain nombre de liens hypertextes vers d'autres sites, mis en place avec son autorisation. Cependant, le site n'a pas la possibilité de vérifier le contenu des sites ainsi visités, et n'assumera en conséquence aucune responsabilité de ce fait.",
@@ -411,12 +448,12 @@
         "paragraph4": "Le prestataire externe pourra éventuellement recueillir des informations sur les visiteurs du Site et d'autres sites Internet grâce à ces balises, constituer des rapports sur l'activité du Site à l'attention du site, et fournir d'autres services relatifs à l'utilisation de celui-ci et d'Internet."
       }
     },
-
     "section10": {
       "title": "10. Droit applicable et attribution de juridiction",
       "paragraph1": "Tout litige en relation avec l'utilisation du site <1>https://codercat.fr</1> est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Dunkerque."
     }
   },
+
   "story": {
     "eyebrow": "Pourquoi ça compte",
     "searchPlaceholder": "café ouvert près de moi",

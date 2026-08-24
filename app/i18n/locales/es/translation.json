@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Desarrollo web y seguridad",
-    "description": "« Desarrollo sitios web rápidos, seguros y fáciles de gestionar para pequeñas empresas, para que puedas trabajar en autonomía desde el primer día. »"
+    "title": "Sitios web seguros para pequeñas empresas",
+    "description": "Diseño sitios web rápidos, profesionales y seguros desde el principio. ¿Ya tienes un sitio WordPress? Empieza con una auditoría de seguridad para identificar los aspectos que se pueden mejorar."
   },
   "nav": {
     "Home": "Inicio",
@@ -17,73 +17,85 @@
   },
   "bio": {
     "title": "Sobre mí",
-    "availability": "Disponible inmediatamente",
+    "availability": "Disponible de inmediato",
     "role": "Desarrollador Full-Stack",
     "location": "Dunkerque, Francia",
     "skills": {
-      "web": "Desarrollo Web",
-      "mobile": "Desarrollo Móvil",
-      "security": "Seguridad Web"
+      "web": "Desarrollo web",
+      "mobile": "Desarrollo móvil",
+      "security": "Seguridad web"
     },
-    "paragraph1": "Ayudo a <1>pequeñas empresas</1> a desarrollar aplicaciones web y móviles modernas, rápidas y seguras, adaptadas a sus necesidades reales.",
-
+    "paragraph1": "Acompaño a las <1>pequeñas empresas</1> en la creación de aplicaciones web y móviles modernas, rápidas y seguras, diseñadas para responder a sus necesidades reales.",
     "paragraph2": "Mi experiencia en informática me permite diseñar soluciones completas, desde la arquitectura hasta el despliegue, priorizando siempre el rendimiento, la calidad del código y una experiencia de usuario cuidada.",
-
-    "paragraph3": "La <1>ciberseguridad</1> forma parte de mi forma de trabajar desde el primer día, integrando buenas prácticas durante todo el desarrollo y no como una tarea añadida al final del proyecto.",
-
-    "paragraph4": "Mi objetivo es crear soluciones fiables, escalables y fáciles de mantener, que aporten valor al negocio y puedan evolucionar junto con las necesidades de cada cliente.",
-
+    "paragraph3": "La <1>ciberseguridad</1> forma parte integral de mi forma de trabajar. Se tiene en cuenta desde el inicio del proyecto y durante todo el desarrollo, en lugar de añadirse al final.",
+    "paragraph4": "Mi objetivo es desarrollar soluciones fiables, escalables y fáciles de mantener, capaces de aportar un valor real a las empresas y evolucionar con sus necesidades.",
     "cta": "Hablemos de tu proyecto"
   },
   "projects": {
     "title": "Algunos proyectos...",
-    "viewSite": "Ver el sitio",
+    "intro1": "Detrás de cada proyecto hay una idea, un reto y muchas horas de aprendizaje. Me gusta diseñar soluciones útiles, sencillas y bien pensadas, dando tanta importancia al aspecto técnico como a la experiencia de las personas que las utilizan.",
+    "intro2": "Aquí encontrarás proyectos que reflejan mi forma de trabajar: curiosidad, perseverancia y ganas de mejorar constantemente. Algunos nacieron para responder a necesidades concretas, otros para experimentar con nuevas tecnologías y seguir aprendiendo.",
+    "intro3": "Cada uno representa una etapa de mi trayectoria como desarrollador. Espero que disfrutes descubriéndolos tanto como yo disfruté creándolos.",
+    "viewSite": "Ver sitio",
     "viewCode": "Código fuente",
-    "dotLabel": "Proyecto {{number}}",
-    "intro1": "Detrás de cada proyecto hay una idea, un reto y muchas horas de aprendizaje. Me gusta crear soluciones útiles, claras y bien pensadas, prestando atención tanto a la parte técnica como a la experiencia de quienes las utilizan.",
-    "intro2": "Aquí encontrarás proyectos que reflejan mi forma de trabajar: curiosidad, constancia y ganas de seguir mejorando. Algunos nacieron para resolver necesidades reales, otros para experimentar con nuevas tecnologías y seguir aprendiendo.",
-    "intro3": "Cada uno representa un paso más en mi recorrido como desarrollador. Espero que disfrutes descubriéndolos tanto como yo disfruté creándolos."
+    "dotLabel": "Proyecto {{number}}"
   },
   "services": {
-    "title": "Planes...",
-    "intro": "Cada proyecto es único. Estos planes están para darte una referencia, no para encasillarte en una oferta. Mi objetivo es crear una solución adaptada a tu actividad, con un desarrollo cuidado, precios transparentes y un acompañamiento desde el primer contacto hasta la puesta en línea. Si tu necesidad va más allá, definimos juntos una solución a medida.",
-    "chooseLabel": "Elige tu plan",
+    "title": "Mis servicios",
+    "intro": "Diseño sitios web modernos, rápidos y profesionales, con la seguridad integrada desde el principio. Si ya tienes un sitio WordPress, puedes empezar con un diagnóstico de seguridad para identificar los puntos que deben corregirse y determinar si conviene asegurar el sitio existente o empezar de nuevo sobre una base sólida.",
+    "chooseLabel": "Creación de sitios web seguros",
     "compareShow": "Comparar los planes en detalle ↓",
-    "compareHide": "Ocultar la comparación ↑",
-    "tableFeature": "Función",
-    "addonsLabel": "Opciones y servicios adicionales",
-    "guaranteeTitle": "Satisfecho o reembolsado — 14 días",
-    "guaranteeText": "Si el entregable no corresponde al pliego de condiciones validado juntos, reembolso íntegramente. Sin discusión.",
+    "compareHide": "Ocultar comparación ↑",
+    "tableFeature": "Funcionalidad",
+    "securityEntry": {
+      "eyebrow": "¿YA TIENES UN SITIO WORDPRESS?",
+      "title": "Empieza con un diagnóstico de seguridad",
+      "description": "Antes de modificar o reconstruir tu sitio, reviso su configuración, sus protecciones y las principales vulnerabilidades habituales. Obtendrás un diagnóstico claro y recomendaciones priorizadas.",
+      "priceLabel": "Desde",
+      "price": "150 – 500 €",
+      "cta": "Diagnosticar mi sitio",
+      "followupTitle": "¿Y si tu sitio necesita ser replanteado?",
+      "followupText": "El diagnóstico también puede ser el punto de partida para un rediseño. Si tu sitio es difícil de mantener, está obsoleto o no se adapta bien a tus necesidades, puedo acompañarte en la creación de un nuevo sitio moderno y seguro desde el principio.",
+      "followupCta": "Descubrir los sitios seguros"
+    },
+    "addonsLabel": "Después del diagnóstico",
+    "addonsIntro": "Según los resultados del diagnóstico, hay varias opciones: corregir lo existente, realizar su mantenimiento o plantear un rediseño hacia un sitio diseñado con la seguridad desde el principio.",
+    "guaranteeTitle": "Un servicio claro y transparente",
+    "guaranteeText": "Cada proyecto se define con un alcance preciso. Las funcionalidades, los plazos y los entregables se validan conjuntamente antes de comenzar el desarrollo. Un diagnóstico no te obliga a rehacer tu sitio.",
     "plans": {
       "starter": {
         "name": "Starter",
         "tag": null,
         "price": "890 €",
         "sub": "pago único",
-        "pitch": "Tu presencia en línea, limpia y rápida.",
+        "pitch": "Una presencia online profesional, rápida y segura desde el principio.",
         "features": [
-          "Sitio web de hasta 5 páginas",
-          "Diseño responsive móvil",
+          "Sitio corporativo de hasta 5 páginas",
+          "Diseño responsive para móviles",
           "SEO técnico básico",
           "Formulario de contacto",
-          "RGPD esencial (avisos, cookies)",
+          "HTTPS y configuración segura",
+          "RGPD esencial",
+          "Controles de seguridad antes de la publicación",
           "Entrega en 2 semanas"
         ],
-        "cta": "Empezar"
+        "cta": "Crear mi sitio"
       },
       "pro": {
         "name": "Pro",
         "tag": "El más elegido",
-        "price": "1.990 €",
+        "price": "1 990 €",
         "sub": "pago único",
-        "pitch": "Un sitio que trabaja para ti, no solo que te representa.",
+        "pitch": "Un sitio profesional diseñado para acompañar tu actividad con funcionalidades avanzadas y una seguridad reforzada.",
         "features": [
-          "Todo lo de Starter incluido",
-          "Área de cliente o portal profesional",
-          "Reserva de citas en línea",
+          "Todo lo incluido en Starter",
+          "Área de clientes o portal profesional",
+          "Reserva de citas online",
           "Panel de administración",
-          "Auditoría de seguridad incluida",
-          "RGPD completo (Privacy by Design)",
+          "Seguridad reforzada",
+          "Controles de seguridad exhaustivos",
+          "Protección de datos desde el diseño",
+          "Optimización del rendimiento",
           "Entrega en 3 a 4 semanas"
         ],
         "cta": "Elegir Pro"
@@ -91,16 +103,19 @@
       "custom": {
         "name": "A medida",
         "tag": null,
-        "price": "Bajo presupuesto",
-        "sub": "según complejidad",
-        "pitch": "Aplicación web, SaaS, software profesional — tú describes, yo construyo.",
+        "price": "Presupuesto personalizado",
+        "sub": "según el proyecto",
+        "pitch": "Aplicación web, SaaS o software profesional: una solución diseñada en función de tus necesidades y tu nivel de riesgo.",
         "features": [
-          "Todo lo de Pro incluido",
-          "Arquitectura escalable",
+          "Todo lo incluido en Pro",
+          "Análisis de necesidades y riesgos",
+          "Arquitectura adaptada al proyecto",
           "API e integraciones de terceros",
           "Pruebas automatizadas",
-          "CI/CD y despliegue en la nube",
-          "Acompañamiento posterior a la entrega"
+          "CI/CD y despliegue",
+          "Seguridad adaptada a la arquitectura",
+          "Acompañamiento posterior a la entrega",
+          "Evoluciones a medida"
         ],
         "cta": "Hablemos"
       }
@@ -109,8 +124,8 @@
       {
         "label": "Páginas incluidas",
         "starter": "5",
-        "pro": "Ilimitadas",
-        "custom": "Ilimitadas"
+        "pro": "Según el proyecto",
+        "custom": "A medida"
       },
       {
         "label": "Diseño responsive",
@@ -119,28 +134,28 @@
         "custom": true
       },
       {
-        "label": "SEO técnico",
+        "label": "SEO technique",
         "starter": "Básico",
         "pro": "Avanzado",
         "custom": "Avanzado"
       },
       {
-        "label": "Área de cliente",
+        "label": "Área de clientes",
         "starter": false,
         "pro": true,
         "custom": true
       },
       {
-        "label": "Auditoría de seguridad",
-        "starter": false,
-        "pro": true,
-        "custom": true
+        "label": "Controles de seguridad",
+        "starter": "Antes de la publicación",
+        "pro": "Exhaustivos",
+        "custom": "Adaptados al proyecto"
       },
       {
-        "label": "RGPD completo",
-        "starter": false,
-        "pro": true,
-        "custom": true
+        "label": "Protección de datos",
+        "starter": "Esencial",
+        "pro": "Reforzada",
+        "custom": "Según el proyecto"
       },
       {
         "label": "API e integraciones",
@@ -150,45 +165,50 @@
       },
       {
         "label": "Soporte posterior a la entrega",
-        "starter": "30 d",
-        "pro": "60 d",
+        "starter": "30 días",
+        "pro": "60 días",
         "custom": "A medida"
       }
     ],
     "addons": {
       "security": {
-        "title": "Auditoría de seguridad",
+        "title": "Diagnóstico de seguridad de WordPress",
         "price": "150 – 500 €",
         "items": [
-          "Inyecciones SQL y XSS",
-          "Accesos no protegidos",
-          "Exposición de contraseñas",
-          "Cabeceras HTTP seguras",
-          "Conformidad RGPD verificada",
-          "Informe claro, acciones priorizadas",
-          "Duración: 1 a 2 días"
+          "Análisis de la configuración de WordPress",
+          "Verificación del CMS, las extensiones y el tema",
+          "Verificación de las cabeceras HTTP",
+          "HTTPS, cookies y protecciones del navegador",
+          "Búsqueda de vulnerabilidades web habituales",
+          "Verificación de accesos y funcionalidades expuestas",
+          "Búsqueda de información sensible accesible",
+          "Verificación de las principales protecciones del sitio",
+          "Informe claro con recomendaciones priorizadas",
+          "Consejos para proteger o evolucionar el sitio"
         ]
       },
       "maintenance": {
-        "title": "Mantenimiento mensual",
-        "price": "29 – 99 € / mes",
+        "title": "Mantenimiento y seguridad",
+        "price": "29 – 99 € / mois",
         "items": [
-          "Vigilancia 24/7",
-          "Actualizaciones de seguridad",
-          "Copias de seguridad automáticas",
-          "Informe mensual de rendimiento",
-          "1h de modificaciones incluida"
+          "Actualizaciones técnicas y de seguridad",
+          "Monitorización de disponibilidad",
+          "Copias de seguridad según el alojamiento",
+          "Verificación periódica del sitio",
+          "Pequeñas correcciones y modificaciones",
+          "Acompañamiento en caso de problema"
         ]
       },
       "gdpr": {
-        "title": "RGPD reforzado",
-        "price": "Incluido en Pro y A medida",
+        "title": "Protección de datos",
+        "price": "Presupuesto personalizado",
         "items": [
-          "Cifrado de extremo a extremo",
-          "Derecho al olvido automatizado",
-          "Consentimiento granular",
-          "Registro de tratamientos automático",
-          "Mercados regulados abiertos"
+          "Configuración técnica relacionada con la protección de datos",
+          "Gestión de consentimientos",
+          "Configuración de cookies",
+          "Reducción de la recopilación de datos",
+          "Protección de datos personales",
+          "Acompañamiento técnico sobre las necesidades de RGPD"
         ]
       }
     }
@@ -200,20 +220,20 @@
   },
   "testimonialForm": {
     "errors": {
-      "noRating": "Por favor, indica una puntuación.",
+      "noRating": "Por favor, indica una valoración.",
       "noConsent": "Por favor, acepta la política de privacidad para enviar tu testimonio.",
-      "generic": "Se ha producido un error, inténtalo de nuevo."
+      "generic": "Se ha producido un error. Inténtalo de nuevo."
     },
     "success": {
       "title": "¡Gracias por tu opinión!",
-      "text": "Se publicará tras su validación."
+      "text": "Se publicará después de su validación."
     },
     "namePlaceholder": "Tu nombre *",
     "companyPlaceholder": "Empresa (opcional)",
     "projectPlaceholder": "Proyecto relacionado (opcional)",
     "messagePlaceholder": "Tu testimonio *",
-    "ratingLabel": "Puntuación *",
-    "consentText": "Acepto que mis datos sean tratados conforme a la",
+    "ratingLabel": "Valoración *",
+    "consentText": "Acepto que mis datos sean tratados de acuerdo con la",
     "consentLink": "política de privacidad",
     "submit": "Enviar mi opinión",
     "submitting": "Enviando..."
@@ -221,7 +241,7 @@
   "contact": {
     "title": "Contacto",
     "secureBadge": "Formulario seguro",
-    "description": "¿Tienes una idea o un proyecto en mente? Cuéntame qué necesitas, cuál es tu objetivo o simplemente en qué punto te encuentras. Te responderé en un plazo de 24 a 48 horas para que podamos encontrar la mejor solución juntos.",
+    "description": "¿Tienes un proyecto, un sitio WordPress que quieres revisar o alguna pregunta? Rellena el formulario y te responderé en un plazo de 24 a 48 horas para que encontremos juntos la solución más adecuada.",
     "whatsapp": {
       "text": "¿Prefieres un contacto rápido?",
       "link": "Contáctame por WhatsApp"
@@ -233,7 +253,7 @@
     "messagePlaceholder": "Tu mensaje",
     "submit": "Enviar",
     "submitting": "Enviando...",
-    "successMessage": "Mensaje enviado con éxito.",
+    "successMessage": "Mensaje enviado correctamente.",
     "errorMessage": "Se ha producido un error al enviar el mensaje."
   },
   "privacyPolicy": {
@@ -244,12 +264,12 @@
   },
   "privacyModal": {
     "title": "Política de privacidad",
-    "scrollHint": "Desplácese hasta el final para poder aceptar la política de privacidad.",
+    "scrollHint": "Desplázate hasta el final para poder aceptar la política de privacidad.",
     "acceptButton": "He leído y comprendido esta política"
   },
   "cookieModal": {
     "title": "Gestionar las cookies",
-    "description": "Utilizamos Google Analytics y Microsoft Clarity para medir la audiencia del sitio. Estas cookies no son esenciales y solo se depositan con su consentimiento.",
+    "description": "Utilizamos Google Analytics y Microsoft Clarity para medir la audiencia del sitio. Estas cookies no son esenciales y solo se instalan con tu consentimiento.",
     "statusLabel": "Estado actual:",
     "statusAccepted": "cookies aceptadas",
     "statusRefused": "cookies rechazadas",
@@ -258,169 +278,158 @@
     "accept": "Aceptar"
   },
   "cookieBanner": {
-    "ariaLabel": "Gestión de cookies",
-    "text": "Este sitio utiliza cookies de medición de audiencia (Google Analytics, Microsoft Clarity). Solo se depositan con tu consentimiento. Más información en nuestra <0>política de privacidad</0>. Podrás modificar tu elección en cualquier momento desde el enlace <1>« Gestionar las cookies »</1> en la parte inferior del menú de navegación.",
+    "ariaLabel": "Gestión de las cookies",
+    "text": "Este sitio utiliza cookies de medición de audiencia (Google Analytics, Microsoft Clarity). Solo se instalan con tu consentimiento. Más información en nuestra <0>política de privacidad</0>. Puedes cambiar tu elección en cualquier momento desde el enlace <1>« Gestionar las cookies »</1> situado al final del menú de navegación.",
     "refuse": "Rechazar",
     "accept": "Aceptar"
   },
   "errors": {
-    "nameTooShort": "Nombre demasiado corto (mín. 2 caracteres)!",
-    "emailInvalid": "Email inválido (formato nombre@servidor.dom)!",
-    "messageTooShort": "Mensaje demasiado corto (mín. 10 caracteres)!"
+    "nameTooShort": "¡Nombre demasiado corto (mín. 2 caracteres)!",
+    "emailInvalid": "¡Correo electrónico no válido (formato nombre@servidor.dom)!",
+    "messageTooShort": "¡Mensaje demasiado corto (mín. 10 caracteres)!"
   },
   "legalNotice": {
     "title": "Aviso legal",
     "lastUpdate": "Última actualización: julio de 2026.",
-
     "definitions": {
       "title": "Definiciones",
-      "client": "<0>Cliente:</0> todo profesional o persona física con capacidad jurídica en el sentido de los artículos 1123 y siguientes del Código Civil francés, o persona jurídica, que visite el Sitio objeto de las presentes condiciones generales.",
-      "services": "<0>Prestaciones y Servicios:</0> <1>https://codercat.fr</1> pone a disposición de los Clientes servicios de desarrollo web.",
-      "content": "<0>Contenido:</0> Conjunto de elementos que constituyen la información presente en el Sitio, en particular textos, imágenes, vídeos.",
-      "clientInfo": "<0>Información de clientes:</0> En adelante denominada «Información(es)», que corresponde al conjunto de datos personales que puede conservar <1>https://codercat.fr</1> para la gestión de su cuenta, la gestión de la relación con el cliente y con fines de análisis y estadísticas.",
-      "user": "<0>Usuario:</0> Internauta que se conecta y utiliza el sitio mencionado.",
-      "personalInfo": "<0>Información personal:</0> «La información que permite, de cualquier forma, directa o indirectamente, la identificación de las personas físicas a las que se aplica» (artículo 4 de la ley n.º 78-17 del 6 de enero de 1978).",
-      "gdprTerms": "Los términos «datos de carácter personal», «interesado», «encargado del tratamiento» y «datos sensibles» tienen el significado definido por el Reglamento General de Protección de Datos (RGPD: n.º 2016-679)."
+      "client": "<0>Cliente:</0> tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.",
+      "services": "<0>Prestaciones y servicios:</0> <1>https://codercat.fr</1> met à disposition des Clients des prestations de développement web.",
+      "content": "<0>Contenido:</0> Ensemble des éléments constituants l'information présente sur le Site, notamment textes, images, vidéos.",
+      "clientInfo": "<0>Información del cliente:</0> Ci-après dénommé « Information(s) », qui correspondent à l'ensemble des données personnelles susceptibles d'être détenues par <1>https://codercat.fr</1> pour la gestion de votre compte, de la gestion de la relation client et à des fins d'analyses et de statistiques.",
+      "user": "<0>Usuario:</0> Internaute se connectant, utilisant le site susnommé.",
+      "personalInfo": "<0>Información personal:</0> « Les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).",
+      "gdprTerms": "Los términos «datos personales», «interesado», «encargado del tratamiento» y «datos sensibles» tienen el significado definido por el Reglamento General de Protección de Datos (RGPD: n.º 2016-679)."
     },
-
     "section1": {
       "title": "1. Presentación del sitio web",
-      "intro": "En virtud del artículo 6 de la ley n.º 2004-575 del 21 de junio de 2004 para la confianza en la economía digital, se informa a los usuarios del sitio web <1>https://codercat.fr</1> de la identidad de los distintos intervinientes en el marco de su realización y seguimiento:",
-      "owner": "<0>Propietario:</0> Asociación declarada (Ley de 1901) codercat, sin capital social — 4 rue du parc, 59240 Dunkerque",
-      "publisher": "<0>Responsable de publicación:</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
-      "webmaster": "<0>Webmaster:</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
-      "host": "<0>Alojamiento:</0> Vercel Inc. — 440 N Barranca Avenue #4133, Covina, CA 91723, Estados Unidos — <1>vercel.com</1>",
-      "dpo": "<0>Delegado de protección de datos:</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
-      "domain": "El nombre de dominio está registrado ante OVHcloud y los DNS se gestionan a través de Cloudflare, Inc., sin incidencia en el alojamiento del contenido del sitio.",
-      "credit": "El aviso legal se basa en el modelo propuesto por el <1>generador gratuito ofrecido por Orson.io</1>."
+      "intro": "En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet <1>https://codercat.fr</1> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :",
+      "owner": "<0>Propriétaire :</0> Association déclarée (Loi 1901) codercat, sans capital social — 4 rue du parc, 59240 Dunkerque",
+      "publisher": "<0>Responsable de publication :</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
+      "webmaster": "<0>Webmaster :</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
+      "host": "<0>Hébergeur :</0> Vercel Inc. — 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis — <1>vercel.com</1>",
+      "dpo": "<0>Délégué à la protection des données :</0> Marcos Manzanares — <1>marcosmanzanaresdev@gmail.com</1>",
+      "domain": "Le nom de domaine est enregistré auprès d'OVHcloud et les DNS sont gérés via Cloudflare, Inc., sans incidence sur l'hébergement du contenu du site.",
+      "credit": "Les mentions légales sont issues du modèle proposé par le <1>générateur gratuit offert par Orson.io</1>."
     },
-
     "section2": {
       "title": "2. Condiciones generales de uso del sitio y de los servicios ofrecidos",
-      "paragraph1": "El Sitio constituye una obra intelectual protegida por las disposiciones del Código de Propiedad Intelectual y las normativas internacionales aplicables. El Cliente no puede en ningún caso reutilizar, ceder o explotar por su propia cuenta la totalidad o parte de los elementos o trabajos del Sitio.",
-      "paragraph2": "El uso del sitio <1>https://codercat.fr</1> implica la aceptación plena y total de las condiciones generales de uso descritas a continuación. Estas condiciones de uso pueden modificarse o completarse en cualquier momento; por ello, se invita a los usuarios del sitio a consultarlas de manera regular.",
-      "paragraph3": "Este sitio web es normalmente accesible en todo momento para los usuarios. No obstante, el sitio puede decidir una interrupción por motivos de mantenimiento técnico, esforzándose en comunicar previamente a los usuarios las fechas y horas de la intervención. El sitio web se actualiza regularmente por su responsable. Del mismo modo, el aviso legal puede modificarse en cualquier momento: se impone, no obstante, al usuario, quien debe consultarlo con la mayor frecuencia posible para tener conocimiento de él."
+      "paragraph1": "Le Site constitue une œuvre de l'esprit protégée par les dispositions du Code de la Propriété Intellectuelle et des Réglementations Internationales applicables. Le Client ne peut en aucune manière réutiliser, céder ou exploiter pour son propre compte tout ou partie des éléments ou travaux du Site.",
+      "paragraph2": "L'utilisation du site <1>https://codercat.fr</1> implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites. Ces conditions d'utilisation sont susceptibles d'être modifiées ou complétées à tout moment ; les utilisateurs du site sont donc invités à les consulter de manière régulière.",
+      "paragraph3": "Ce site internet est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par le site, qui s'efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l'intervention. Le site web est mis à jour régulièrement par son responsable. De la même façon, les mentions légales peuvent être modifiées à tout moment : elles s'imposent néanmoins à l'utilisateur qui est invité à s'y référer le plus souvent possible afin d'en prendre connaissance."
     },
-
     "section3": {
       "title": "3. Descripción de los servicios prestados",
-      "paragraph1": "El sitio web <1>https://codercat.fr</1> tiene como objetivo proporcionar información sobre el conjunto de actividades de la empresa. Se esfuerza por ofrecer información lo más precisa posible. No obstante, no podrá ser considerado responsable de las omisiones, inexactitudes y carencias en la actualización, ya sean de su propia responsabilidad o de terceros que le proporcionen dicha información.",
-      "paragraph2": "Toda la información indicada en el sitio se proporciona a título orientativo y está sujeta a cambios. Además, la información que figura en el sitio no es exhaustiva. Se ofrece con la salvedad de las modificaciones que se hayan podido introducir desde su publicación."
+      "paragraph1": "Le site internet <1>https://codercat.fr</1> a pour objet de fournir une information concernant l'ensemble des activités de la société. Il s'efforce de fournir des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des oublis, des inexactitudes et des carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.",
+      "paragraph2": "Toutes les informations indiquées sur le site sont données à titre indicatif, et sont susceptibles d'évoluer. Par ailleurs, les renseignements figurant sur le site ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne."
     },
-
     "section4": {
       "title": "4. Limitaciones contractuales sobre los datos técnicos",
-      "paragraph1": "El sitio utiliza la tecnología JavaScript. No podrá ser considerado responsable de los daños materiales derivados del uso del sitio. Además, el usuario del sitio se compromete a acceder a él utilizando un equipo reciente, sin virus y con un navegador de última generación actualizado.",
-      "paragraph2": "El sitio <1>https://codercat.fr</1> está alojado en un proveedor situado en el territorio de la Unión Europea, de conformidad con las disposiciones del Reglamento General de Protección de Datos (RGPD: n.º 2016-679).",
-      "paragraph3": "El objetivo es ofrecer una prestación que garantice la mejor tasa de accesibilidad. El proveedor de alojamiento asegura la continuidad de su servicio las 24 horas del día, todos los días del año. No obstante, se reserva la posibilidad de interrumpir el servicio de alojamiento durante los periodos más breves posibles, en particular con fines de mantenimiento, mejora de sus infraestructuras, avería de las mismas o si las Prestaciones y Servicios generan un tráfico considerado anormal.",
-      "paragraph4": "El sitio y el proveedor de alojamiento no podrán ser considerados responsables en caso de mal funcionamiento de la red de Internet, de las líneas telefónicas o del equipo informático y de telefonía relacionado, en particular, con la congestión de la red que impida el acceso al servidor."
+      "paragraph1": "Le site utilise la technologie JavaScript. Il ne pourra être tenu responsable de dommages matériels liés à l'utilisation du site. De plus, l'utilisateur du site s'engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis à jour.",
+      "paragraph2": "Le site <1>https://codercat.fr</1> est hébergé chez un prestataire sur le territoire de l'Union Européenne conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD : n° 2016-679).",
+      "paragraph3": "L'objectif est d'apporter une prestation qui assure le meilleur taux d'accessibilité. L'hébergeur assure la continuité de son service 24 heures sur 24, tous les jours de l'année. Il se réserve néanmoins la possibilité d'interrompre le service d'hébergement pour les durées les plus courtes possibles, notamment à des fins de maintenance, d'amélioration de ses infrastructures, de défaillance de ses infrastructures ou si les Prestations et Servicios génèrent un trafic réputé anormal.",
+      "paragraph4": "Le site et l'hébergeur ne pourront être tenus responsables en cas de dysfonctionnement du réseau Internet, des lignes téléphoniques ou du matériel informatique et de téléphonie lié notamment à l'encombrement du réseau empêchant l'accès au serveur."
     },
-
     "section5": {
-      "title": "5. Propiedad intelectual y falsificaciones",
-      "paragraph1": "El sitio es propietario de los derechos de propiedad intelectual y posee los derechos de uso sobre todos los elementos accesibles en el sitio web, en particular textos, imágenes, gráficos, logotipos, vídeos, iconos y sonidos. Queda prohibida cualquier reproducción, representación, modificación, publicación o adaptación de la totalidad o parte de los elementos del sitio, cualquiera que sea el medio o procedimiento utilizado, salvo autorización previa por escrito.",
-      "paragraph2": "Cualquier explotación no autorizada del sitio o de cualquiera de los elementos que contiene se considerará constitutiva de una infracción y será perseguida de conformidad con las disposiciones de los artículos L.335-2 y siguientes del Código de Propiedad Intelectual."
+      "title": "5. Propiedad intelectual e infracciones",
+      "paragraph1": "Le site est propriétaire des droits de propriété intellectuelle et détient les droits d'usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, icônes et sons. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable.",
+      "paragraph2": "Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle."
     },
-
     "section6": {
       "title": "6. Limitaciones de responsabilidad",
-      "paragraph1": "El sitio actúa como editor del sitio y es responsable de la calidad y veracidad del Contenido que publica.",
-      "paragraph2": "El sitio no podrá ser considerado responsable de los daños directos e indirectos causados al equipo del usuario al acceder al sitio web, y que resulten bien del uso de un equipo que no cumpla con las especificaciones indicadas en el punto 4, bien de la aparición de un fallo o de una incompatibilidad.",
-      "paragraph3": "El sitio tampoco podrá ser considerado responsable de los daños indirectos (como, por ejemplo, una pérdida de mercado o de una oportunidad) derivados del uso del sitio. Se ponen a disposición de los usuarios espacios interactivos (posibilidad de hacer preguntas en el espacio de contacto). El sitio se reserva el derecho de eliminar, sin previo aviso, cualquier contenido publicado en dicho espacio que infrinja la legislación aplicable en Francia, en particular las disposiciones relativas a la protección de datos. En su caso, el sitio se reserva también la posibilidad de exigir responsabilidad civil y/o penal al usuario, en particular en caso de mensajes de carácter racista, injurioso, difamatorio o pornográfico, sea cual sea el soporte utilizado (texto, fotografía…)."
+      "paragraph1": "Le site agit en tant qu'éditeur du site et est responsable de la qualité et de la véracité du Contenu qu'il publie.",
+      "paragraph2": "Le site ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l'utilisateur, lors de l'accès au site internet, et résultant soit de l'utilisation d'un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l'apparition d'un bug ou d'une incompatibilité.",
+      "paragraph3": "Le site ne pourra également être tenu responsable des dommages indirects (tels par exemple qu'une perte de marché ou perte d'une chance) consécutifs à l'utilisation du site. Des espaces interactifs (possibilité de poser des questions dans l'espace contact) sont à la disposition des utilisateurs. Le site se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données. Le cas échéant, le site se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l'utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie…)."
     },
-
     "section7": {
       "title": "7. Gestión de los datos personales",
-      "intro": "El Cliente está informado de las normativas relativas a la comunicación de marketing, la ley del 21 de junio de 2004 para la confianza en la Economía Digital, la Ley de Informática y Libertades del 6 de agosto de 2004, así como del Reglamento General de Protección de Datos (RGPD: n.º 2016-679).",
+      "intro": "Le Client est informé des réglementations concernant la communication marketing, la loi du 21 juin 2004 pour la confiance dans l'Économie Numérique, la Loi Informatique et Libertés du 6 août 2004 ainsi que du Règlement Général sur la Protection des Données (RGPD : n° 2016-679).",
       "collectors": {
-        "title": "7.1 Responsables de la recogida de datos personales",
-        "paragraph1": "Para los Datos Personales recogidos en el marco de la creación de la cuenta personal del Usuario y de su navegación por el Sitio, el responsable del tratamiento de los Datos Personales es codercat, representada por Marcos Manzanares, su representante legal.",
-        "paragraph2": "Como responsable del tratamiento de los datos que recoge, el sitio se compromete a respetar el marco de las disposiciones legales vigentes. Le corresponde, en particular, establecer las finalidades de sus tratamientos de datos, proporcionar a sus prospectos y clientes, a partir de la recogida de sus consentimientos, información completa sobre el tratamiento de sus datos personales, y mantener un registro de tratamientos conforme a la realidad. Cada vez que el sitio trata Datos Personales, adopta todas las medidas razonables para garantizar la exactitud y pertinencia de los Datos Personales en relación con las finalidades para las que los trata."
+        "title": "7.1 Responsables de la recopilación de datos personales",
+        "paragraph1": "Pour les Données Personnelles collectées dans le cadre de la création du compte personnel de l'Utilisateur et de sa navigation sur le Site, le responsable du traitement des Données Personnelles est codercat, représenté par Marcos Manzanares, son représentant légal.",
+        "paragraph2": "En tant que responsable du traitement des données qu'il collecte, le site s'engage à respecter le cadre des dispositions légales en vigueur. Il lui appartient notamment d'établir les finalités de ses traitements de données, de fournir à ses prospects et clients, à partir de la collecte de leurs consentements, une information complète sur le traitement de leurs données personnelles et de maintenir un registre des traitements conforme à la réalité. Chaque fois que le site traite des Données Personnelles, il prend toutes les mesures raisonnables pour s'assurer de l'exactitude et de la pertinence des Données Personnelles au regard des finalités pour lesquelles il les traite."
       },
       "purpose": {
-        "title": "7.2 Finalidad de los datos recogidos",
-        "intro": "El sitio puede tratar la totalidad o parte de los datos:",
-        "item1": "para permitir la navegación por el Sitio y la gestión y trazabilidad de las prestaciones y servicios solicitados por el usuario: datos de conexión y uso del Sitio, facturación, historial de pedidos, etc.",
-        "item2": "para prevenir y combatir el fraude informático (spam, hacking…): equipo informático utilizado para la navegación, dirección IP, contraseña (cifrada)",
-        "item3": "para mejorar la navegación por el Sitio: datos de conexión y uso",
-        "item4": "para realizar encuestas de satisfacción opcionales: dirección de correo electrónico",
-        "item5": "para llevar a cabo campañas de comunicación (SMS, correo electrónico): número de teléfono, dirección de correo electrónico",
-        "noSale": "El sitio no comercializa sus datos personales, que se utilizan únicamente por necesidad o con fines estadísticos y de análisis."
+        "title": "7.2 Finalidad de los datos recopilados",
+        "intro": "Le site est susceptible de traiter tout ou partie des données :",
+        "item1": "pour permettre la navigation sur le Site et la gestion et la traçabilité des prestations et services commandés par l'utilisateur : données de connexion et d'utilisation du Site, facturation, historique des commandes, etc.",
+        "item2": "pour prévenir et lutter contre la fraude informatique (spamming, hacking…) : matériel informatique utilisé pour la navigation, l'adresse IP, le mot de passe (hashé)",
+        "item3": "pour améliorer la navigation sur le Site : données de connexion et d'utilisation",
+        "item4": "pour mener des enquêtes de satisfaction facultatives : adresse email",
+        "item5": "pour mener des campagnes de communication (SMS, e-mail) : numéro de téléphone, adresse email",
+        "noSale": "Le site ne commercialise pas vos données personnelles, qui sont donc uniquement utilisées par nécessité ou à des fins statistiques et d'analyses."
       },
       "rights": {
         "title": "7.3 Derecho de acceso, rectificación y oposición",
-        "intro": "De conformidad con la normativa europea vigente, los Usuarios disponen de los siguientes derechos:",
-        "item1": "derecho de acceso (artículo 15 RGPD) y de rectificación (artículo 16 RGPD), de actualización, de completitud de los datos de los Usuarios, derecho de bloqueo o de supresión de los datos personales de los Usuarios (artículo 17 del RGPD), cuando sean inexactos, incompletos, equívocos, caducados, o cuya recogida, uso, comunicación o conservación esté prohibida",
-        "item2": "derecho a retirar en cualquier momento un consentimiento (artículo 13-2c RGPD)",
-        "item3": "derecho a la limitación del tratamiento de los datos de los Usuarios (artículo 18 RGPD)",
-        "item4": "derecho de oposición al tratamiento de los datos de los Usuarios (artículo 21 RGPD)",
-        "item5": "derecho a la portabilidad de los datos que los Usuarios hayan proporcionado, cuando dichos datos sean objeto de tratamientos automatizados basados en su consentimiento o en un contrato (artículo 20 RGPD)",
-        "item6": "derecho a definir el destino de los datos de los Usuarios después de su fallecimiento y a elegir a quién deberá comunicar (o no) el sitio sus datos a un tercero previamente designado",
-        "death": "En cuanto el sitio tenga conocimiento del fallecimiento de un Usuario y, a falta de instrucciones por su parte, se compromete a destruir sus datos, salvo que su conservación resulte necesaria con fines probatorios o para responder a una obligación legal.",
-        "contact": "Si el Usuario desea saber cómo utiliza el sitio sus Datos Personales, solicitar su rectificación u oponerse a su tratamiento, puede contactar con el sitio por escrito a la siguiente dirección:",
+        "intro": "Conformément à la réglementation européenne en vigueur, les Utilisateurs disposent des droits suivants :",
+        "item1": "droit d'accès (article 15 RGPD) et de rectification (article 16 RGPD), de mise à jour, de complétude des données des Utilisateurs, droit de verrouillage ou d'effacement des données des Utilisateurs à caractère personnel (article 17 du RGPD), lorsqu'elles sont inexactes, incomplètes, équivoques, périmées, ou dont la collecte, l'utilisation, la communication ou la conservation est interdite",
+        "item2": "droit de retirer à tout moment un consentement (article 13-2c RGPD)",
+        "item3": "droit à la limitation du traitement des données des Utilisateurs (article 18 RGPD)",
+        "item4": "droit d'opposition au traitement des données des Utilisateurs (article 21 RGPD)",
+        "item5": "droit à la portabilité des données que les Utilisateurs auront fournies, lorsque ces données font l'objet de traitements automatisés fondés sur leur consentement ou sur un contrat (article 20 RGPD)",
+        "item6": "droit de définir le sort des données des Utilisateurs après leur mort et de choisir à qui le site devra communiquer (ou non) ses données à un tiers qu'il aura préalablement désigné",
+        "death": "Dès que le site a connaissance du décès d'un Utilisateur et à défaut d'instructions de sa part, il s'engage à détruire ses données, sauf si leur conservation s'avère nécessaire à des fins probatoires ou pour répondre à une obligation légale.",
+        "contact": "Si l'Utilisateur souhaite savoir comment le site utilise ses Données Personnelles, demander à les rectifier ou s'opposer à leur traitement, il peut contacter le site par écrit à l'adresse suivante :",
         "contactName": "codercat — DPO, Marcos Manzanares",
         "contactAddress": "4 rue du parc, 59240 Dunkerque",
-        "identification": "En ese caso, el Usuario deberá indicar los Datos Personales que desea que el sitio corrija, actualice o elimine, identificándose de manera precisa mediante una copia de un documento de identidad (carné de identidad o pasaporte).",
-        "cnil": "Las solicitudes de eliminación de Datos Personales estarán sujetas a las obligaciones impuestas al sitio por la ley, en particular en materia de conservación o archivo de documentos. Por último, los Usuarios pueden presentar una reclamación ante las autoridades de control, en particular ante la CNIL (<1>cnil.fr/fr/plaintes</1>"
+        "identification": "Dans ce cas, l'Utilisateur doit indiquer les Données Personnelles qu'il souhaiterait que le site corrige, mette à jour ou supprime, en s'identifiant précisément avec une copie d'une pièce d'identité (carte d'identité ou passeport).",
+        "cnil": "Les demandes de suppression de Données Personnelles seront soumises aux obligations qui sont imposées au site par la loi, notamment en matière de conservation ou d'archivage des documents. Enfin, les Utilisateurs peuvent déposer une réclamation auprès des autorités de contrôle, et notamment de la CNIL (<1>cnil.fr/fr/plaintes</1>"
       },
       "noDisclosure": {
-        "title": "7.4 No comunicación de los datos personales",
-        "paragraph1": "El sitio se prohíbe tratar, alojar o transferir la Información recogida sobre sus Clientes hacia un país situado fuera de la Unión Europea o considerado «no adecuado» por la Comisión Europea sin informar previamente al cliente. No obstante, sigue siendo libre de elegir a sus subcontratistas técnicos y comerciales siempre que presenten las garantías suficientes en relación con las exigencias del RGPD (n.º 2016-679).",
-        "paragraph2": "El sitio se compromete a tomar todas las precauciones necesarias para preservar la seguridad de la Información y, en particular, a que no sea comunicada a personas no autorizadas. Sin embargo, si se pone en su conocimiento un incidente que afecte a la integridad o confidencialidad de la Información del Cliente, deberá informar al Cliente lo antes posible y comunicarle las medidas correctoras adoptadas. Por lo demás, el sitio no recoge ningún «dato sensible».",
-        "paragraph3": "Los Datos Personales del Usuario pueden ser tratados por filiales del sitio y por subcontratistas (proveedores de servicios), exclusivamente para llevar a cabo las finalidades de la presente política. Dentro de los límites de sus respectivas atribuciones y para las finalidades mencionadas anteriormente, las principales personas con posible acceso a los datos de los Usuarios son principalmente los agentes de nuestro servicio de atención al cliente."
+        "title": "7.4 No comunicación de datos personales",
+        "paragraph1": "Le site s'interdit de traiter, héberger ou transférer les Informations collectées sur ses Clients vers un pays situé en dehors de l'Union européenne ou reconnu comme « non adéquat » par la Commission européenne sans en informer préalablement le client. Pour autant, il reste libre du choix de ses sous-traitants techniques et commerciaux à la condition qu'ils présentent les garanties suffisantes au regard des exigences du RGPD (n° 2016-679).",
+        "paragraph2": "Le site s'engage à prendre toutes les précautions nécessaires afin de préserver la sécurité des Informations et notamment qu'elles ne soient pas communiquées à des personnes non autorisées. Cependant, si un incident impactant l'intégrité ou la confidentialité des Informations du Client est porté à sa connaissance, il devra dans les meilleurs délais informer le Client et lui communiquer les mesures de corrections prises. Par ailleurs, le site ne collecte aucune « donnée sensible ».",
+        "paragraph3": "Les Données Personnelles de l'Utilisateur peuvent être traitées par des filiales du site et des sous-traitants (prestataires de services), exclusivement afin de réaliser les finalités de la présente politique. Dans la limite de leurs attributions respectives et pour les finalités rappelées ci-dessus, les principales personnes susceptibles d'avoir accès aux données des Utilisateurs sont principalement les agents de notre service client."
       },
       "dataTypes": {
-        "title": "7.5 Tipos de datos recogidos",
-        "paragraph1": "En cuanto a los usuarios del sitio, recogemos los siguientes datos, indispensables para el funcionamiento del servicio, que se conservarán durante un período máximo de 13 meses tras el fin de la relación contractual: nombre, empresa, proyecto.",
-        "paragraph2": "El sitio recoge además información que permite mejorar la experiencia del usuario y ofrecer consejos contextualizados, en particular gracias a herramientas de medición de audiencia y análisis de navegación como Google Analytics y Microsoft Clarity.",
-        "paragraph3": "Estos datos se conservan durante un período máximo de 13 meses tras el fin de la relación contractual."
+        "title": "7.5 Tipos de datos recopilados",
+        "paragraph1": "Concernant les utilisateurs du site, nous collectons les données suivantes, indispensables au fonctionnement du service, et qui seront conservées pendant une période maximale de 13 mois après la fin de la relation contractuelle : nom, entreprise, projet.",
+        "paragraph2": "Le site collecte en outre des informations qui permettent d'améliorer l'expérience utilisateur et de proposer des conseils contextualisés, notamment grâce à des outils de mesure d'audience et d'analyse de navigation tels que Google Analytics et Microsoft Clarity.",
+        "paragraph3": "Ces données sont conservées pour une période maximale de 13 mois après la fin de la relation contractuelle."
       }
     },
-
     "section8": {
       "title": "8. Notificación de incidentes",
-      "paragraph1": "Sean cuales sean los esfuerzos realizados, ningún método de transmisión por Internet ni ningún método de almacenamiento electrónico es completamente seguro. En consecuencia, no podemos garantizar una seguridad absoluta. Si tuviéramos conocimiento de una brecha de seguridad, avisaríamos a los usuarios afectados para que pudieran tomar las medidas oportunas. Nuestros procedimientos de notificación de incidentes tienen en cuenta nuestras obligaciones legales, ya sean a nivel nacional o europeo. Nos comprometemos a informar plenamente a nuestros clientes de todas las cuestiones relativas a la seguridad de su cuenta y a proporcionarles toda la información necesaria para ayudarles a cumplir sus propias obligaciones normativas en materia de reporte.",
-      "paragraph2": "Ninguna información personal del usuario del sitio se publica sin su conocimiento, se intercambia, se transfiere, se cede o se vende en ningún soporte a terceros. Solo en el supuesto de venta del sitio y de sus derechos se permitiría la transmisión de dicha información al eventual comprador, quien a su vez quedaría sujeto a la misma obligación de conservación y modificación de los datos respecto al usuario.",
+      "paragraph1": "Quels que soient les efforts fournis, aucune méthode de transmission sur Internet et aucune méthode de stockage électronique n'est complètement sûre. Nous ne pouvons en conséquence pas garantir une sécurité absolue. Si nous prenions connaissance d'une brèche de la sécurité, nous avertirions les utilisateurs concernés afin qu'ils puissent prendre les mesures appropriées. Nos procédures de notification d'incident tiennent compte de nos obligations légales, qu'elles se situent au niveau national ou européen. Nous nous engageons à informer pleinement nos clients de toutes les questions relevant de la sécurité de leur compte et à leur fournir toutes les informations nécessaires pour les aider à respecter leurs propres obligations réglementaires en matière de reporting.",
+      "paragraph2": "Aucune information personnelle de l'utilisateur du site n'est publiée à son insu, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers. Seule l'hypothèse du rachat du site et de ses droits permettrait la transmission des dites informations à l'éventuel acquéreur, qui serait à son tour tenu de la même obligation de conservation et de modification des données vis-à-vis de l'utilisateur.",
       "security": {
         "title": "Seguridad",
-        "paragraph1": "Para garantizar la seguridad y confidencialidad de los Datos Personales y de los Datos Personales de Salud, el sitio utiliza redes protegidas por dispositivos estándar como cortafuegos, seudonimización, cifrado y contraseña.",
-        "paragraph2": "Durante el tratamiento de los Datos Personales, el sitio adopta todas las medidas razonables para protegerlos contra cualquier pérdida, uso indebido, acceso no autorizado, divulgación, alteración o destrucción."
+        "paragraph1": "Pour assurer la sécurité et la confidentialité des Données Personnelles et des Données Personnelles de Santé, le site utilise des réseaux protégés par des dispositifs standards tels que pare-feu, pseudonymisation, chiffrement et mot de passe.",
+        "paragraph2": "Lors du traitement des Données Personnelles, le site prend toutes les mesures raisonnables visant à les protéger contre toute perte, utilisation détournée, accès non autorisé, divulgation, altération ou destruction."
       }
     },
-
     "section9": {
-      "title": "9. Enlaces hipertextuales, «cookies» y balizas («tags») de internet",
-      "paragraph1": "El sitio contiene varios enlaces hipertextuales hacia otros sitios, colocados con su autorización. Sin embargo, el sitio no tiene la posibilidad de verificar el contenido de los sitios así visitados y, en consecuencia, no asumirá ninguna responsabilidad al respecto.",
-      "paragraph2": "Salvo que decida desactivar las cookies, usted acepta que el sitio pueda utilizarlas. Puede desactivar estas cookies en cualquier momento y de forma gratuita a partir de las posibilidades de desactivación que se le ofrecen y que se recuerdan a continuación, sabiendo que ello puede reducir o impedir el acceso a la totalidad o parte de los Servicios ofrecidos por el sitio.",
+      "title": "9. Enlaces, «cookies» y etiquetas («tags») de Internet",
+      "paragraph1": "Le site contient un certain nombre de liens hypertextes vers d'autres sites, mis en place avec son autorisation. Cependant, le site n'a pas la possibilité de vérifier le contenu des sites ainsi visités, et n'assumera en conséquence aucune responsabilité de ce fait.",
+      "paragraph2": "Sauf si vous décidez de désactiver les cookies, vous acceptez que le site puisse les utiliser. Vous pouvez à tout moment désactiver ces cookies et ce gratuitement à partir des possibilités de désactivation qui vous sont offertes et rappelées ci-après, sachant que cela peut réduire ou empêcher l'accessibilité à tout ou partie des Servicios proposés par le site.",
       "cookies": {
         "title": "9.1 Cookies",
-        "paragraph1": "Una «cookie» es un pequeño archivo de información enviado al navegador del Usuario y registrado en el terminal del Usuario (por ejemplo, ordenador, smartphone). Este archivo incluye información como el nombre de dominio del Usuario, el proveedor de acceso a Internet del Usuario, el sistema operativo del Usuario, así como la fecha y hora de acceso. Las Cookies no pueden en ningún caso dañar el terminal del Usuario.",
-        "paragraph2": "El sitio puede tratar la información del Usuario relativa a su visita al Sitio, como las páginas consultadas o las búsquedas realizadas. Esta información le permite mejorar el contenido del Sitio y la navegación del Usuario.",
-        "paragraph3": "Dado que las Cookies facilitan la navegación y/o la prestación de los servicios ofrecidos por el Sitio, el Usuario puede configurar su navegador para decidir si desea aceptarlas o no, de manera que las Cookies se registren en el terminal o, por el contrario, se rechacen, ya sea sistemáticamente o según su emisor. El Usuario también puede configurar su software de navegación de manera que se le proponga la aceptación o el rechazo de las Cookies puntualmente, antes de que una Cookie pueda registrarse en su terminal. El sitio informa al Usuario de que, en ese caso, es posible que no todas las funcionalidades de su software de navegación estén disponibles.",
-        "paragraph4": "Si el Usuario rechaza el registro de Cookies en su terminal o navegador, o elimina las ya registradas, su navegación y experiencia en el Sitio pueden verse limitadas. Esto también podría ocurrir cuando el sitio o uno de sus proveedores no pueda reconocer, por razones de compatibilidad técnica, el tipo de navegador utilizado por el terminal, los parámetros de idioma y visualización, o el país desde el que el terminal parece estar conectado a Internet.",
-        "paragraph5": "En su caso, el sitio declina toda responsabilidad por las consecuencias derivadas del funcionamiento degradado del Sitio y de los servicios eventualmente ofrecidos, resultantes (i) del rechazo de Cookies por parte del Usuario, (ii) de la imposibilidad para el sitio de registrar o consultar las Cookies necesarias para su funcionamiento debido a la elección del Usuario. Para la gestión de las Cookies y las opciones del Usuario, la configuración de cada navegador es diferente. Se describe en el menú de ayuda del navegador, que indicará de qué manera el Usuario puede modificar sus preferencias en materia de Cookies.",
-        "paragraph6": "En cualquier momento, el Usuario puede elegir expresar y modificar sus preferencias en materia de Cookies. El sitio podrá además recurrir a los servicios de proveedores externos para ayudarle a recopilar y tratar la información descrita en esta sección.",
-        "paragraph7": "Por último, al hacer clic en los iconos dedicados a las redes sociales que figuran en el Sitio o en su aplicación móvil, y si el Usuario ha aceptado el depósito de cookies al continuar su navegación, dichas redes sociales también pueden depositar cookies en sus terminales (ordenador, tableta, teléfono móvil).",
-        "paragraph8": "Este tipo de cookies solo se depositan en sus terminales si usted lo consiente, al continuar su navegación por el Sitio o la aplicación móvil. En cualquier momento, el Usuario puede, no obstante, retirar su consentimiento a que se deposite este tipo de cookies."
+        "paragraph1": "Un « cookie » est un petit fichier d'information envoyé sur le navigateur de l'Utilisateur et enregistré au sein du terminal de l'Utilisateur (ex : ordinateur, smartphone). Ce fichier comprend des informations telles que le nom de domaine de l'Utilisateur, le fournisseur d'accès Internet de l'Utilisateur, le système d'exploitation de l'Utilisateur, ainsi que la date et l'heure d'accès. Les Cookies ne risquent en aucun cas d'endommager le terminal de l'Utilisateur.",
+        "paragraph2": "Le site est susceptible de traiter les informations de l'Utilisateur concernant sa visite du Site, telles que les pages consultées, les recherches effectuées. Ces informations lui permettent d'améliorer le contenu du Site et la navigation de l'Utilisateur.",
+        "paragraph3": "Les Cookies facilitant la navigation et/ou la fourniture des services proposés par le Site, l'Utilisateur peut configurer son navigateur pour qu'il lui permette de décider s'il souhaite ou non les accepter, de manière à ce que des Cookies soient enregistrés dans le terminal ou, au contraire, qu'ils soient rejetés, soit systématiquement, soit selon leur émetteur. L'Utilisateur peut également configurer son logiciel de navigation de manière à ce que l'acceptation ou le refus des Cookies lui soient proposés ponctuellement, avant qu'un Cookie soit susceptible d'être enregistré dans son terminal. Le site informe l'Utilisateur que, dans ce cas, il se peut que les fonctionnalités de son logiciel de navigation ne soient pas toutes disponibles.",
+        "paragraph4": "Si l'Utilisateur refuse l'enregistrement de Cookies dans son terminal ou son navigateur, ou s'il supprime ceux qui y sont enregistrés, sa navigation et son expérience sur le Site peuvent être limitées. Cela pourrait également être le cas lorsque le site ou l'un de ses prestataires ne peut pas reconnaître, à des fins de compatibilité technique, le type de navigateur utilisé par le terminal, les paramètres de langue et d'affichage ou le pays depuis lequel le terminal semble connecté à Internet.",
+        "paragraph5": "Le cas échéant, le site décline toute responsabilité pour les conséquences liées au fonctionnement dégradé du Site et des services éventuellement proposés, résultant (i) du refus de Cookies par l'Utilisateur, (ii) de l'impossibilité pour le site d'enregistrer ou de consulter les Cookies nécessaires à leur fonctionnement du fait du choix de l'Utilisateur. Pour la gestion des Cookies et des choix de l'Utilisateur, la configuration de chaque navigateur est différente. Elle est décrite dans le menu d'aide du navigateur, qui permettra de savoir de quelle manière l'Utilisateur peut modifier ses souhaits en matière de Cookies.",
+        "paragraph6": "À tout moment, l'Utilisateur peut faire le choix d'exprimer et de modifier ses souhaits en matière de Cookies. Le site pourra en outre faire appel aux services de prestataires externes pour l'aider à recueillir et traiter les informations décrites dans cette section.",
+        "paragraph7": "Enfin, en cliquant sur les icônes dédiées aux réseaux sociaux figurant sur le Site ou dans son application mobile, et si l'Utilisateur a accepté le dépôt de cookies en poursuivant sa navigation, ces réseaux sociaux peuvent également déposer des cookies sur vos terminaux (ordinateur, tablette, téléphone portable).",
+        "paragraph8": "Ces types de cookies ne sont déposés sur vos terminaux qu'à condition que vous y consentiez, en continuant votre navigation sur le Site ou l'application mobile. À tout moment, l'Utilisateur peut néanmoins revenir sur son consentement à ce que ce type de cookies soit déposé."
       },
       "tags": {
-        "title": "9.2 Balizas («tags») de internet",
-        "paragraph1": "El sitio puede emplear ocasionalmente balizas de Internet (también llamadas «tags», o balizas de acción, GIF de un píxel, GIF transparentes, GIF invisibles y GIF de uno a uno) y desplegarlas a través de un socio especializado en análisis web que puede encontrarse (y por tanto almacenar la información correspondiente, incluida la dirección IP del Usuario) en un país extranjero.",
-        "paragraph2": "Estas balizas se colocan tanto en la publicidad en línea que permite a los internautas acceder al Sitio, como en las distintas páginas del mismo.",
-        "paragraph3": "Esta tecnología permite al sitio evaluar las respuestas de los visitantes ante el Sitio y la eficacia de sus acciones (por ejemplo, el número de veces que se abre una página y la información consultada), así como el uso de este Sitio por parte del Usuario.",
-        "paragraph4": "El proveedor externo podrá eventualmente recopilar información sobre los visitantes del Sitio y de otros sitios de Internet gracias a estas balizas, elaborar informes sobre la actividad del Sitio para el sitio, y prestar otros servicios relacionados con el uso de este y de Internet."
+        "title": "9.2 Etiquetas («tags») de Internet",
+        "paragraph1": "Le site peut employer occasionnellement des balises Internet (également appelées « tags », ou balises d'action, GIF à un pixel, GIF transparents, GIF invisibles et GIF un à un) et les déployer par l'intermédiaire d'un partenaire spécialiste d'analyses Web susceptible de se trouver (et donc de stocker les informations correspondantes, y compris l'adresse IP de l'Utilisateur) dans un pays étranger.",
+        "paragraph2": "Ces balises sont placées à la fois dans les publicités en ligne permettant aux internautes d'accéder au Site, et sur les différentes pages de celui-ci.",
+        "paragraph3": "Cette technologie permet au site d'évaluer les réponses des visiteurs face au Site et l'efficacité de ses actions (par exemple, le nombre de fois où une page est ouverte et les informations consultées), ainsi que l'utilisation de ce Site par l'Utilisateur.",
+        "paragraph4": "Le prestataire externe pourra éventuellement recueillir des informations sur les visiteurs du Site et d'autres sites Internet grâce à ces balises, constituer des rapports sur l'activité du Site à l'attention du site, et fournir d'autres services relatifs à l'utilisation de celui-ci et d'Internet."
       }
     },
-
     "section10": {
-      "title": "10. Derecho aplicable y atribución de jurisdicción",
-      "paragraph1": "Todo litigio relacionado con el uso del sitio <1>https://codercat.fr</1> se somete al derecho francés. Salvo en los casos en que la ley no lo permita, se atribuye competencia exclusiva a los tribunales de Dunkerque."
+      "title": "10. Derecho aplicable y jurisdicción",
+      "paragraph1": "Tout litige en relation avec l'utilisation du site <1>https://codercat.fr</1> est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Dunkerque."
     }
   },
   "story": {
     "eyebrow": "Por qué importa",
     "searchPlaceholder": "cafetería abierta cerca de mí",
-    "resultActive": "El café de enfrente — abierto",
+    "resultActive": "La cafetería de enfrente — abierta",
     "visualCaption": "La búsqueda que decide adónde va la gente."
   }
 }

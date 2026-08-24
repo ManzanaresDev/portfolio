@@ -11,6 +11,7 @@ if (
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+    trustHost: true,
   providers: [
     Google({
       clientId: process.env.AUTH_GOOGLE_ID,
@@ -20,10 +21,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
     signIn: "/login",
   },
-  callbacks: {
-    authorized({ auth }) {
-      // true = accès autorisé, false = redirection vers /login
-      return !!auth?.user;
-    },
+callbacks: {
+  authorized({ auth }) {
+    const allowedEmails = [
+      "marcos.manzanares.perso@gmail.com",
+      "marcosmanzanaresdev@gmail.com",
+    ];
+    return !!auth?.user && allowedEmails.includes(auth.user.email ?? "");
   },
+},
 });
