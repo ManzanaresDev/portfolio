@@ -14,7 +14,7 @@ import Providers from "./providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Marcos Manzanares | Développeur Web Full-Stack & Sécurité Web",
+  title: "Marcos Manzanares | Développeur Web Full-Stack & Sécurité Web | Codercat",
 
   description:
     "Portfolio de Marcos Manzanares, développeur web Full-Stack spécialisé en React, Next.js, Node.js, Express, MongoDB et sécurité des applications web. Découvrez mes projets, compétences et réalisations.",
