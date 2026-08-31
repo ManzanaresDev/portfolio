@@ -5,13 +5,20 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  isNew = false,
+}: {
+  project: Project;
+  isNew?: boolean;
+}) {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="marquee-card"
-      style={{ display: "block", textDecoration: "none" }}
+      className="grid-card"
+      style={{ display: "block", textDecoration: "none", position: "relative" }}
     >
+      {isNew && <span className="new-badge">Nouveau</span>}
       <div
         style={{ position: "relative", width: "100%", aspectRatio: "4 / 3" }}
       >
@@ -20,7 +27,7 @@ function ProjectCard({ project }: { project: Project }) {
           alt={project.title}
           fill
           style={{ objectFit: "cover", objectPosition: "top" }}
-          sizes="(max-width: 640px) 78vw, (max-width: 1024px) 28vw, 360px"
+          sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 30vw"
         />
       </div>
       <div style={{ padding: "16px 18px" }}>
@@ -42,9 +49,6 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsGallery({ projects }: { projects: Project[] }) {
   const { t } = useTranslation();
-
-  // Duplicated once so the track can scroll from 0% to -50% and loop seamlessly.
-  const track = [...projects, ...projects];
 
   return (
     <div className="section-container" style={{ color: "#fff" }}>
@@ -89,53 +93,25 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
         </p>
       </div>
 
-      <div className="marquee-viewport">
-        <div
-          className="marquee-track"
-          style={{ ["--count" as string]: projects.length }}
-        >
-          {track.map((p, i) => (
-            <ProjectCard key={`${p.id ?? p.title}-${i}`} project={p} />
-          ))}
-        </div>
+      <div className="projects-grid">
+        {projects.map((p, i) => (
+          <ProjectCard
+            key={`${p.id ?? p.title}-${i}`}
+            project={p}
+            isNew={i === projects.length - 1}
+          />
+        ))}
       </div>
 
       <style>{`
-        .marquee-viewport {
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
           width: 100%;
-          min-width: 0;
-          overflow: hidden;
-          -webkit-mask-image: linear-gradient(
-            to right,
-            transparent 0,
-            black 40px,
-            black calc(100% - 40px),
-            transparent 100%
-          );
-          mask-image: linear-gradient(
-            to right,
-            transparent 0,
-            black 40px,
-            black calc(100% - 40px),
-            transparent 100%
-          );
         }
 
-        .marquee-track {
-          display: flex;
-          gap: 16px;
-          width: max-content;
-          animation: marquee-scroll calc(var(--count) * 8s) linear infinite;
-        }
-
-        .marquee-viewport:hover .marquee-track,
-        .marquee-track:active {
-          animation-play-state: paused;
-        }
-
-        .marquee-card {
-          flex: 0 0 clamp(240px, 28vw, 360px);
-          width: clamp(240px, 28vw, 360px);
+        .grid-card {
           border-radius: 16px;
           overflow: hidden;
           border: 1px solid rgba(255,255,255,0.08);
@@ -143,32 +119,39 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
           transition: border-color 0.2s, transform 0.2s;
         }
 
-        .marquee-card:hover {
+        .grid-card:hover {
           border-color: rgba(93, 223, 255, 0.35);
           transform: translateY(-2px);
         }
 
-        .marquee-card .tag {
+        .grid-card .tag {
           font-size: 0.7rem;
         }
 
-        @keyframes marquee-scroll {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+        .new-badge {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          z-index: 2;
+          background: rgba(93, 223, 255, 0.9);
+          color: #001018;
+          font-size: 0.7rem;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          padding: 4px 10px;
+          border-radius: 999px;
         }
 
-        @media (max-width: 640px) {
-          .marquee-card {
-            flex: 0 0 78vw;
-            width: 78vw;
+        @media (max-width: 1024px) {
+          .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
 
-        @media (prefers-reduced-motion: reduce) {
-          .marquee-track {
-            animation: none;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
+        @media (max-width: 640px) {
+          .projects-grid {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>
