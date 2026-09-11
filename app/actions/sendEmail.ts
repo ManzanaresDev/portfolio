@@ -1,10 +1,12 @@
 // sendEmail.ts
 "use server";
 
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { headers } from "next/headers";
 import { contactSchema } from "@/lib/contactSchema";
 import { rateLimit } from "@/lib/rateLimit";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEmail(data: unknown) {
   // validation côté serveur!
@@ -26,14 +28,6 @@ export async function sendEmail(data: unknown) {
   if (!rateLimit(ip, 3000)) {
     return;
   }
-
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
 
   const emailHtml = `
     <!DOCTYPE html>
@@ -127,10 +121,16 @@ export async function sendEmail(data: unknown) {
     </html>
   `;
 
-  await transporter.sendMail({
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_TO,
+  const { error } = await resend.emails.send({
+    from: "CoderCat Portfolio <contact@codercat.fr>",
+    to: process.env.EMAIL_TO!,
+    replyTo: email,
     subject: `CODERCAT — PORTFOLIO — Nouveau message de ${name}`,
     html: emailHtml,
   });
+
+  if (error) {
+    console.error("Erreur Resend :", error);
+    throw new Error("Impossible d'envoyer le message pour le moment.");
+  }
 }
