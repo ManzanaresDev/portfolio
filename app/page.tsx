@@ -1,3 +1,6 @@
+// app/page.tsx
+
+
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProjectsGallery from "@/components/ProjectsGallery";
@@ -7,8 +10,14 @@ import ServicesSection from "@/components/ServiceSection";
 import ContactSection from "@/components/ContactSection";
 import BackgroundLayer from "@/components/BackgroundLayer";
 import StorySection from "@/components/StoryTelling/StorySection";
+import DelayedPopup from "@/components/DelayedPopup";
+import ProjectPopupContent from "@/components/ProjectPopupContent";
+import { getProjects } from "@/app/actions/projects";
 
-export default function Portfolio() {
+export default async function Portfolio() {
+  const projects = await getProjects();
+  const featuredProject = projects[projects.length - 1]; // dernier projet
+
   return (
     <>
       <Navbar />
@@ -42,6 +51,12 @@ export default function Portfolio() {
         <section id="contact" className="page-section">
           <ContactSection />
         </section>
+
+        {featuredProject && (
+          <DelayedPopup delay={3000}>
+            <ProjectPopupContent project={featuredProject} />
+          </DelayedPopup>
+        )}
       </main>
     </>
   );
