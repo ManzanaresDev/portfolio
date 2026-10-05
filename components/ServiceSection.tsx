@@ -1,39 +1,18 @@
 "use client";
 
-import {
-  Check,
-  X,
-  ShieldCheck,
-  Lock,
-  Zap,
-  ArrowRight,
-} from "lucide-react";
-import React, { useState } from "react";
+import { Check, ShieldCheck, Zap, Sparkles, ArrowRight } from "lucide-react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 type PlanContent = {
   name: string;
-  tag: string | null;
   price: string;
   sub: string;
   pitch: string;
   features: string[];
   cta: string;
-};
-
-type AddonContent = {
-  title: string;
-  price: string;
-  items: string[];
-};
-
-type ComparisonRow = {
-  label: string;
-  starter: string | boolean;
-  pro: string | boolean;
-  custom: string | boolean;
 };
 
 type SecurityEntryContent = {
@@ -48,54 +27,19 @@ type SecurityEntryContent = {
   followupCta: string;
 };
 
+type SideCardContent = {
+  title: string;
+  price: string;
+  text: string;
+  items: string[];
+  cta: string;
+};
+
 // ─── Config non traduisible ─────────────────────────────────────────────────
 
 const PLAN_META = [
-  {
-    id: "starter",
-    accent: "#93c5fd",
-    highlight: false,
-  },
-  {
-    id: "pro",
-    accent: "#5ddfff",
-    highlight: true,
-  },
-  {
-    id: "custom",
-    accent: "#a78bfa",
-    highlight: false,
-  },
-] as const;
-
-const ADDON_META = [
-  {
-    id: "security",
-    icon: (
-      <ShieldCheck
-        size={20}
-        style={{ color: "#93c5fd", flexShrink: 0 }}
-      />
-    ),
-  },
-  {
-    id: "maintenance",
-    icon: (
-      <Zap
-        size={20}
-        style={{ color: "#fbbf24", flexShrink: 0 }}
-      />
-    ),
-  },
-  {
-    id: "gdpr",
-    icon: (
-      <Lock
-        size={20}
-        style={{ color: "#34d399", flexShrink: 0 }}
-      />
-    ),
-  },
+  { id: "starter", accent: "#93c5fd", highlight: false },
+  { id: "pro", accent: "#5ddfff", highlight: true },
 ] as const;
 
 // ─── Sub-components ─────────────────────────────────────────────────────────
@@ -115,51 +59,10 @@ function CheckItem({ text }: { text: string }) {
     >
       <Check
         size={13}
-        style={{
-          marginTop: 3,
-          flexShrink: 0,
-          color: "#34d399",
-        }}
+        style={{ marginTop: 3, flexShrink: 0, color: "#34d399" }}
       />
       <span>{text}</span>
     </li>
-  );
-}
-
-function CellValue({ val }: { val: string | boolean }) {
-  if (val === true) {
-    return (
-      <Check
-        size={16}
-        style={{
-          color: "#34d399",
-          margin: "0 auto",
-        }}
-      />
-    );
-  }
-
-  if (val === false) {
-    return (
-      <X
-        size={15}
-        style={{
-          color: "rgba(255,255,255,0.2)",
-          margin: "0 auto",
-        }}
-      />
-    );
-  }
-
-  return (
-    <span
-      style={{
-        fontSize: 13,
-        color: "rgba(255,255,255,0.6)",
-      }}
-    >
-      {val}
-    </span>
   );
 }
 
@@ -167,7 +70,6 @@ function CellValue({ val }: { val: string | boolean }) {
 
 export default function ServicesSection() {
   const { t } = useTranslation();
-  const [showComparison, setShowComparison] = useState(false);
 
   const securityEntry = t("services.securityEntry", {
     returnObjects: true,
@@ -177,22 +79,17 @@ export default function ServicesSection() {
     returnObjects: true,
   }) as Record<string, PlanContent>;
 
-  const addonsContent = t("services.addons", {
+  const custom = t("services.custom", {
     returnObjects: true,
-  }) as Record<string, AddonContent>;
+  }) as SideCardContent;
 
-  const comparisonRows = t("services.comparisonRows", {
+  const maintenance = t("services.maintenance", {
     returnObjects: true,
-  }) as ComparisonRow[];
+  }) as SideCardContent;
 
   const plans = PLAN_META.map((meta) => ({
     ...meta,
     ...plansContent[meta.id],
-  }));
-
-  const addons = ADDON_META.map((meta) => ({
-    ...meta,
-    ...addonsContent[meta.id],
   }));
 
   const labelStyle: React.CSSProperties = {
@@ -204,21 +101,34 @@ export default function ServicesSection() {
     margin: "0 0 20px",
   };
 
+  const sideCardStyle: React.CSSProperties = {
+    background: "rgba(255,255,255,0.04)",
+    border: "1px solid rgba(255,255,255,0.09)",
+    borderRadius: 16,
+    padding: "clamp(14px, 2.5vw, 22px)",
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+  };
+
+  const sideCtaStyle: React.CSSProperties = {
+    marginTop: "auto",
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 7,
+    color: "#5ddfff",
+    fontSize: 13,
+    fontWeight: 600,
+    textDecoration: "none",
+    paddingTop: 8,
+  };
+
   return (
-    <div
-      className="section-container"
-      style={{ color: "#fff" }}
-    >
+    <div className="section-container" style={{ color: "#fff" }}>
       {/* ── Hero ── */}
 
-      <div
-        style={{
-          marginBottom: "clamp(32px, 6vw, 56px)",
-        }}
-      >
-        <h2 className="title">
-          {t("services.title")}
-        </h2>
+      <div style={{ marginBottom: "clamp(32px, 6vw, 56px)" }}>
+        <h2 className="title">{t("services.title")}</h2>
 
         <p
           style={{
@@ -237,9 +147,7 @@ export default function ServicesSection() {
 
       <section
         aria-labelledby="security-entry-title"
-        style={{
-          marginBottom: "clamp(42px, 7vw, 72px)",
-        }}
+        style={{ marginBottom: "clamp(42px, 7vw, 72px)" }}
       >
         <div
           style={{
@@ -252,8 +160,6 @@ export default function ServicesSection() {
             overflow: "hidden",
           }}
         >
-          {/* Glow décoratif */}
-
           <div
             aria-hidden="true"
             style={{
@@ -269,34 +175,16 @@ export default function ServicesSection() {
             }}
           />
 
-          <div
-            style={{
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
+          <div style={{ position: "relative", zIndex: 1 }}>
             <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 18,
-              }}
+              style={{ display: "flex", flexDirection: "column", gap: 18 }}
             >
               {/* Eyebrow */}
 
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 10,
-                }}
-              >
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <ShieldCheck
                   size={20}
-                  style={{
-                    color: "#5ddfff",
-                    flexShrink: 0,
-                  }}
+                  style={{ color: "#5ddfff", flexShrink: 0 }}
                 />
 
                 <p
@@ -312,13 +200,12 @@ export default function ServicesSection() {
                 </p>
               </div>
 
-              {/* Contenu */}
+              {/* Contenu + prix */}
 
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns:
-                    "minmax(0, 1fr) auto",
+                  gridTemplateColumns: "minmax(0, 1fr) auto",
                   gap: "clamp(20px, 5vw, 48px)",
                   alignItems: "center",
                 }}
@@ -327,8 +214,7 @@ export default function ServicesSection() {
                   <h3
                     id="security-entry-title"
                     style={{
-                      fontSize:
-                        "clamp(20px, 3vw, 28px)",
+                      fontSize: "clamp(20px, 3vw, 28px)",
                       lineHeight: 1.2,
                       fontWeight: 700,
                       color: "#fff",
@@ -340,11 +226,9 @@ export default function ServicesSection() {
 
                   <p
                     style={{
-                      fontSize:
-                        "clamp(13px, 1.5vw, 15px)",
+                      fontSize: "clamp(13px, 1.5vw, 15px)",
                       lineHeight: 1.7,
-                      color:
-                        "rgba(255,255,255,0.55)",
+                      color: "rgba(255,255,255,0.55)",
                       margin: 0,
                       maxWidth: 720,
                     }}
@@ -353,25 +237,20 @@ export default function ServicesSection() {
                   </p>
                 </div>
 
-                {/* Prix */}
-
                 <div
                   style={{
                     minWidth: 150,
                     textAlign: "center",
                     padding: "16px 20px",
-                    background:
-                      "rgba(255,255,255,0.04)",
-                    border:
-                      "1px solid rgba(255,255,255,0.08)",
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
                     borderRadius: 14,
                   }}
                 >
                   <p
                     style={{
                       fontSize: 11,
-                      color:
-                        "rgba(255,255,255,0.35)",
+                      color: "rgba(255,255,255,0.35)",
                       margin: "0 0 4px",
                     }}
                   >
@@ -380,8 +259,7 @@ export default function ServicesSection() {
 
                   <p
                     style={{
-                      fontSize:
-                        "clamp(20px, 3vw, 25px)",
+                      fontSize: "clamp(20px, 3vw, 25px)",
                       fontWeight: 700,
                       color: "#fff",
                       margin: 0,
@@ -404,26 +282,21 @@ export default function ServicesSection() {
                     gap: 8,
                     padding: "11px 18px",
                     borderRadius: 10,
-                    background:
-                      "linear-gradient(135deg, #2563c4, #5ddfff)",
+                    background: "linear-gradient(135deg, #2563c4, #5ddfff)",
                     color: "#0a1628",
                     fontWeight: 700,
                     fontSize: 14,
                     textDecoration: "none",
-                    transition:
-                      "opacity 0.2s, transform 0.2s",
+                    transition: "opacity 0.2s",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.opacity =
-                      "0.85";
+                    e.currentTarget.style.opacity = "0.85";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.opacity =
-                      "1";
+                    e.currentTarget.style.opacity = "1";
                   }}
                 >
                   {securityEntry.cta}
-
                   <ArrowRight size={15} />
                 </a>
               </div>
@@ -435,11 +308,9 @@ export default function ServicesSection() {
               style={{
                 marginTop: 24,
                 paddingTop: 20,
-                borderTop:
-                  "1px solid rgba(255,255,255,0.08)",
+                borderTop: "1px solid rgba(255,255,255,0.08)",
                 display: "grid",
-                gridTemplateColumns:
-                  "minmax(0, 1fr) auto",
+                gridTemplateColumns: "minmax(0, 1fr) auto",
                 gap: 20,
                 alignItems: "center",
               }}
@@ -460,8 +331,7 @@ export default function ServicesSection() {
                   style={{
                     fontSize: 12,
                     lineHeight: 1.6,
-                    color:
-                      "rgba(255,255,255,0.4)",
+                    color: "rgba(255,255,255,0.4)",
                     margin: 0,
                   }}
                 >
@@ -483,7 +353,6 @@ export default function ServicesSection() {
                 }}
               >
                 {securityEntry.followupCta}
-
                 <ArrowRight size={14} />
               </a>
             </div>
@@ -491,21 +360,17 @@ export default function ServicesSection() {
         </div>
       </section>
 
-      {/* ── Formules ── */}
+      {/* ── Formules (2) ── */}
 
       <div id="services-plans">
-        <p style={labelStyle}>
-          {t("services.chooseLabel")}
-        </p>
+        <p style={labelStyle}>{t("services.chooseLabel")}</p>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             gap: "clamp(10px, 2vw, 16px)",
-            marginBottom:
-              "clamp(16px, 3vw, 28px)",
+            marginBottom: "clamp(16px, 3vw, 28px)",
             alignItems: "stretch",
           }}
         >
@@ -522,48 +387,17 @@ export default function ServicesSection() {
                     : "rgba(255,255,255,0.09)"
                 }`,
                 borderRadius: 18,
-                padding:
-                  "clamp(18px, 3vw, 28px)",
+                padding: "clamp(18px, 3vw, 28px)",
                 display: "flex",
                 flexDirection: "column",
-                gap: 0,
-                position: "relative",
                 boxShadow: plan.highlight
                   ? "0 0 40px rgba(93,223,255,0.08)"
                   : "none",
               }}
             >
-              {/* Badge */}
-
-              {plan.tag && (
-                <span
-                  style={{
-                    position: "absolute",
-                    top: -12,
-                    left: "50%",
-                    transform:
-                      "translateX(-50%)",
-                    background:
-                      "linear-gradient(90deg, #2563c4, #5ddfff)",
-                    borderRadius: 99,
-                    padding: "3px 14px",
-                    fontSize: 11,
-                    fontWeight: 700,
-                    color: "#0a1628",
-                    whiteSpace: "nowrap",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {plan.tag}
-                </span>
-              )}
-
-              {/* Name */}
-
               <p
                 style={{
-                  fontSize:
-                    "clamp(11px, 1.1vw, 12px)",
+                  fontSize: "clamp(11px, 1.1vw, 12px)",
                   fontWeight: 600,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
@@ -574,16 +408,13 @@ export default function ServicesSection() {
                 {plan.name}
               </p>
 
-              {/* Price */}
-
               <p
                 style={{
-                  fontSize:
-                    "clamp(22px, 4vw, 30px)",
+                  fontSize: "clamp(22px, 4vw, 30px)",
                   fontWeight: 700,
                   color: "#fff",
                   margin: "0 0 2px",
-                  lineHeight: 1,
+                  lineHeight: 1.1,
                 }}
               >
                 {plan.price}
@@ -592,50 +423,31 @@ export default function ServicesSection() {
               <p
                 style={{
                   fontSize: 12,
-                  color:
-                    "rgba(255,255,255,0.3)",
+                  color: "rgba(255,255,255,0.3)",
                   margin: "0 0 14px",
                 }}
               >
                 {plan.sub}
               </p>
 
-              {/* Pitch */}
-
               <p
                 style={{
-                  fontSize:
-                    "clamp(12px, 1.3vw, 13px)",
-                  color:
-                    "rgba(255,255,255,0.5)",
+                  fontSize: "clamp(12px, 1.3vw, 13px)",
+                  color: "rgba(255,255,255,0.5)",
                   lineHeight: 1.6,
                   margin: "0 0 16px",
-                  borderBottom:
-                    "1px solid rgba(255,255,255,0.07)",
+                  borderBottom: "1px solid rgba(255,255,255,0.07)",
                   paddingBottom: 16,
                 }}
               >
                 {plan.pitch}
               </p>
 
-              {/* Features */}
-
-              <ul
-                style={{
-                  margin: "0 0 20px",
-                  padding: 0,
-                  flex: 1,
-                }}
-              >
+              <ul style={{ margin: "0 0 20px", padding: 0, flex: 1 }}>
                 {plan.features.map((feature) => (
-                  <CheckItem
-                    key={feature}
-                    text={feature}
-                  />
+                  <CheckItem key={feature} text={feature} />
                 ))}
               </ul>
-
-              {/* CTA */}
 
               <a
                 href="#contact"
@@ -650,21 +462,17 @@ export default function ServicesSection() {
                   border: plan.highlight
                     ? "none"
                     : "1px solid rgba(255,255,255,0.12)",
-                  color: plan.highlight
-                    ? "#0a1628"
-                    : "#fff",
+                  color: plan.highlight ? "#0a1628" : "#fff",
                   fontWeight: 700,
                   fontSize: 14,
                   textDecoration: "none",
                   transition: "opacity 0.2s",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.opacity =
-                    "0.85";
+                  e.currentTarget.style.opacity = "0.85";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.opacity =
-                    "1";
+                  e.currentTarget.style.opacity = "1";
                 }}
               >
                 {plan.cta}
@@ -674,357 +482,137 @@ export default function ServicesSection() {
         </div>
       </div>
 
-      {/* ── Toggle comparateur ── */}
-
-      <div
-        style={{
-          textAlign: "center",
-          marginBottom:
-            "clamp(28px, 5vw, 48px)",
-        }}
-      >
-        <button
-          onClick={() =>
-            setShowComparison(!showComparison)
-          }
-          style={{
-            background: "none",
-            border:
-              "1px solid rgba(255,255,255,0.15)",
-            borderRadius: 8,
-            padding: "8px 20px",
-            color:
-              "rgba(255,255,255,0.5)",
-            fontSize: 13,
-            cursor: "pointer",
-            transition: "all 0.2s",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor =
-              "rgba(93,223,255,0.4)";
-            e.currentTarget.style.color =
-              "#5ddfff";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor =
-              "rgba(255,255,255,0.15)";
-            e.currentTarget.style.color =
-              "rgba(255,255,255,0.5)";
-          }}
-        >
-          {showComparison
-            ? t("services.compareHide")
-            : t("services.compareShow")}
-        </button>
-      </div>
-
-      {/* ── Comparateur ── */}
-
-      {showComparison && (
-        <div
-          style={{
-            marginBottom:
-              "clamp(28px, 5vw, 48px)",
-            overflowX: "auto",
-          }}
-        >
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              fontSize: 13,
-            }}
-          >
-            <thead>
-              <tr>
-                <th
-                  style={{
-                    textAlign: "left",
-                    padding: "10px 12px",
-                    color:
-                      "rgba(255,255,255,0.3)",
-                    fontWeight: 500,
-                    fontSize: 12,
-                  }}
-                >
-                  {t("services.tableFeature")}
-                </th>
-
-                {plans.map((plan) => (
-                  <th
-                    key={plan.id}
-                    style={{
-                      textAlign: "center",
-                      padding: "10px 12px",
-                      color: plan.accent,
-                      fontWeight: 700,
-                      fontSize: 13,
-                    }}
-                  >
-                    {plan.name}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-
-            <tbody>
-              {comparisonRows.map(
-                (row, index) => (
-                  <tr
-                    key={row.label}
-                    style={{
-                      background:
-                        index % 2 === 0
-                          ? "rgba(255,255,255,0.02)"
-                          : "transparent",
-                      borderTop:
-                        "1px solid rgba(255,255,255,0.05)",
-                    }}
-                  >
-                    <td
-                      style={{
-                        padding: "10px 12px",
-                        color:
-                          "rgba(255,255,255,0.55)",
-                      }}
-                    >
-                      {row.label}
-                    </td>
-
-                    <td
-                      style={{
-                        padding: "10px 12px",
-                        textAlign: "center",
-                      }}
-                    >
-                      <CellValue
-                        val={row.starter}
-                      />
-                    </td>
-
-                    <td
-                      style={{
-                        padding: "10px 12px",
-                        textAlign: "center",
-                      }}
-                    >
-                      <CellValue val={row.pro} />
-                    </td>
-
-                    <td
-                      style={{
-                        padding: "10px 12px",
-                        textAlign: "center",
-                      }}
-                    >
-                      <CellValue
-                        val={row.custom}
-                      />
-                    </td>
-                  </tr>
-                )
-              )}
-            </tbody>
-          </table>
-        </div>
-      )}
-
-      {/* ── Après le diagnostic ── */}
-
-      <div
-        style={{
-          marginBottom: 24,
-        }}
-      >
-        <p style={labelStyle}>
-          {t("services.addonsLabel")}
-        </p>
-
-        <p
-          style={{
-            fontSize:
-              "clamp(12px, 1.4vw, 14px)",
-            lineHeight: 1.7,
-            color:
-              "rgba(255,255,255,0.45)",
-            margin: "-8px 0 20px",
-          }}
-        >
-          {t("services.addonsIntro")}
-        </p>
-      </div>
-
-      {/* ── Addons ── */}
+      {/* ── Sur-mesure + Maintenance ── */}
 
       <div
         style={{
           display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fit, minmax(240px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
           gap: "clamp(10px, 2vw, 16px)",
+          alignItems: "stretch",
         }}
       >
-        {addons.map((addon) => {
-          const isSecurity =
-            addon.id === "security";
+        {/* Sur-mesure */}
 
-          return (
-            <div
-              key={addon.id}
-              style={{
-                background: isSecurity
-                  ? "rgba(93,223,255,0.055)"
-                  : "rgba(255,255,255,0.04)",
-                border: isSecurity
-                  ? "1px solid rgba(93,223,255,0.2)"
-                  : "1px solid rgba(255,255,255,0.09)",
-                borderRadius: 16,
-                padding:
-                  "clamp(14px, 2.5vw, 22px)",
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-                position: "relative",
-              }}
-            >
-              {isSecurity && (
-                <span
-                  style={{
-                    position: "absolute",
-                    top: 14,
-                    right: 14,
-                    fontSize: 9,
-                    fontWeight: 700,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "#5ddfff",
-                    background:
-                      "rgba(93,223,255,0.08)",
-                    border:
-                      "1px solid rgba(93,223,255,0.15)",
-                    borderRadius: 99,
-                    padding: "3px 8px",
-                  }}
-                >
-                  Porte d'entrée
-                </span>
-              )}
+        <div style={sideCardStyle}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <Sparkles size={20} style={{ color: "#a78bfa", flexShrink: 0 }} />
 
-              <div
+            <div>
+              <p
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 10,
-                  paddingRight: isSecurity
-                    ? 90
-                    : 0,
-                }}
-              >
-                {addon.icon}
-
-                <div>
-                  <p
-                    style={{
-                      fontSize:
-                        "clamp(13px, 1.5vw, 15px)",
-                      fontWeight: 600,
-                      margin: 0,
-                      color: "#fff",
-                    }}
-                  >
-                    {addon.title}
-                  </p>
-
-                  <p
-                    style={{
-                      fontSize: 12,
-                      color:
-                        "rgba(255,255,255,0.35)",
-                      margin: 0,
-                    }}
-                  >
-                    {addon.price}
-                  </p>
-                </div>
-              </div>
-
-              <ul
-                style={{
+                  fontSize: "clamp(13px, 1.5vw, 15px)",
+                  fontWeight: 600,
                   margin: 0,
-                  padding: 0,
+                  color: "#fff",
                 }}
               >
-                {addon.items.map((item) => (
-                  <CheckItem
-                    key={item}
-                    text={item}
-                  />
-                ))}
-              </ul>
+                {custom.title}
+              </p>
 
-              {isSecurity && (
-                <a
-                  href="#contact"
-                  style={{
-                    marginTop: 8,
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 7,
-                    padding: "9px 12px",
-                    borderRadius: 9,
-                    background:
-                      "rgba(93,223,255,0.08)",
-                    border:
-                      "1px solid rgba(93,223,255,0.18)",
-                    color: "#5ddfff",
-                    fontSize: 12,
-                    fontWeight: 600,
-                    textDecoration: "none",
-                  }}
-                >
-                  {securityEntry.cta}
-
-                  <ArrowRight size={13} />
-                </a>
-              )}
+              <p
+                style={{
+                  fontSize: 12,
+                  color: "rgba(255,255,255,0.35)",
+                  margin: 0,
+                }}
+              >
+                {custom.price}
+              </p>
             </div>
-          );
-        })}
+          </div>
+
+          <p
+            style={{
+              fontSize: "clamp(12px, 1.3vw, 13px)",
+              color: "rgba(255,255,255,0.5)",
+              lineHeight: 1.6,
+              margin: 0,
+            }}
+          >
+            {custom.text}
+          </p>
+
+          <a href="#contact" style={sideCtaStyle}>
+            {custom.cta}
+            <ArrowRight size={13} />
+          </a>
+        </div>
+
+        {/* Maintenance */}
+
+        <div style={sideCardStyle}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <Zap size={20} style={{ color: "#fbbf24", flexShrink: 0 }} />
+
+            <div>
+              <p
+                style={{
+                  fontSize: "clamp(13px, 1.5vw, 15px)",
+                  fontWeight: 600,
+                  margin: 0,
+                  color: "#fff",
+                }}
+              >
+                {maintenance.title}
+              </p>
+
+              <p
+                style={{
+                  fontSize: 12,
+                  color: "rgba(255,255,255,0.35)",
+                  margin: 0,
+                }}
+              >
+                {maintenance.price}
+              </p>
+            </div>
+          </div>
+
+          <p
+            style={{
+              fontSize: "clamp(12px, 1.3vw, 13px)",
+              color: "rgba(255,255,255,0.5)",
+              lineHeight: 1.6,
+              margin: 0,
+            }}
+          >
+            {maintenance.text}
+          </p>
+
+          <ul style={{ margin: 0, padding: 0 }}>
+            {maintenance.items.map((item) => (
+              <CheckItem key={item} text={item} />
+            ))}
+          </ul>
+
+          <a href="#contact" style={sideCtaStyle}>
+            {maintenance.cta}
+            <ArrowRight size={13} />
+          </a>
+        </div>
       </div>
 
       {/* ── Garantie ── */}
 
       <div
         style={{
-          marginTop:
-            "clamp(28px, 5vw, 48px)",
-          background:
-            "rgba(52,211,153,0.05)",
-          border:
-            "1px solid rgba(52,211,153,0.15)",
+          marginTop: "clamp(28px, 5vw, 48px)",
+          background: "rgba(52,211,153,0.05)",
+          border: "1px solid rgba(52,211,153,0.15)",
           borderRadius: 14,
-          padding:
-            "clamp(14px, 2.5vw, 22px)",
+          padding: "clamp(14px, 2.5vw, 22px)",
           display: "flex",
           alignItems: "center",
           gap: 14,
         }}
       >
-        <span
-          style={{
-            fontSize: 28,
-            flexShrink: 0,
-          }}
-        >
-          🛡️
-        </span>
+        <span style={{ fontSize: 28, flexShrink: 0 }}>🛡️</span>
 
         <div>
           <p
             style={{
-              fontSize:
-                "clamp(13px, 1.5vw, 14px)",
+              fontSize: "clamp(13px, 1.5vw, 14px)",
               fontWeight: 600,
               margin: "0 0 4px",
               color: "#34d399",
@@ -1035,10 +623,8 @@ export default function ServicesSection() {
 
           <p
             style={{
-              fontSize:
-                "clamp(11px, 1.2vw, 13px)",
-              color:
-                "rgba(255,255,255,0.45)",
+              fontSize: "clamp(11px, 1.2vw, 13px)",
+              color: "rgba(255,255,255,0.45)",
               margin: 0,
               lineHeight: 1.6,
             }}

@@ -44,191 +44,83 @@
     "dotLabel": "Projet {{number}}"
   },
 
-"services": {
-  "title": "Mes services",
+  "services": {
+    "title": "Mes services",
+    "intro": "Je crée des sites web modernes, rapides et professionnels, avec la sécurité intégrée dès le départ. Si vous avez déjà un site WordPress, vous pouvez commencer par un diagnostic de sécurité : vous saurez ce qu'il faut corriger et s'il vaut mieux sécuriser l'existant ou repartir sur une base saine.",
 
-  "intro": "Je conçois des sites web modernes, rapides et professionnels, avec la sécurité intégrée dès leur conception. Si vous avez déjà un site WordPress, vous pouvez commencer par un diagnostic de sécurité pour identifier les points à corriger et déterminer s'il vaut mieux sécuriser l'existant ou repartir sur une base saine.",
+    "chooseLabel": "Création de sites web sécurisés",
 
-  "chooseLabel": "Création de sites web sécurisés",
-  "compareShow": "Comparer les formules en détail ↓",
-  "compareHide": "Masquer la comparaison ↑",
-  "tableFeature": "Fonctionnalité",
-
-  "securityEntry": {
-    "eyebrow": "VOUS AVEZ DÉJÀ UN SITE WORDPRESS ?",
-    "title": "Commencez par un diagnostic de sécurité",
-    "description": "Avant de modifier ou de reconstruire votre site, je vérifie sa configuration, ses protections et les principales vulnérabilités courantes. Vous obtenez un état des lieux clair ainsi que des recommandations priorisées.",
-    "priceLabel": "À partir de",
-    "price": "150 – 500 €",
-    "cta": "Faire diagnostiquer mon site",
-    "followupTitle": "Et si votre site doit être repensé ?",
-    "followupText": "Le diagnostic peut aussi être le point de départ d'une refonte. Si votre site est difficile à maintenir, obsolète ou mal adapté à vos besoins, je peux vous accompagner vers un nouveau site moderne et sécurisé dès sa conception.",
-    "followupCta": "Découvrir les sites sécurisés"
-  },
-
-  "addonsLabel": "Après le diagnostic",
-  "addonsIntro": "Selon les résultats du diagnostic, plusieurs solutions sont possibles : corriger l'existant, assurer sa maintenance ou envisager une refonte vers un site conçu avec la sécurité dès le départ.",
-
-  "guaranteeTitle": "Une prestation claire et transparente",
-  "guaranteeText": "Chaque projet est défini selon un périmètre précis. Les fonctionnalités, délais et livrables sont validés ensemble avant le début du développement. Un diagnostic ne vous engage pas à refaire votre site.",
-
-  "plans": {
-    "starter": {
-      "name": "Starter",
-      "tag": null,
-      "price": "890 €",
-      "sub": "paiement unique",
-      "pitch": "Une présence en ligne professionnelle, rapide et sécurisée dès sa conception.",
-      "features": [
-        "Site vitrine jusqu'à 5 pages",
-        "Design responsive mobile",
-        "SEO technique de base",
-        "Formulaire de contact",
-        "HTTPS & configuration sécurisée",
-        "RGPD essentiel",
-        "Contrôles de sécurité avant mise en ligne",
-        "Livraison en 2 semaines"
-      ],
-      "cta": "Créer mon site"
+    "securityEntry": {
+      "eyebrow": "VOUS AVEZ DÉJÀ UN SITE WORDPRESS ?",
+      "title": "Commencez par un diagnostic de sécurité",
+      "description": "Avant de modifier ou de reconstruire votre site, je vérifie sa configuration, ses extensions, ses protections et les principales failles courantes. Vous recevez un rapport clair avec des recommandations classées par priorité.",
+      "priceLabel": "Forfait",
+      "price": "190 €",
+      "cta": "Faire diagnostiquer mon site",
+      "followupTitle": "Et si votre site doit être repensé ?",
+      "followupText": "Le diagnostic est déduit du prix si vous décidez de refaire votre site avec moi. Sans engagement.",
+      "followupCta": "Découvrir les sites sécurisés"
     },
 
-    "pro": {
-      "name": "Pro",
-      "tag": "Le plus choisi",
-      "price": "1 990 €",
-      "sub": "paiement unique",
-      "pitch": "Un site métier conçu pour accompagner votre activité avec des fonctionnalités avancées et une sécurité renforcée.",
-      "features": [
-        "Tout Starter inclus",
-        "Espace client ou portail métier",
-        "Prise de rendez-vous en ligne",
-        "Tableau de bord d'administration",
-        "Sécurité renforcée",
-        "Contrôles de sécurité approfondis",
-        "Protection des données dès la conception",
-        "Optimisation des performances",
-        "Livraison en 3 à 4 semaines"
-      ],
-      "cta": "Choisir Pro"
+    "plans": {
+      "starter": {
+        "name": "Site vitrine",
+        "price": "à partir de 690 €",
+        "sub": "paiement en 2 fois possible",
+        "pitch": "Une présence en ligne professionnelle, rapide et sécurisée pour présenter votre activité et être contacté.",
+        "features": [
+          "Jusqu'à 5 pages",
+          "Adapté aux mobiles",
+          "Référencement de base (SEO)",
+          "Formulaire de contact",
+          "HTTPS et configuration sécurisée",
+          "Conformité RGPD essentielle",
+          "Vérifications de sécurité avant la mise en ligne"
+        ],
+        "cta": "Demander un devis"
+      },
+      "pro": {
+        "name": "Site métier",
+        "price": "à partir de 1 490 €",
+        "sub": "paiement en 2 fois possible",
+        "pitch": "Un site qui travaille pour vous : espace client, rendez-vous en ligne et outils pour gérer votre activité.",
+        "features": [
+          "Tout le site vitrine",
+          "Espace client",
+          "Prise de rendez-vous en ligne",
+          "Tableau de bord pour gérer vos contenus",
+          "Sécurité renforcée",
+          "Protection des données dès la conception",
+          "Optimisation de la vitesse"
+        ],
+        "cta": "Demander un devis"
+      }
     },
 
     "custom": {
-      "name": "Sur-mesure",
-      "tag": null,
+      "title": "Un projet plus spécifique ?",
       "price": "Sur devis",
-      "sub": "selon le projet",
-      "pitch": "Application web, SaaS ou logiciel métier : une solution conçue autour de vos besoins et de votre niveau de risque.",
-      "features": [
-        "Tout Pro inclus",
-        "Analyse des besoins et des risques",
-        "Architecture adaptée au projet",
-        "API & intégrations tierces",
-        "Tests automatisés",
-        "CI/CD & déploiement",
-        "Sécurité adaptée à l'architecture",
-        "Accompagnement post-livraison",
-        "Évolutions sur mesure"
-      ],
-      "cta": "Discutons-en"
-    }
-  },
-
-  "comparisonRows": [
-    {
-      "label": "Pages incluses",
-      "starter": "5",
-      "pro": "Selon projet",
-      "custom": "Sur mesure"
-    },
-    {
-      "label": "Design responsive",
-      "starter": true,
-      "pro": true,
-      "custom": true
-    },
-    {
-      "label": "SEO technique",
-      "starter": "Base",
-      "pro": "Avancé",
-      "custom": "Avancé"
-    },
-    {
-      "label": "Espace client",
-      "starter": false,
-      "pro": true,
-      "custom": true
-    },
-    {
-      "label": "Contrôles de sécurité",
-      "starter": "Avant mise en ligne",
-      "pro": "Approfondis",
-      "custom": "Adaptés au projet"
-    },
-    {
-      "label": "Protection des données",
-      "starter": "Essentielle",
-      "pro": "Renforcée",
-      "custom": "Selon projet"
-    },
-    {
-      "label": "API & intégrations",
-      "starter": false,
-      "pro": false,
-      "custom": true
-    },
-    {
-      "label": "Support post-livraison",
-      "starter": "30 j",
-      "pro": "60 j",
-      "custom": "Sur mesure"
-    }
-  ],
-
-  "addons": {
-    "security": {
-      "title": "Diagnostic de sécurité WordPress",
-      "price": "150 – 500 €",
-      "items": [
-        "Analyse de la configuration WordPress",
-        "Vérification du CMS, des extensions et du thème",
-        "Vérification des headers HTTP",
-        "HTTPS, cookies et protections du navigateur",
-        "Recherche de vulnérabilités web courantes",
-        "Vérification des accès et fonctionnalités exposées",
-        "Recherche d'informations sensibles accessibles",
-        "Vérification des principales protections du site",
-        "Rapport clair avec recommandations priorisées",
-        "Conseils pour sécuriser ou faire évoluer le site"
-      ]
+      "text": "Application web, logiciel métier ou connexion à vos outils (paiement, agenda, facturation…) : on en parle, et je vous réponds sous 48 h avec un devis gratuit.",
+      "items": [],
+      "cta": "Décrire mon projet"
     },
 
     "maintenance": {
-      "title": "Maintenance & sécurité",
-      "price": "29 – 99 € / mois",
+      "title": "Maintenance et sécurité",
+      "price": "à partir de 29 € / mois",
+      "text": "Pour que votre site reste à jour et protégé après sa mise en ligne.",
       "items": [
         "Mises à jour techniques et de sécurité",
-        "Surveillance de disponibilité",
-        "Sauvegardes selon l'hébergement",
-        "Vérification régulière du site",
+        "Surveillance de la disponibilité",
         "Petites corrections et modifications",
-        "Accompagnement en cas de problème"
-      ]
+        "Aide en cas de problème"
+      ],
+      "cta": "En savoir plus"
     },
 
-    "gdpr": {
-      "title": "Protection des données",
-      "price": "Sur devis",
-      "items": [
-        "Configuration technique liée à la protection des données",
-        "Gestion des consentements",
-        "Configuration des cookies",
-        "Réduction de la collecte de données",
-        "Protection des données personnelles",
-        "Accompagnement technique sur les besoins RGPD"
-      ]
-    }
-  }
-},
+    "guaranteeTitle": "Une prestation claire et transparente",
+    "guaranteeText": "Devis gratuit et sans engagement. Chaque projet est défini avec un périmètre précis, validé ensemble avant le début des travaux. Je limite le nombre de projets par trimestre pour rester disponible et soigner chaque réalisation."
+  },
 
   "testimonials": {
     "title": "Témoignages clients",
@@ -353,7 +245,7 @@
     "section4": {
       "title": "4. Limitations contractuelles sur les données techniques",
       "paragraph1": "Le site utilise la technologie JavaScript. Il ne pourra être tenu responsable de dommages matériels liés à l'utilisation du site. De plus, l'utilisateur du site s'engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis à jour.",
-      "paragraph2": "Le site <1>https://codercat.fr</1> est hébergé chez un prestataire sur le territoire de l'Union Européenne conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD : n° 2016-679).",
+      "paragraph2": "Le site <1>https://codercat.fr</1> est hébergé par Vercel Inc., société établie aux États-Unis, dont l'infrastructure est répartie dans plusieurs régions du monde. Les données susceptibles d'être transférées vers les États-Unis le sont dans le respect du Règlement Général sur la Protection des Données (RGPD : n° 2016-679), avec des garanties appropriées telles que le cadre de protection des données UE–États-Unis (Data Privacy Framework) ou les clauses contractuelles types de la Commission européenne.",
       "paragraph3": "L'objectif est d'apporter une prestation qui assure le meilleur taux d'accessibilité. L'hébergeur assure la continuité de son service 24 heures sur 24, tous les jours de l'année. Il se réserve néanmoins la possibilité d'interrompre le service d'hébergement pour les durées les plus courtes possibles, notamment à des fins de maintenance, d'amélioration de ses infrastructures, de défaillance de ses infrastructures ou si les Prestations et Services génèrent un trafic réputé anormal.",
       "paragraph4": "Le site et l'hébergeur ne pourront être tenus responsables en cas de dysfonctionnement du réseau Internet, des lignes téléphoniques ou du matériel informatique et de téléphonie lié notamment à l'encombrement du réseau empêchant l'accès au serveur."
     },
@@ -400,11 +292,11 @@
         "contactName": "codercat — DPO, Marcos Manzanares",
         "contactAddress": "4 rue du parc, 59240 Dunkerque",
         "identification": "Dans ce cas, l'Utilisateur doit indiquer les Données Personnelles qu'il souhaiterait que le site corrige, mette à jour ou supprime, en s'identifiant précisément avec une copie d'une pièce d'identité (carte d'identité ou passeport).",
-        "cnil": "Les demandes de suppression de Données Personnelles seront soumises aux obligations qui sont imposées au site par la loi, notamment en matière de conservation ou d'archivage des documents. Enfin, les Utilisateurs peuvent déposer une réclamation auprès des autorités de contrôle, et notamment de la CNIL (<1>cnil.fr/fr/plaintes</1>"
+        "cnil": "Les demandes de suppression de Données Personnelles seront soumises aux obligations qui sont imposées au site par la loi, notamment en matière de conservation ou d'archivage des documents. Enfin, les Utilisateurs peuvent déposer une réclamation auprès des autorités de contrôle, et notamment de la CNIL (<1>cnil.fr/fr/plaintes</1>)."
       },
       "noDisclosure": {
         "title": "7.4 Non-communication des données personnelles",
-        "paragraph1": "Le site s'interdit de traiter, héberger ou transférer les Informations collectées sur ses Clients vers un pays situé en dehors de l'Union européenne ou reconnu comme « non adéquat » par la Commission européenne sans en informer préalablement le client. Pour autant, il reste libre du choix de ses sous-traitants techniques et commerciaux à la condition qu'ils présentent les garanties suffisantes au regard des exigences du RGPD (n° 2016-679).",
+        "paragraph1": "Certains prestataires techniques du site sont établis aux États-Unis ou y traitent des données : Vercel (hébergement), Cloudflare (gestion des DNS), ainsi que Google Analytics et Microsoft Clarity (mesure d'audience, uniquement avec votre consentement). Ces transferts sont encadrés par les garanties prévues par le RGPD, notamment le cadre de protection des données UE–États-Unis (Data Privacy Framework) ou les clauses contractuelles types de la Commission européenne. Le site reste libre du choix de ses sous-traitants techniques et commerciaux, à la condition qu'ils présentent des garanties suffisantes au regard des exigences du RGPD (n° 2016-679).",
         "paragraph2": "Le site s'engage à prendre toutes les précautions nécessaires afin de préserver la sécurité des Informations et notamment qu'elles ne soient pas communiquées à des personnes non autorisées. Cependant, si un incident impactant l'intégrité ou la confidentialité des Informations du Client est porté à sa connaissance, il devra dans les meilleurs délais informer le Client et lui communiquer les mesures de corrections prises. Par ailleurs, le site ne collecte aucune « donnée sensible ».",
         "paragraph3": "Les Données Personnelles de l'Utilisateur peuvent être traitées par des filiales du site et des sous-traitants (prestataires de services), exclusivement afin de réaliser les finalités de la présente politique. Dans la limite de leurs attributions respectives et pour les finalités rappelées ci-dessus, les principales personnes susceptibles d'avoir accès aux données des Utilisateurs sont principalement les agents de notre service client."
       },
