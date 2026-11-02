@@ -4,6 +4,7 @@ import type { Project } from "@/lib/types";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import { resolveImagePath } from "@/lib/image";
 
 function ProjectCard({
   project,
@@ -12,6 +13,8 @@ function ProjectCard({
   project: Project;
   isNew?: boolean;
 }) {
+  // dans ProjectCard
+const imageSrc = resolveImagePath(project.image);
   return (
     <Link
       href={`/projects/${project.id}`}
@@ -23,7 +26,7 @@ function ProjectCard({
         style={{ position: "relative", width: "100%", aspectRatio: "4 / 3" }}
       >
         <Image
-          src={project.image ?? ""}
+    src={imageSrc ?? "/images/placeholder.jpg"}
           alt={project.title}
           fill
           style={{ objectFit: "cover", objectPosition: "top" }}
