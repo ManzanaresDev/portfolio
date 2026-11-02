@@ -1,6 +1,7 @@
 // components/ProjectPopupContent.tsx
 import type { Project } from "@/lib/types";
 import Image from "next/image";
+import { resolveImagePath } from "@/lib/image";
 
 export default function ProjectPopupContent({ project }: { project: Project }) {
   return (
@@ -34,7 +35,8 @@ export default function ProjectPopupContent({ project }: { project: Project }) {
       >
         {project.image && (
           <Image
-            src={project.image}
+            // src={project.image}
+            src={resolveImagePath(project.image) ?? "/images/placeholder.jpg"}
             alt={project.title}
             fill
             style={{ objectFit: "cover", objectPosition: "top" }}
